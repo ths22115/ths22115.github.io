@@ -31,10 +31,10 @@ function changeActive(new_section, current_section){
    new_section.style.display = "block";
 
    //home and about section bug fixing
-    if (current_section.id === "home_div" && new_section.id === "about_div"){
+    if (new_section.id !== "home_div") {
         document.getElementById("about_button").style.display = "none";
         document.getElementById("home_button").style.display = "block";
-    } else if (current_section.id === "about_div" && new_section.id === "home_div"){
+    } else {
         document.getElementById("about_button").style.display = "block";
         document.getElementById("home_button").style.display = "none";
     }

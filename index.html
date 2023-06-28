@@ -10,21 +10,30 @@
 </head>
 <body onload="onLoad()">
 <header>
-    <button class="section_buttons" onclick="sectionSwap('tech_div')">tech.</button>
-    <a href="#news">linkedin.</a>
+    <button class="section_buttons"
+            onclick="sectionSwap('tech_div')"
+            style="color:black;text-decoration:line-through;text-decoration-thickness: 0.3rem;">
+        <span style='color:white'>tech.</span>
+    </button>
+    <a href="http://www.linkedin.com/in/miles-thomas-552648245" target="_blank">linkedin.</a>
     <button class="section_buttons" onclick="sectionSwap('res_div')">resume.</button>
     <button id="about_button" class="section_buttons" onclick="sectionSwap('about_div')">me.</button>
     <button id="home_button" class="section_buttons" style="display:none" onclick="sectionSwap('home_div')">home.</button>
-    <a href="#news" >instagram.</a>
-    <a href="#contact" >spotify.</a>
-    <button class="section_buttons" onclick="sectionSwap('fash_div')">fashion.</button>
+    <a href="http://www.instagram.com/miles.th0mas" target="_blank">instagram.</a>
+    <a href="http://open.spotify.com/user/s861qg91pi85xquepp1gn15w6" target="_blank">spotify.</a>
+    <button
+            class="section_buttons"
+            onclick="sectionSwap('fash_div')"
+            style="color:black;text-decoration:line-through;text-decoration-thickness: 0.3rem;">
+        <span style='color:white'>fashion.</span>
+    </button>
 </header>
 <div id="background"></div>
 <div id="home_div" class="sections">
-    <div class="section_title">
+    <div id="home_title" class="section_title">
         <h1>miles thomas.</h1>
     </div>
-    <div class="section_subtitle">
+    <div id="home_subtitle" class="section_subtitle">
         <ul>
             <li>18 y/o full-time college student.</li>
             <li>experienced programmer, software developer and web designer.</li>
@@ -35,95 +44,73 @@
     </div>
 </div>
 <div id="about_div" class="sections" style="display:none">
-    <div class="section_title">
-        <h1>ABOUTTTTT</h1>
+    <div id="about_title" class="section_title">
+        <h1>about me.</h1>
     </div>
-    <div class="section_subtitle">
+    <div id="about_sidetext" class="section_sidetext">
+        <ul id="about_sidetext_header">
+            <li>currently:</li>
+        </ul>
+            <hr>
+        <ul id="about_sidetext_items">
+            <li>working part-time @ UO.</li>
+            <li>taking transfer college credits @ DTCC.</li>
+            <li>working on personal full-stack projects (this lol)</li>
+            <li>doing creative fashion projects (fashion tab)</li>
+        </ul>
+    </div>
+    <div id="about_subtitle" class="section_subtitle">
+        <p>coming soon <333
+            <br> <br>
+            blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah...
+            Miles blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah
+            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah
+            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht
+            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles blah
+            blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah
+            Miles blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah
+            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah
+            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht
+            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles.
+        </p>
+        <!--        <p>blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah Miles-->
+        <!--            blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+        <!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+        <!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+        <!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles-->
+        <!--            blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah-->
+        <!--            Miles blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+        <!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+        <!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+        <!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles. </p>-->
+
+        <!--        <p>blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah Miles-->
+        <!--            blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+        <!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+        <!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+        <!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles. </p>-->
+    </div>
+</div>
+<div id="tech_div" class="sections" style="display:none">
+    <div id="tech_title" class="section_title">
+        <h1>coming soon <3</h1>
+    </div>
+    <div id="tech_subtitle" class="section_subtitle">
         <ul>
-            <li>AHHHH</li>
-            <li>experienced programmer, software developer and web designer.</li>
-            <li>aspiring model, creative artist and innovative fashion designer.</li>
-            <!--            <li>poetry???</li>-->
-            <!--            <li>music???</li>-->
         </ul>
     </div>
 </div>
-
-<!--<div id="initial_region">-->
-<!--    <div id="center_panel">-->
-<!--        <div class="background_rects" id="rect1"></div>-->
-<!--        <div class="background_divs" id="div1"></div>-->
-<!--        <div id="center">-->
-
-<!--            <h1 id='center_header' class="center_text">Miles Thomas</h1>-->
-<!--            <img src="../../static/main/goodpic.jpg" alt="fun picture of me">-->
-<!--            <a href="https://github.com/ths22115" class="bi bi-github"></a>-->
-<!--            <a href="https://www.instagram.com/miles.th0mas" class="bi bi-instagram"></a>-->
-<!--            <a href="https://www.linkedin.com/in/miles-thomas-552648245/" class="bi bi-linkedin"></a>-->
-<!--            <p class="center_text">18 y/o college programmer :D</p>-->
-<!--        </div>-->
-
-
-<!--        &lt;!&ndash;      <p class ="center_text" id="counter_heading">site in dev for</p>&ndash;&gt;-->
-<!--        &lt;!&ndash;      <div id="counter">&ndash;&gt;-->
-<!--        &lt;!&ndash;        <table>&ndash;&gt;-->
-<!--        &lt;!&ndash;          <tr>&ndash;&gt;-->
-<!--        &lt;!&ndash;            {%  if elapsed_days > 0 %}&ndash;&gt;-->
-<!--        &lt;!&ndash;            <td class ="center_text">{{ elapsed_days }} Days</td>&ndash;&gt;-->
-<!--        &lt;!&ndash;            {% endif %}&ndash;&gt;-->
-<!--        &lt;!&ndash;            {%  if elapsed_hours > 0 %}&ndash;&gt;-->
-<!--        &lt;!&ndash;            <td class ="center_text">{{ elapsed_hours }} Hours</td>&ndash;&gt;-->
-<!--        &lt;!&ndash;            {% endif %}&ndash;&gt;-->
-<!--        &lt;!&ndash;            {%  if elapsed_mins > 0 %}&ndash;&gt;-->
-<!--        &lt;!&ndash;            <td class ="center_text">{{ elapsed_mins }} Mins</td>&ndash;&gt;-->
-<!--        &lt;!&ndash;            {% endif %}&ndash;&gt;-->
-<!--        &lt;!&ndash;            {%  if elapsed_secs > 0 %}&ndash;&gt;-->
-<!--        &lt;!&ndash;            <td class ="center_text">{{ elapsed_secs }} Secs</td>&ndash;&gt;-->
-<!--        &lt;!&ndash;            {% endif %}&ndash;&gt;-->
-<!--        &lt;!&ndash;          </tr>&ndash;&gt;-->
-<!--        &lt;!&ndash;        </table>&ndash;&gt;-->
-<!--        &lt;!&ndash;      </div>&ndash;&gt;-->
-
-<!--    </div>-->
-<!--</div>-->
-<!--<div id="projects">-->
-<!--    <div class="column"></div>-->
-<!--    <div class="column"></div>-->
-<!--    <div class="column"></div>-->
-<!--</div>-->
-<!--<div class="achievements"></div>-->
-<!--<div class="activities"></div>-->
-<!--<script>-->
-<!--    let VPwidth = parseInt(getComputedStyle(document.querySelector('#initial_region')).width.replace('px', ''));-->
-<!--    let centerPanel_targetWidth = VPwidth * .653;-->
-<!--    let centerPanel_targetHeight = centerPanel_targetWidth / 2.85;-->
-
-<!--    // let center_targetWidth = centerPanel_targetWidth * .9715;-->
-<!--    let center_targetWidth = (VPwidth * .6478) * .9715; // center, rect and div are all equal but independent of the center panel size-->
-<!--    let center_targetHeight = (centerPanel_targetWidth / 2.7538) * .8756;-->
-
-<!--    //margin for the rect to fill remaining space inside the panel-->
-<!--    let backRect_targetLeftMargin = centerPanel_targetWidth - center_targetWidth;-->
-<!--    let backRect_targetTopMargin = centerPanel_targetHeight - center_targetHeight;-->
-
-<!--    document.getElementById("center_panel").style.height = centerPanel_targetHeight.toString() + 'px'; // sets center_panel dimensions = initial window width *  1:2.7 (HxW) aspect ratio-->
-<!--    document.getElementById("center_panel").style.width = centerPanel_targetWidth.toString() + 'px';-->
-
-<!--    document.getElementById('center').style.width = center_targetWidth.toString() + 'px'; // sets center backDiv and backRect dimensions-->
-<!--    document.getElementById('center').style.height = center_targetHeight.toString() + 'px';-->
-<!--    document.getElementById('div1').style.width = center_targetWidth.toString() + 'px';-->
-<!--    document.getElementById('div1').style.height = center_targetHeight.toString() + 'px';-->
-<!--    document.getElementById('rect1').style.width = center_targetWidth.toString() + 'px';-->
-<!--    document.getElementById('rect1').style.height = center_targetHeight.toString() + 'px';-->
-
-<!--    document.getElementById('rect1').style.marginLeft = backRect_targetLeftMargin.toString()  + 'px'; // sets rect margins-->
-<!--    document.getElementById('rect1').style.marginTop = backRect_targetTopMargin.toString()  + 'px';-->
-
-<!--    document.getElementById('div1').style.marginLeft = (backRect_targetLeftMargin/3.2).toString()  + 'px'; // sets div margins-->
-<!--    document.getElementById('div1').style.marginTop = (backRect_targetTopMargin/2.5).toString()  + 'px';-->
-
-<!--    let centerHeader_fontSize = center_targetHeight * .2676-->
-<!--    document.querySelector('h1').style.fontSize = centerHeader_fontSize.toString() + 'px';-->
-<!--</script>-->
+<div id="fash_div" class="sections" style="display:none">
+    <div id="fash_title" class="section_title">
+        <h1>coming soon <3</h1>
+    </div>
+    <div id="fash_subtitle" class="section_subtitle">
+        <ul>
+        </ul>
+    </div>
+</div>
+<footer>
+    <p>site actively in development. check back later for new features.</p>
+</footer>
 </body>
 </html>
