@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="indexStyleNew.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">-->
+    <title>Miles Thomas</title>
+    <script src="indexScriptNew.js"></script>
+</head>
+<body onload="onLoad()">
+<header>
+    <button class="section_buttons"
+            onclick="sectionSwap('tech_div')"
+            style="color:black;text-decoration:line-through;text-decoration-thickness: 0.3rem;">
+        <span style='color:white'>tech.</span>
+    </button>
+    <a href="http://www.linkedin.com/in/miles-thomas-552648245" target="_blank">linkedin.</a>
+    <button class="section_buttons" onclick="sectionSwap('res_div')">resume.</button>
+    <button id="about_button" class="section_buttons" onclick="sectionSwap('about_div')">me.</button>
+    <button id="home_button" class="section_buttons" style="display:none" onclick="sectionSwap('home_div')">home.</button>
+    <a href="http://www.instagram.com/miles.th0mas" target="_blank">instagram.</a>
+    <a href="http://open.spotify.com/user/s861qg91pi85xquepp1gn15w6" target="_blank">spotify.</a>
+    <button
+            class="section_buttons"
+            onclick="sectionSwap('fash_div')"
+            style="color:black;text-decoration:line-through;text-decoration-thickness: 0.3rem;">
+        <span style='color:white'>fashion.</span>
+    </button>
+</header>
+<div id="background"></div>
+<div id="home_div" class="sections">
+    <div id="home_title" class="section_title">
+        <h1>miles thomas.</h1>
+    </div>
+    <div id="home_subtitle" class="section_subtitle">
+        <ul>
+            <li>18 y/o full-time college student.</li>
+            <li>experienced programmer, software developer and web designer.</li>
+            <li>aspiring model, creative artist and innovative fashion designer.</li>
+<!--            <li>poetry???</li>-->
+<!--            <li>music???</li>-->
+        </ul>
+    </div>
+</div>
+<div id="about_div" class="sections" style="display:none">
+    <div id="about_title" class="section_title">
+        <h1>about me.</h1>
+    </div>
+    <div id="about_sidetext" class="section_sidetext">
+        <ul id="about_sidetext_header">
+            <li>currently:</li>
+        </ul>
+            <hr>
+        <ul id="about_sidetext_items">
+            <li>working part-time @ UO.</li>
+            <li>taking transfer college credits @ DTCC.</li>
+            <li>working on personal full-stack projects (this lol)</li>
+            <li>doing creative fashion projects (fashion tab)</li>
+        </ul>
+    </div>
+    <div id="about_subtitle" class="section_subtitle">
+        <p>coming soon <333
+<!--            <br> <br>-->
+<!--            blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah...-->
+<!--            Miles blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+<!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+<!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+<!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles blah-->
+<!--            blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah-->
+<!--            Miles blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+<!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+<!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+<!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles.-->
+        </p>
+        <!--        <p>blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah Miles-->
+        <!--            blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+        <!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+        <!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+        <!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles-->
+        <!--            blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah-->
+        <!--            Miles blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+        <!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+        <!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+        <!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles. </p>-->
+
+        <!--        <p>blah blah blah Miles Thomas blah blah blah Miles blah blah Samoht blah blah blah Miles Thomas blah blah blah Miles-->
+        <!--            blah blah blah Miles Thomas blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah-->
+        <!--            blah blah blah blah Samoht blah blah blah Miles blah blah blah Miles Thomas blah blah blah Miles blah blah-->
+        <!--            Samoht blah blah blah Miles Thomas blah blah blah Miles blah blah blah Miles Thomas blah blah blah Samoht-->
+        <!--            blah blah blah Miles blah blah blah Miles Thomas blah blah blah blah blah Samoht blah blah blah Miles. </p>-->
+    </div>
+</div>
+<div id="tech_div" class="sections" style="display:none">
+    <div id="tech_title" class="section_title">
+        <h1>coming soon <3</h1>
+    </div>
+    <div id="tech_subtitle" class="section_subtitle">
+        <ul>
+        </ul>
+    </div>
+</div>
+<div id="fash_div" class="sections" style="display:none">
+    <div id="fash_title" class="section_title">
+        <h1>coming soon <3</h1>
+    </div>
+    <div id="fash_subtitle" class="section_subtitle">
+        <ul>
+        </ul>
+    </div>
+</div>
+<footer>
+    <p>site actively in development. check back later for new features.</p>
+</footer>
+<div style="height:0; clear:both;"></div>
+</body>
+</html>
