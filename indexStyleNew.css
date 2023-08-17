@@ -1,7 +1,13 @@
-@font-face {
-    font-family: myFirstFont;
-    src: url(font/Intro-Trial-Bd.ttf);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+/*@font-face {*/
+/*    font-family: myFirstFont;*/
+/*    src: url(font/Intro-Trial-Bd.ttf);*/
+/*}*/
 
 /*div {*/
 /*    font-family: myFirstFont;*/
@@ -12,6 +18,7 @@ html { /*rainbow css*/
             linear-gradient(to left, red, #ff8100,yellow, #2cea2c, #59ffa1, #2780ff, #a728ff, #e728fd, #ff4ca4, #bebebe, #62d1ff, #7a3702, #800000, #a40000, #ff0000);
     background-size: 600%;
     animation: rainbow-animation 39.8s linear infinite;
+    color: white;
 }
 
 @keyframes rainbow-animation {
@@ -21,27 +28,36 @@ html { /*rainbow css*/
 }
 
 html {
-    margin: 0;
     min-height: 100%; /* Look, it's not fixed anymore! */
     /*display: flex;*/
     flex-direction: column;
     background-color: #ffc8a1;
     font-family: Monaco, Helvetica, SansSerif, serif;
     font-weight: bold;
+    /*color: black;*/
 }
 
-body{ color: white; }
+body{
+    color: white;
+    /*color: black;*/
+    margin: .6vh 0;
+    width: 100vw;
+    /*height: 100vh;*/
+}
 
 header {
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 100%;
-    padding-top: .7%;
+    margin-top: .73vw;
     overflow: auto;
 }
 
 header > a, header > button {
     float: left;
     color: white;
+    /*color: black;*/
     text-decoration: none;
     font-size: 17px;
     width: 14.27%;
@@ -54,22 +70,22 @@ button.section_buttons { background:none; border:none; }
 /*general body styling */
 
 .sections { /*home and about sections at least*/
+    font-size: 8vw; /* need to add thresholds for when width gets small and height gets big */
+    /*font-size: 16.2vh;*/
+    margin-top: 1.52em;
+    margin-left: 1.56em;
     float: left;
     width: 85%;
-    padding-left: 15%;
 }
 
 .section_title { /*home and about sections at least*/
-    font-size: 72px;
-    padding-top: 9%;
-    margin-right: 0;
+    font-size: 1em;
     width: max-content;
 }
 
 h1 { /*home and about sections at least*/
-    margin-bottom: 0;
-    margin-right: 0;
-    width: fit-content;
+    font-size: 1em;
+    width: max-content;
 }
 
 ul {
@@ -78,13 +94,13 @@ ul {
 
 /* home body styling */
 
-div#home_subtitle > ul {
-    font-size: 24px;
-    padding-left: .5%;
-    margin: 0;
+#home_subtitle > ul {
+    padding-left: .06em; /*based on title font size */
+    font-size: .16667em;
 }
-div#home_subtitle > ul > li {
-    margin-bottom: 12px;
+#home_subtitle > ul > li {
+    /*font-size: .16667em;*/
+    margin-bottom: .5em; /* based on subtitle font size ^^^ */
 }
 
 /* about body styling */
@@ -99,12 +115,11 @@ div#home_subtitle > ul > li {
     float: left;
     width: max-content;
     height: fit-content;
-    margin-top: 15.7%; /* distance from header */
-    margin-left: 17%; /* distance from title */
-    font-size: 15px;
+    margin-left: 1.06em; /* distance from title */
 }
 
-div#about_sidetext > ul > li {
+#about_sidetext > ul > li {
+    font-size: .127em;
     margin-bottom: 5px;
 }
 
@@ -115,35 +130,37 @@ div#about_sidetext > ul > li {
     margin-top: 1.5%;
 }
 
-div#about_text > p {
-    width: 85%;
-}
-
 hr {
     /*padding-left: 40px;*/
     display: block;
     margin-top: 0.5%;
     margin-bottom: 0.5%;
-    margin-left: 40px;
+    /*margin-left: 40px;*/
     margin-right: 0;
     border-style: double;
     border-width: 1px;
 }
 
-#about_text {
+#about_subtitle {
+    clear: both;
+    width: 85%;
     height: min-content;
     display: block;
     margin-top: 1%;
-    float: left;
+    font-size: .16667em;
 }
 
 footer {
-    position: fixed;
+    position: fixed; /* make header fixed too eventually? */
     left: 0;
     bottom: 0;
-    /*padding-bottom:;*/
-    width: 100%;
-    /*background-color: red;*/
-    /*color: white;*/
+    margin-bottom: .73vw;
+    width: 100vw;
     text-align: center;
+}
+
+footer > a .fa-github {
+    color: white;
+    float: right;
+    margin-right: 1vw;
 }
