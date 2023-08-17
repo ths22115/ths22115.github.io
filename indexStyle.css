@@ -115,7 +115,7 @@ div#about_sidetext > ul > li {
     margin-top: 1.5%;
 }
 
-div#about_subtitle > p {
+div#about_text > p {
     width: 85%;
 }
 
@@ -130,7 +130,7 @@ hr {
     border-width: 1px;
 }
 
-#about_subtitle {
+#about_text {
     height: min-content;
     display: block;
     margin-top: 1%;
