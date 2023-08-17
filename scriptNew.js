@@ -1,10 +1,16 @@
 function onLoad() {
-    const sections = document.querySelectorAll("div.sections");
-    for (let i = 0; i < sections.length; i++) {
-        if (sections[i].id === "home_div") {
-            sections[i].style.display = "block";
-        } else {
-            sections[i].style.display = "none";
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    if (urlParams.has('samoth')) {
+        window.location.href="./fashion/samoth/index.html";
+    } else {
+        const sections = document.querySelectorAll("div.sections");
+        for (let i = 0; i < sections.length; i++) {
+            if (sections[i].id === "home_div") {
+                sections[i].style.display = "block";
+            } else {
+                sections[i].style.display = "none";
+            }
         }
     }
 }
