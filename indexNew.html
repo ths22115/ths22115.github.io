@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">-->
     <title>Miles Thomas</title>
-    <script src="indexScriptNew.js"></script>
+    <script defer src="indexScriptNew.js"></script>
     <script src="https://kit.fontawesome.com/3424007297.js" crossorigin="anonymous"></script>
 </head>
 <body onload="onLoad()">
-<header>
+<div id="redev" class="section_title">
+    site currently in redevelopment, check back soon <3
+</div>
+<header style="display: none;">
     <button class="section_buttons"
             onclick="sectionSwap('tech_div')"
             style="color:black;text-decoration:line-through;text-decoration-thickness: 0.3rem;">
@@ -30,7 +33,7 @@
     </button>
 </header>
 <div id="background"></div>
-<div id="home_div" class="sections">
+<div id="home_div" class="sections" style="display: none;">
     <div id="home_title" class="section_title">
         <h1>miles thomas.</h1>
     </div>
@@ -60,7 +63,7 @@
             <li>in search of part-time employment in school.</li>
         </ul>
     </div>
-    <div id="about_subtitle" class="section_subtitle">
+    <div id="about_subtitle" class="section_subtitle" style="display: none;">
         <p>
             Miles Mckinley Thomas (he/they) is an 18-year-old Queer African American scholar, developer, artist, author, athlete, and progressivist.
             <br> <br>
@@ -88,12 +91,11 @@
         </ul>
     </div>
 </div>
-<footer>
+<footer style="display: none;">
     site actively in development. check back later for new features.
     <a href="https://github.com/ths22115/ths22115.github.io">
         <i class="fa-brands fa-github fa-2xl"></i>
     </a>
 </footer>
-<div style="height:0; clear:both;"></div>
 </body>
 </html>

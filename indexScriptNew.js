@@ -1,12 +1,12 @@
 function onLoad() {
-    const sections = document.querySelectorAll("div.sections");
-    for (let i = 0; i < sections.length; i++) {
-        if (sections[i].id === "home_div") {
-            sections[i].style.display = "block";
-        } else {
-            sections[i].style.display = "none";
-        }
-    }
+    // const sections = document.querySelectorAll("div.sections");
+    // for (let i = 0; i < sections.length; i++) {
+    //     if (sections[i].id === "home_div") {
+    //         sections[i].style.display = "block";
+    //     } else {
+    //         sections[i].style.display = "none";
+    //     }
+    // }
 }
 
 function sectionSwap(new_active) {

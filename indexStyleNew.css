@@ -32,7 +32,7 @@ html {
     /*display: flex;*/
     flex-direction: column;
     background-color: #ffc8a1;
-    font-family: Monaco, Helvetica, SansSerif, serif;
+    font-family: sans-serif;
     font-weight: bold;
     /*color: black;*/
 }
@@ -40,9 +40,12 @@ html {
 body{
     color: white;
     /*color: black;*/
-    margin: .6vh 0;
+    /*margin: .6vh 0;*/
     width: 100vw;
-    /*height: 100vh;*/
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header {
@@ -76,6 +79,18 @@ button.section_buttons { background:none; border:none; }
     margin-left: 1.56em;
     float: left;
     width: 85%;
+}
+
+#redev {
+    font-size: 60px;
+    text-align: center;
+    padding: 0 30px;
+}
+
+@media (max-width: 600px) {
+    #redev {
+        font-size: 30px;
+    }
 }
 
 .section_title { /*home and about sections at least*/
