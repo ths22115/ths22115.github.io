@@ -1,20 +1,12 @@
 function onLoad() {
-    const width = window.innerWidth;
-    var target_section;
-    if (width < 1200) {
-        target_section = "mobile_dev_warning";
-    } else {
-        target_section = "home_div"
-    }
-
-    const sections = document.querySelectorAll("div.sections");
-    for (let i = 0; i < sections.length; i++) {
-        if (sections[i].id === target_section) {
-            sections[i].style.display = "block";
-        } else {
-            sections[i].style.display = "none";
-        }
-    }
+    // const sections = document.querySelectorAll("div.sections");
+    // for (let i = 0; i < sections.length; i++) {
+    //     if (sections[i].id === "home_div") {
+    //         sections[i].style.display = "block";
+    //     } else {
+    //         sections[i].style.display = "none";
+    //     }
+    // }
 }
 
 function sectionSwap(new_active) {
