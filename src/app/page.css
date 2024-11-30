@@ -7,13 +7,16 @@
   --button-secondary-hover: #f2f2f2;
 
   display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: 1fr 9fr;
+  /* align-items: center;
+  justify-items: center; */
   min-height: 100svh;
+  max-height: 100lvh;
+  width: 100%;
   padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+  /* gap: 64px; */
+  /* font-family: var(--font-geist-sans); */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,11 +30,47 @@
   }
 }
 
-.main {
+.tv-static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200dvw;
+  height: 200dvh;
+  background-color: #fb0000;
+  filter: url(#grainy);
+  opacity: 100%;
+  animation: .3s linear 0s infinite normal animating-multiple-properties;
+}
+
+/* it is possible to animate multiple properties in a single animation */
+@keyframes animating-multiple-properties {
+  from {
+    rotate: 0deg;
+
+  }
+  to {
+    rotate: 360deg;
+    /* unset properties i.e. 'filter' will revert to default values */
+  }
+}
+
+#title-mius {
+  /* gap: 32px; */
+  grid-row: 4/5;
+  grid-column: 2/3;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+#nav-list {
+  grid-row: 6/10;
+  grid-column: 2/3;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style-position: inside;
+
 }
 
 .main ol {
