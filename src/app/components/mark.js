@@ -1,17 +1,12 @@
 "use client"
-// import { useLocation } from 'react-router-dom';
+import React from "react";
 import MarkBlack from "../../../public/miusMarkBlack.svg"
 import MarkWhite from "../../../public/miusMarkWhite.svg"
 import Image from "next/image";
 
-export default function Mark() {
-    var currentRoute = location.pathname;
-    if (currentRoute === "/") {
-
-    }
-    // console.log();
+const Mark = React.forwardRef((props, ref) => {
     return (
-        <Image className="mark" src={MarkBlack} alt={"Mius Thomas Logo"} width={1000}/>
+        <Image className={"mark  mark-" + props.page} src={MarkBlack} ref={ref} alt={"Mius Thomas Logo"} width={1000}/>
     )
-
-}
+});
+export default Mark;

@@ -11,6 +11,7 @@
   --gray30: hsl(0,0%, 30%);
   --grayo: hsl(0,0%,0%);
   --bgrnd: #eaeaea;
+  --bgrnd2: #eaeaea;
   --fgrnd: #171717;
 }
 
@@ -31,7 +32,7 @@ body {
 
 body {
   color: var(--fgrnd);
-  background: var(--bgrnd);
+  background: var(--bgrnd2);
   font-family: 'all-round-gothic', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,9 +57,13 @@ a {
 
 .mark {
   position: absolute;
-  /* top: 35%;
-  left: 50%; */
   bottom: -300px;
   right: -300px;
-  opacity: .1;
+  opacity: .02;
+  transform: translate(0, 0);
+}
+
+.mark-landing {
+  bottom: -300px;
+  right: -300px;
 }
