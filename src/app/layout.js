@@ -1,4 +1,5 @@
 import "./globals.css";
+import Mark from "./components/mark";
 
 export const metadata = {
   title: "Mius Thomas",
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
+        <Mark /> 
       </body>
     </html>
   );
