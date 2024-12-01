@@ -1,17 +1,38 @@
+'use client'
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import "./page.css";
+import Mark from "./components/mark";
 
 export default function Home() {
+  const markRef = useRef(null);
+
+  useEffect(() => {
+    function opacitySpikeTimer() {
+      if (markRef.current) {
+        const randomTime = Math.random() * 3500;
+        const randomPeak = Math.random() * 0.1 + 0.1;
+        const randomX = (Math.random() * 100) * (Math.random() < 0.5 ? 1 : -1); 
+        const randomY = (Math.random() * 100) * (Math.random() < 0.5 ? 1 : -1);
+
+        markRef.current.style.opacity = randomPeak;
+        markRef.current.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        // markRef.current.style.transform = 'translate(50px, 100px)';
+        
+        setTimeout(function() { 
+          markRef.current.style.opacity = '';
+          markRef.current.style.transform = '';
+        }, 50);
+        setTimeout(opacitySpikeTimer, randomTime); // Recursive call
+      }
+    }
+
+    opacitySpikeTimer();
+  }, []);
+
   return (
     <div className={"page"}>
-      {/* <div className={"tv-static"}></div> */}
-      <svg>
-        <filter id="grainy">
-            <feTurbulence type="fractalNoise" baseFrequency="0.6"/>
-            <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
-        </filter>
-        {/* <path xmlns="http://www.w3.org/2000/svg" d="M76.5 361.5C-14.9753 272.022 59.4634 213.991 108.3 196.073C104.711 197.276 85.0286 198.846 32.5 196C-34.5 192.37 9.99998 135.5 108.5 172C207 208.5 164.5 86 445.5 18.5C726.5 -49 457 88.5 391.5 252.5C326 416.5 541 260.5 617.5 423C694 585.5 476.5 508 358.5 571C240.5 634 191 473.5 76.5 361.5Z" filter="url(#grainy)"/> */}
-      </svg>
+      <div className={"noise-wrapper"}></div>
       <div className="nav">
         <a className="title mius">MIUS THOMAS</a>
         <ul className="nav-list">
@@ -21,9 +42,7 @@ export default function Home() {
           <li className="nav-button">CONTACT</li>
         </ul>
       </div>
-      {/* <div id="nav-div"> */}
-       
-      {/* </div> */}
+      <Mark ref={markRef} page={"landing"} />
     </div>
   );
 }

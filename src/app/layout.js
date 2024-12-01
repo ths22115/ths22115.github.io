@@ -1,5 +1,4 @@
 import "./globals.css";
-import Mark from "./components/mark";
 
 export const metadata = {
   title: "Mius Thomas",
@@ -7,11 +6,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // opacitySpikeTimer();
   return (
     <html lang="en">
       <body>
         {children}
-        <Mark /> 
       </body>
     </html>
   );
