@@ -55,15 +55,32 @@ a {
   }
 } */
 
+@keyframes mark-opacity {
+  0% {
+    opacity: .018;
+  }
+
+  100% {
+      opacity: .008;
+  }
+}
+
 .mark {
   position: absolute;
   bottom: -300px;
   right: -300px;
-  opacity: .02;
+  /* opacity: .016; */
   transform: translate(0, 0);
+  animation: 10s ease-in-out 0s infinite alternate mark-opacity;
 }
 
 .mark-landing {
   bottom: -300px;
   right: -300px;
+}
+
+.mark-about {
+  top: 50%;
+  left: 50%;
+  /* transform: translateX(-50%); */
 }
