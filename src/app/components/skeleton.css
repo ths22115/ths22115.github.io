@@ -1,12 +1,12 @@
 .skeleton {
   display: grid;
   grid-template-rows: repeat(10, 1fr);
-  grid-template-columns: 1fr 9fr;
+  grid-template-columns: 1fr 1fr 9fr;
   /* align-items: center;
   justify-items: center; */
   height: 100dvh;
   width: 100%;
-  padding: 80px;
+  padding: 5rem;
   /* gap: 64px; */
   /* font-family: var(--font-geist-sans); */
   overflow: hidden;

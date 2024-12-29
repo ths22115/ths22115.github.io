@@ -6,14 +6,22 @@ import Navbar from "./navbar";
 
 export default function Skeleton(props) {
   const markRef = useRef(null);
-  const markSize = 1000;
+  const markWidth = 1000;
+  const markHeight = .843 * markWidth;
+
+
 
   useEffect(() => {
     if (props.page == 'about') { //center mark for about page
-        const xPos = (window.innerWidth/2) - (markSize/2);
+        const xPos = (window.innerWidth/2) - (markWidth/2);
         if (markRef.current) {
             markRef.current.style.left = `${xPos}px`;
         }
+    } else if (props.page == 'exp' || props.page == 'port') { // mark to x-scroll position
+         const yPos = (window.innerHeight/2) - (markHeight/2);
+         if (markRef.current) {
+             markRef.current.style.top = `${yPos}px`;
+         }
     }
 
     function opacitySpikeTimer() {
@@ -42,7 +50,7 @@ export default function Skeleton(props) {
     <div className={"skeleton"}>
       <div className={"noise-wrapper"}></div>
       <Navbar page={props.page} />
-      <Mark ref={markRef} page={props.page} size={markSize}/>
+      <Mark ref={markRef} page={props.page} size={markWidth}/>
     </div>
   );
 }

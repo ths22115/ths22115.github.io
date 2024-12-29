@@ -72,6 +72,7 @@ a {
   /* opacity: .016; */
   transform: translate(0, 0);
   animation: 10s ease-in-out 0s infinite alternate mark-opacity;
+  pointer-events: none;
 }
 
 .mark-landing {
@@ -83,4 +84,9 @@ a {
   top: 50%;
   left: 50%;
   /* transform: translateX(-50%); */
+}
+
+.mark-port, .mark-exp {
+  top: 50%;
+  left: -300px;
 }

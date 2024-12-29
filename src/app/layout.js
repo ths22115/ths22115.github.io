@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./globals.js";
 
 export const metadata = {
   title: "Mius Thomas",
