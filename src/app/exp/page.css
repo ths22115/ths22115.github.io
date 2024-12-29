@@ -1,17 +1,30 @@
 .resume {
     height: 100%;
-    min-height: 100svh;
     position: absolute;
     top: 0;
     right: 0;
     width: 40%;
     /* margin-right: 3rem; */
     display: flex;
+    flex-direction: row;
+    column-gap: .25rem;
+    overflow-y: scroll;
+    margin-right: 2.5rem;
+    
+}
+
+.job-list {
+    height: fit-content;
+    min-height: 100svh;
+    width: 100%;
+    /* margin-right: 3rem; */
+    display: flex;
     flex-direction: column;
     row-gap: 4rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    padding: 2rem 3rem 0 0;
+    /* overflow-x: hidden;
+    overflow-y: scroll; */
+    padding-top: 1rem;
+    padding-left: 6.25rem;
 }
 
 .job {
@@ -23,17 +36,65 @@
     row-gap: 0;
 }
 .job:not(.active-job) {
-    opacity: .6;
+    opacity: .4;
 }
 
 .job-company {
     font: var(--p);
     font-size: 4rem;
     color: var(--gray0);
+    font-weight: bold;
 }
 
 .job-title {
     font: var(--p2);
     /* font-size: 3rem; */
     color: var(--gray0);
+}
+
+.filter-key {
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.exp-filter, .exp-key {
+    /* position: fixed; */
+}
+.exp-key {
+    /* bottom: 0; */
+}
+
+.exp-key-list {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: .25rem;
+}
+
+.exp-filter-item, .exp-key-item {
+    font: var(--p);
+    color: var(--gray30);
+    font-weight: normal;
+    opacity: 1;
+    list-style-type: none;
+}
+
+.exp-key-item {
+    font-weight: bold;
+    color: var(--grayo);
+}
+.exp-key-item:not(.exp-key-current) {
+    color: var(--gray30);
+    opacity: .6;
 }

@@ -16,8 +16,15 @@ const Navbar = (props) => {
                 <li className={"nav-button " + (props.page == 'port' ? 'active' : '')}>
                     <Link href={'/port'}>PORTFOLIO</Link>
                 </li>
-                <li className={"nav-button " + (props.page == 'exp' ? 'active' : '')}>
+                <li className={"nav-button nested-button " + (props.page == 'exp' ? 'active' : '')}>
                     <Link href={'/exp'}>EXPERIENCE</Link>
+                    {props.page == 'exp' ? 
+                    (<ul className="exp-list">
+                        <li className={"exp-tab exp-active " + (props.page == 'exp' ? 'exp-visible' : '')}>SWE</li> / 
+                        <li className={"exp-tab " + (props.page == 'exp' ? 'exp-visible' : '')}>DESIGN</li>
+                    </ul>)
+                    : ''}
+                    
                 </li>
                 <li className={"nav-button " + (props.page == 'contact' ? 'active' : '')}>
                     <Link href={'/contact'}>CONTACT</Link>
