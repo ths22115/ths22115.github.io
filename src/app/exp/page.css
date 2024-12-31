@@ -3,20 +3,28 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 40%;
+    width: 100%;
     /* margin-right: 3rem; */
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
     column-gap: .25rem;
     overflow-y: scroll;
-    margin-right: 2.5rem;
-    
+    padding-right: 5rem;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    z-index: 10;
+}
+.resume::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .job-list {
     height: fit-content;
     min-height: 100svh;
-    width: 100%;
+    width: max-content;
+    min-width: 450px;
     /* margin-right: 3rem; */
     display: flex;
     flex-direction: column;
@@ -35,15 +43,36 @@
     flex-direction: column;
     row-gap: 0;
 }
-.job:not(.active-job) {
-    opacity: .4;
-}
 
 .job-company {
     font: var(--p);
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--gray0);
-    font-weight: bold;
+    margin-bottom: -.25rem;
+    /* line-height: 1; */
+    /* font-weight: bold; */
+}
+
+.job-preview {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    opacity: 1;
+    transition: .3s;
+    column-gap: .75rem;
+    text-wrap: nowrap;
+    text-align: center;
+}
+.job-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: .5rem;
+    text-wrap: nowrap;
+}
+
+.job-preview:not(.job-preview-active) {
+    opacity: 0;
 }
 
 .job-title {
@@ -91,7 +120,7 @@
 }
 
 .exp-key-item {
-    font-weight: bold;
+    /* font-weight: bold; */
     color: var(--grayo);
 }
 .exp-key-item:not(.exp-key-current) {

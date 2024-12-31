@@ -1,6 +1,7 @@
 .nav {
     grid-row: 4/8;
-    grid-column: 1/4;
+    grid-column: 1/3;
+    z-index: 20;
   }
 
 .title {
@@ -38,7 +39,7 @@ transition: .5s;
 }
 
 .active {
-font-weight: bold;
+/* font-weight: bold; */
 color: var(--grayo);
 opacity: 1;
 }
@@ -70,12 +71,12 @@ opacity: 1;
     font: var(--p);
     color: var(--gray30);
     font-weight: normal;
-    opacity: .6;
+    opacity: .4;
     list-style-type: none;
     transition: .5s;
 }
 .exp-active {
     color: var(--gray0);
     opacity: 1;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
