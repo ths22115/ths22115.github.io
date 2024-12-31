@@ -20,8 +20,8 @@ const Navbar = (props) => {
                     <Link href={'/exp'}>EXPERIENCE</Link>
                     {props.page == 'exp' ? 
                     (<ul className="exp-list">
-                        <li className={"exp-tab exp-active " + (props.page == 'exp' ? 'exp-visible' : '')}>SWE</li> / 
-                        <li className={"exp-tab " + (props.page == 'exp' ? 'exp-visible' : '')}>DESIGN</li>
+                        <li className={"exp-tab exp-active " + (props.page == 'exp' ? 'exp-visible' : '')}>( SWE )</li> 
+                        <li className={"exp-tab " + (props.page == 'exp' ? 'exp-visible' : '')}>( DESIGN )</li>
                     </ul>)
                     : ''}
                     
