@@ -33,6 +33,7 @@
     overflow-y: scroll; */
     padding-top: 1rem;
     padding-left: 6.25rem;
+    transition: 1s;
 }
 
 .job {
@@ -42,6 +43,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 0;
+    transition: 1s;
 }
 
 .job-company {
@@ -79,6 +81,19 @@
     font: var(--p2);
     /* font-size: 3rem; */
     color: var(--gray0);
+}
+
+.job-desc {
+    height: max-content;
+    margin-top: .4rem;
+    opacity: 1;
+    transition: 1s;
+    width: 100%;
+    max-width: 25rem;
+}
+.job-desc:not(.job-desc-active) {
+    height: 0px;
+    opacity: 0;
 }
 
 .filter-key {
