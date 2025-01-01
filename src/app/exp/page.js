@@ -1,10 +1,28 @@
 'use client'
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./page.css";
 import Skeleton from '../components/skeleton';
 import Job from '../components/job';
 
-export default function About() {
+export default function Experience() {
+  const [jobFocus, setJobFocus] = useState(-1);
+
+  function focusJob(e) {
+    // if(e.target.className)
+    var jobElem = e.target
+    console.log(jobElem)
+    console.log(jobElem.parentElement)
+    while(jobElem.className !== "job") {
+      jobElem = jobElem.parentElement
+    }
+    setJobFocus(jobElem.id)
+    console.log(jobElem.props) 
+    // setJobFocus(jobElem.)
+    // console.log(e.target.className)
+    // setJobFocus(true);
+    // setFocus(true);
+  }
+
   return (
     <div>
     <Skeleton page={'exp'} />
@@ -25,13 +43,13 @@ export default function About() {
     </div> */}
 
       <div className="job-list">
-        <Job company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  start={"MAY 2024"} end={"AUG 2024"}/>
-        <Job company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
-        <Job company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
-        <Job company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
-        <Job company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
-        <Job company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
-        <Job company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
+        <Job id={0} onClick={focusJob} focus={jobFocus} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  start={"MAY 2024"} end={"AUG 2024"}/>
+        <Job id={1} onClick={focusJob} focus={jobFocus} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
+        <Job id={2} onClick={focusJob} focus={jobFocus} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
+        <Job id={3} onClick={focusJob} focus={jobFocus} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
+        <Job id={4} onClick={focusJob} focus={jobFocus} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
+        <Job id={5} onClick={focusJob} focus={jobFocus} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
+        <Job id={6} onClick={focusJob} focus={jobFocus} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
       </div>
     </div>
     </div>
