@@ -12,34 +12,35 @@ export default function Job(props) {
     const [preview, setPreview] = useState(false);
     const [focus, setFocus] = useState(false);
 
+    function isFocused() {
+        // console.log(props.id + ", " + props.focus === props.id)
+        if (props.focus == props.id) {
+            return true
+        }
+        return false
+    }
+    // console.log(isFocused())
+
     // console.log(props.active)
     function jobDefault(e) {
-        if (!focus) {
-            setPreview(false);
-        }
+        setPreview(false);
         
     }
     function jobPreview(e) {
-        if( !focus) {
-            setPreview(true);
-        }
-    }
-    function jobFocus(e) {
         setPreview(true);
-        setFocus(true);
     }
  
     return (
-    <div id={props.id}className={"job"} onMouseOver={jobPreview} onMouseLeave={jobDefault} onClick={props.onClick}>
+    <div id={props.id} className={"job " + (props.filter == "all" || props.filter == props.type ? "job-visible" : "")} onMouseEnter={jobPreview} onMouseLeave={jobDefault} onClick={props.onClick}>
         <div className={"job-company"}>{props.company}</div>
-        <div className={"job-preview " + (preview ? "job-preview-active" : "") }>
+        <div className={"job-preview " + ((preview || isFocused()) ? "job-preview-active" : "") }>
             <div className={"job-title"}>{props.title}</div> 
             <div className="job-date">
                 ( <div className={"job-start"}>{props.start}</div> ~ 
                 <div className={"job-end"}>{props.end}</div> )
             </div>
         </div>
-        <div className={"job-desc " + (props.focus == props.id ? "job-desc-active" : "") }>
+        <div className={"job-desc " + (isFocused() ? "job-desc-active" : "") }>
         Designed, developed, and deployed a fully documented AWS Lambda API to deliver cloud maturity metrics for 
         all 30+ cloud infrastructure systems used at Capital One, to be adopted by over 11,000 software engineers 
         organized in over 2,000 agile teams.

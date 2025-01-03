@@ -74,6 +74,10 @@ opacity: 1;
     opacity: .4;
     list-style-type: none;
     transition: .5s;
+    cursor: pointer;
+}
+.exp-tab:not(.exp-active):hover {
+    opacity: 1;
 }
 .exp-active {
     color: var(--gray0);

@@ -49,8 +49,8 @@ export default function Skeleton(props) {
   return (
     <div className={"skeleton"}>
       <div className={"noise-wrapper"}></div>
-      <Navbar page={props.page} />
-      <Mark ref={markRef} page={props.page} size={markWidth}/>
+      <Navbar page={props.page} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter}/>
+      <Mark ref={markRef} page={props.page} size={markWidth} focus={(props.page == 'exp' ? props.expFocus : -2)}/>
     </div>
   );
 }

@@ -33,7 +33,14 @@
     overflow-y: scroll; */
     padding-top: 1rem;
     padding-left: 6.25rem;
-    transition: 1s;
+    transition: 
+        height 2s ease-out,
+        opacity .2s ease-in-out;
+    /* background-color: green; */
+    /* opacity: .5; */
+}
+.filter-trans {
+    opacity: 0;
 }
 
 .job {
@@ -43,8 +50,22 @@
     display: flex;
     flex-direction: column;
     row-gap: 0;
-    transition: 1s;
+    cursor: pointer;
+    visibility: visible;
+    transition:
+        height 1s ease-out;
+
+    /* background-color: red;
+    opacity: .5; */
 }
+.job:not(.job-visible) {
+    display: none;
+}
+
+.job-visible {
+
+}
+
 
 .job-company {
     font: var(--p);
@@ -60,7 +81,7 @@
     flex-direction: row;
     justify-content: flex-start;
     opacity: 1;
-    transition: .3s;
+    transition: .4s;
     column-gap: .75rem;
     text-wrap: nowrap;
     text-align: center;
@@ -87,13 +108,23 @@
     height: max-content;
     margin-top: .4rem;
     opacity: 1;
-    transition: 1s;
+    transition: 
+        font-size .5s ease-in-out,
+        /* height .5s ease-out, */
+        opacity .3s ease-in-out .3s;
     width: 100%;
     max-width: 25rem;
+    /* background-color: aqua;
+    opacity: .5; */
 }
 .job-desc:not(.job-desc-active) {
-    height: 0px;
+    transition: 
+        font-size .5s ease-in-out .2s,
+        /* height .8s ease-in-out, */
+        opacity .4s ease-in-out;
+    /* height: 0px; */
     opacity: 0;
+    font-size: 0;
 }
 
 .filter-key {
