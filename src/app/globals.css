@@ -69,10 +69,13 @@ a {
   position: absolute;
   bottom: -300px;
   right: -300px;
-  /* opacity: .016; */
+  opacity: .013;
   transform: translate(0, 0);
-  animation: 10s ease-in-out 0s infinite alternate mark-opacity;
   pointer-events: none;
+  transition: opacity 1s ease, scale 1s ease;
+}
+.mark:not(.mark-port, .mark-exp) {
+  animation: 10s ease-in-out 0s infinite alternate mark-opacity;
 }
 
 .mark-landing {
@@ -89,4 +92,13 @@ a {
 .mark-port, .mark-exp {
   top: 50%;
   left: -300px;
+  animation: none;
+  opacity: .016;
+}
+
+.mark-focus {
+  /* animation: none; */
+  /* transition: opacity 1s ease; */
+  opacity: .06;
+  scale: 1.04;
 }
