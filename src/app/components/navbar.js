@@ -16,16 +16,21 @@ const Navbar = (props) => {
                 <li className={"nav-button nested-button " + (props.page == 'exp' ? 'active' : '')}>
                     <Link href={'/exp'}>EXPERIENCE</Link>
                     {props.page == 'exp' ? 
-                    (<ul className="exp-list">
-                        <li id={"exp-all"} className={"exp-tab " + (props.expFilter == "all" ? "exp-active " : "") + (props.page == 'exp' ? 'exp-visible' : '')} onClick={props.updateExpFilter}>( ALL )</li>
-                        <li id={"exp-swe"} className={"exp-tab " + (props.expFilter == "swe" ? "exp-active " : "") + (props.page == 'exp' ? 'exp-visible' : '')} onClick={props.updateExpFilter}>( SWE )</li> 
-                        <li id={"exp-design"} className={"exp-tab " + (props.expFilter == "design" ? "exp-active " : "") + (props.page == 'exp' ? 'exp-visible' : '')} onClick={props.updateExpFilter}>( DESIGN )</li>
+                    (<ul className={"sublist exp-list"}>
+                        <li id={"exp-all"} className={"tab exp-tab " + (props.expFilter == "all" ? "tab-active" : "")} onClick={props.updateExpFilter}>( ALL )</li>
+                        <li id={"exp-swe"} className={"tab exp-tab " + (props.expFilter == "swe" ? "tab-active" : "")} onClick={props.updateExpFilter}>( SWE )</li> 
+                        <li id={"exp-design"} className={"tab exp-tab " + (props.expFilter == "design" ? "tab-active" : "")} onClick={props.updateExpFilter}>( DESIGN )</li>
                     </ul>)
                     : ''}
-                    
                 </li>
-                <li className={"nav-button " + (props.page == 'port' ? 'active' : '')}>
+                <li className={"nav-button nested-button " + (props.page == 'port' ? 'active' : '')}>
                     <Link href={'/port'}>PORTFOLIO</Link>
+                    {props.page == 'port' ? 
+                    (<ul className={"sublist port-list"}>
+                        <li id={"port-uiux"} className={"tab port-tab " + (props.expFilter == "uiux" ? "tab-active" : "")} onClick={props.updateExpFilter}>( UI/UX )</li> 
+                        <li id={"port-design"} className={"tab port-tab " + (props.expFilter == "design" ? "tab-active" : "")} onClick={props.updateExpFilter}>( DESIGN )</li>
+                    </ul>)
+                    : ''}
                 </li>
                 <li className={"nav-button " + (props.page == 'contact' ? 'active' : '')}>
                     <Link href={'/contact'}>CONTACT</Link>
