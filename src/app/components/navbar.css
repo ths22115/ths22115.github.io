@@ -53,7 +53,7 @@ opacity: 1;
     justify-content: flex-start;
 }
 
-.exp-list {
+.sublist {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -66,7 +66,8 @@ opacity: 1;
     margin-top: 2.25rem;
     column-gap: .5rem;
 }
-.exp-tab {
+
+.tab {
     width: fit-content;
     font: var(--p);
     color: var(--gray30);
@@ -76,10 +77,10 @@ opacity: 1;
     transition: .5s;
     cursor: pointer;
 }
-.exp-tab:not(.exp-active):hover {
+.tab:not(.tab-active):hover {
     opacity: 1;
 }
-.exp-active {
+.tab-active {
     color: var(--gray0);
     opacity: 1;
     /* font-weight: bold; */
