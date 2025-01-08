@@ -31,7 +31,7 @@
     row-gap: 4rem;
     /* overflow-x: hidden;
     overflow-y: scroll; */
-    padding-top: 1rem;
+    padding: 2rem 0;
     /* padding-left: 6.25rem; */
     transition: 
         height 2s ease-out,

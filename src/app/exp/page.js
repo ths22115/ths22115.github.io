@@ -56,12 +56,9 @@ export default function Experience() {
 
       <div className={"job-list " + (filterChange ? "filter-trans" : "")}>
         <Job id={0} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"swe"} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  start={"MAY 2024"} end={"AUG 2024"}/>
-        <Job id={1} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"design"} company={'CAPITAL ONE 1'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
-        <Job id={2} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"swe"} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
-        <Job id={3} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"design"} company={'CAPITAL ONE 1'} title={'SOFTWARE ENGINEERING INTERN'}  active={true}/>
-        <Job id={4} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"swe"} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
-        <Job id={5} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"design"} company={'CAPITAL ONE 1'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
-        <Job id={6} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"swe"} company={'CAPITAL ONE'} title={'SOFTWARE ENGINEERING INTERN'}  active={false}/>
+        <Job id={1} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"swe"} company={'RENSSELAER UNION'} title={'SYSTEM ADMINISTRATOR'} start={"OCT 2023"} end={"CURRENT"}/>
+        <Job id={2} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"all"} company={'SAMOTH'} title={'FOUNDER, EXECUTIVE DIRECTOR'} start={"AUG 2023"} end={"CURRENT"}/>
+        <Job id={3} onClick={focusJob} focus={jobFocus} filter={jobFilter} type={"design"} company={'RPI BSA FASHION'} title={'GRAPHIC DESIGNER'} start={"OCT 2024"} end={"CURRENT"}/>
       </div>
     </div>
     </div>
