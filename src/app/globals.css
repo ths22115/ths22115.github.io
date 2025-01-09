@@ -49,19 +49,35 @@ a {
   text-decoration: none;
 }
 
+.landing-text {
+  position: absolute;
+  top: 10rem;
+  right: 10rem;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 } */
 
-@keyframes mark-opacity {
+@keyframes mark-opacity-landing {
   0% {
-    opacity: .018;
+    opacity: .017;
   }
 
   100% {
-      opacity: .008;
+      opacity: .026;
+  }
+}
+
+@keyframes mark-opacity {
+  0% {
+    opacity: .02;
+  }
+
+  100% {
+      opacity: .010;
   }
 }
 
@@ -74,13 +90,21 @@ a {
   pointer-events: none;
   transition: opacity 1s ease, scale 1s ease;
 }
-.mark:not(.mark-port, .mark-exp) {
+.mark:not(.mark-port:not(.mark-focus), .mark-exp:not(.mark-focus), .mark-landing) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity;
+}
+.mark-landing:not(.mark-landing:hover) {
+  animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 }
 
 .mark-landing {
-  bottom: -300px;
+  bottom: -250px;
   right: -300px;
+  pointer-events: all;
+  z-index: 20;
+}
+.mark-landing:hover {
+  scale: 1.04;
 }
 
 .mark-about {

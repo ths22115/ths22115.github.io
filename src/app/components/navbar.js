@@ -38,6 +38,7 @@ const Navbar = (props) => {
             </ul>
             <div className="title mius">
                 <Link href={'/'}>MIUS THOMAS</Link>
+                <div className="subtitle">SWE &#x2022; DESIGNER</div>
             </div>
         </div>
     )
