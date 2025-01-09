@@ -63,11 +63,11 @@ a {
 
 @keyframes mark-opacity-landing {
   0% {
-    opacity: .017;
+    opacity: .016;
   }
 
   100% {
-      opacity: .026;
+      opacity: .025;
   }
 }
 
@@ -87,29 +87,30 @@ a {
   right: -300px;
   opacity: .013;
   transform: translate(0, 0);
-  pointer-events: none;
+  pointer-events: all;
   transition: opacity 1s ease, scale 1s ease;
+  z-index: 5;
 }
-.mark:not(.mark-port:not(.mark-focus), .mark-exp:not(.mark-focus), .mark-landing) {
-  animation: 10s ease-in-out 0s infinite alternate mark-opacity;
-}
-.mark-landing:not(.mark-landing:hover) {
+.mark:not(.mark-focus, .mark:hover) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 }
+.mark:not(.mark-about):hover {
+  scale: 1.2;
+}
+/* .mark-landing:not(.mark-landing:hover) {
+  animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
+} */
 
 .mark-landing {
   bottom: -250px;
   right: -300px;
-  pointer-events: all;
   z-index: 20;
-}
-.mark-landing:hover {
-  scale: 1.04;
 }
 
 .mark-about {
-  top: 50%;
+  top: 45%;
   left: 50%;
+  scale: 1.3;
   /* transform: translateX(-50%); */
 }
 
@@ -123,7 +124,7 @@ a {
 .mark-focus {
   /* animation: none; */
   /* transition: opacity 1s ease; */
-  opacity: .06;
+  opacity: .035;
   scale: 1.04;
 }
 
