@@ -8,7 +8,7 @@ import Piece from '../components/piece';
 
 export default function Portfolio() {
   const [portFocus, setPortFocus] = useState(-1);
-  const [portSection, setPortSection] = useState("design");
+  const [portSection, setPortSection] = useState("webdev");
   const [sectionChange, setSectionChange] = useState(false);
   const [displayChange, setDisplayChange] = useState(false);
   const [detailsChange, setDetailsChange] = useState(false);
