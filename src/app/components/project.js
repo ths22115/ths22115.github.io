@@ -21,7 +21,7 @@ export default function Project(props) {
     return (
     <div id={props.id} className={"project"}>
         <div className="project-company" onClick={props.onClick}>SAMOTH</div>
-        <div className={"project-details " + (isFocused() ? "project-details-visible" : "")}>
+        <div className={"expanded project-expanded " + (isFocused() ? "project-expanded-visible" : "")}>
             <div className="project-subtitle">
                 <div className="project-type"><a className={"hyperlink"} href={"https://samoth.us"}>PORTFOLIO SITE <div className={"hyperlink-arrow"}>&#8599;</div></a></div>
                 <div className="project-repo"><a className={"hyperlink"} href={"https://github.com"}>GITHUB REPO <div className={"hyperlink-arrow"}>&#8599;</div></a></div>
