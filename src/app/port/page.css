@@ -133,13 +133,6 @@
     text-align: center;
 }
 
-.project-type, .project-repo {
-    transition: scale .4s;
-}
-.project-type:hover, .project-repo:hover {
-    scale: 1.04;
-}
-
 .project-date, .piece-date {
     display: flex;
     flex-direction: row;

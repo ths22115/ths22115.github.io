@@ -7,7 +7,11 @@ export default function About() {
   return (
     <div>
     <Skeleton page={'contact'} />
-    <div className="lol" style={{position: 'absolute', top: 50+'%', left: 50+'%', fontSize: 1+'rem'}}>LOL</div>
+    <div className="text contact-text">
+        <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"milesmckinleythomas@gmail.com"}>LINKEDIN<div className={"hyperlink-arrow"}>&#8599;</div></a></div>
+        <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"https://www.linkedin.com/in/miles-thomas-552648245/"}>EMAIL<div className={"hyperlink-arrow"}>&#8599;</div></a></div>
+        <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"https://www.instagram.com/urm1us/"}>INSTAGRAM<div className={"hyperlink-arrow"}>&#8599;</div></a></div>
+      </div>
     </div>
   );
 }

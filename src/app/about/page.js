@@ -6,8 +6,23 @@ import Skeleton from './../components/skeleton';
 export default function About() {
   return (
     <div>
-    <Skeleton page={'about'} />
-    <div className="lol" style={{position: 'absolute', top: 50+'%', left: 50+'%', fontSize: 1+'rem'}}>LOL</div>
+      <Skeleton page={'about'} />
+      <div className="text about-text">
+        <div className="about-subtext">
+          20 y/o nothern VA born DE resident.
+          </div>
+        <div className="about-subtext">
+          Third year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation. 
+        </div>
+        <div className="about-subtext">
+          Pursing a B.S. of Computer Science with concentrations in 
+          Information Technology & Web Science, Visualization & Graphics, and Graphic Design.
+        </div>
+        <div className="about-subtext">
+          Passionate UI/UX designer, web developer, creative, soccer player, and Manchester United fan.
+          </div>
+      </div>
+        
     </div>
   );
 }

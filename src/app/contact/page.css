@@ -1,5 +1,3 @@
-
-.nav {
-    font: var(--p);
-    color: var(--gray30);
+.contact-subtext {
+    min-width: 10rem;
 }

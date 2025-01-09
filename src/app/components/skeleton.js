@@ -14,8 +14,10 @@ export default function Skeleton(props) {
   useEffect(() => {
     if (props.page == 'about') { //center mark for about page
         const xPos = (window.innerWidth/2) - (markWidth/2);
+        const yPos = (window.innerHeight/2) - (markHeight/2);
         if (markRef.current) {
             markRef.current.style.left = `${xPos}px`;
+            markRef.current.style.top = `${yPos}px`;
         }
     } else if (props.page == 'exp' || props.page == 'port') { // mark to x-scroll position
          const yPos = (window.innerHeight/2) - (markHeight/2);
@@ -36,7 +38,7 @@ export default function Skeleton(props) {
         // markRef.current.style.transform = 'translate(50px, 100px)';
         
         setTimeout(function() { 
-          markRef.current.style.opacity = '';
+          // markRef.current.style.opacity = '';
           markRef.current.style.transform = '';
         }, 50);
         setTimeout(opacitySpikeTimer, randomTime); // Recursive call
