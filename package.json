@@ -1,4 +1,5 @@
 {
+  "homepage": "https://ths222115.github.io/",
   "name": "mius-site",
   "version": "0.1.0",
   "private": true,
@@ -6,7 +7,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "next": "15.0.3",
@@ -16,6 +19,7 @@
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "15.0.3"
+    "eslint-config-next": "15.0.3",
+    "gh-pages": "^6.3.0"
   }
 }
