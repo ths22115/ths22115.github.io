@@ -87,7 +87,7 @@ export default function Portfolio() {
         {
           webdevData.projects.flatMap(project =>
             Array(project.imgCount).fill(null).map((_, index) => (
-              <ProjectDisplay key={project.title + (index+1)} src={project.img + (index+1) + ".jpg"} project={project.id} focus={portFocus}/>
+              <ProjectDisplay key={project.title + (index+1)} src={"/" + project.img + (index+1) + ".jpg"} project={project.id} focus={portFocus}/>
             ))
           )
         }
@@ -103,7 +103,7 @@ export default function Portfolio() {
       <div className={"display piece-display " + (portSection == "design" ? "display-active " : "")}>
         {
           designData.pieces.map((piece) => 
-            <Piece key={piece.id} id={piece.id} src={"design" + piece.id + ".jpg"} title={piece.title} type={piece.type} date={piece.date} 
+            <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title} type={piece.type} date={piece.date} 
             desc={piece.desc} onClick={focusPiece} focus={portFocus} />
           )
         }
