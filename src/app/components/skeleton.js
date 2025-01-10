@@ -11,6 +11,12 @@ export default function Skeleton(props) {
   const [isMobile, setMobile] = useState(false);
 
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setMobile(true);
+      const rootUrl = window.location.origin;
+      window.location.replace(rootUrl+"/mobile");
+    }
+
     if (props.page == 'about') { //center mark for about page
         const xPos = (window.innerWidth/2) - (markWidth/2);
         const yPos = (window.innerHeight/2) - (markHeight/2);
@@ -23,12 +29,6 @@ export default function Skeleton(props) {
          if (markRef.current) {
              markRef.current.style.top = `${yPos}px`;
          }
-    }
-
-    if (window.innerWidth <= 768) {
-      setMobile(true);
-      const rootUrl = window.location.origin;
-      window.location.replace(rootUrl+"/mobile");
     }
 
     function opacitySpikeTimer() {
