@@ -51,7 +51,7 @@ export default function Skeleton(props) {
     }
 
     opacitySpikeTimer();
-  }, []);
+  }, [props.page, markHeight, markWidth]);
 
   return (
     <div className={"skeleton"}>

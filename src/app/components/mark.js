@@ -9,4 +9,5 @@ const Mark = React.forwardRef((props, ref) => {
         <Image className={"mark  mark-" + props.page + (props.focus > -1 ? " mark-focus" : "")} src={MarkBlack} ref={ref} alt={"Mius Thomas Logo"} width={1000}/>
     )
 });
+Mark.displayName = "Mark";
 export default Mark;
