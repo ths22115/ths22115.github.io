@@ -2,8 +2,8 @@ import "./globals.css";
 import "./globals.js";
 
 export const metadata = {
-  title: "Mius Thomas",
-  description: "A portfolio site developed by Mius Thomas",
+  title: "MIUS THOMAS",
+  description: "A portfolio site designed and developed by Mius Thomas.",
   icons: {
     icon: '/miusMarkWhite.svg', // /public path
   },
