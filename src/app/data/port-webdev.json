@@ -1,0 +1,37 @@
+{
+    "projects": [
+        {
+            "id": 0,
+            "img": "samoth",
+            "imgCount": 3,
+            "title": "Samoth",
+            "type": "Portfolio Website",
+            "link": "https://samoth.us",
+            "repo": "https://github.com/samothMedia/samothSite",
+            "date": "AUG 2024",
+            "desc": "Designed and developed a portfolio website built for Samoth, a creative media collective created to provide young passionate creatives a platform to exercise their niches in an organized, collaborative environment."
+        },
+        {
+            "id": 1,
+            "img": "finder",
+            "imgCount": 8,
+            "title": "Finder",
+            "type": "Web Application",
+            "link": "https://finder.eastus.cloudapp.azure.com/finder/",
+            "repo": "",
+            "date": "DEC 2024",
+            "desc": "Designed and frontend developed with an 4 other students to produce and deploy Finder (FIN-dur), a secure web application designed to safely match lost items, found around the RPI campus, with the descriptions submitted by those who have lost them, providing RPI students, faculty and staff a quick and effective online lost and found service."
+        },
+        {
+            "id": 2,
+            "img": "hackRPI-X",
+            "imgCount": 4,
+            "title": "HACKRPI X",
+            "type": "Web Application",
+            "link": "",
+            "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
+            "date": "NOV 2023",
+            "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
+        }
+    ]
+  }

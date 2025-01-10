@@ -13,7 +13,6 @@ export default function Job(props) {
     const [focus, setFocus] = useState(false);
 
     function isFocused() {
-        // console.log(props.id + ", " + props.focus === props.id)
         if (props.focus == props.id) {
             return true
         }
@@ -29,6 +28,8 @@ export default function Job(props) {
     function jobPreview(e) {
         setPreview(true);
     }
+    console.log(props.filter)
+    console.log(props.company + ": " + props.type)
  
     return (
     <div id={props.id} className={"job " + (props.type == "all" || props.filter == "all" || props.filter == props.type ? "job-visible" : "")} onMouseEnter={jobPreview} onMouseLeave={jobDefault} onClick={props.onClick}>
@@ -41,19 +42,15 @@ export default function Job(props) {
             </div>
         </div>
         <div className={"job-desc " + (isFocused() ? "job-desc-active" : "") }>
-        Designed, developed, and deployed a fully documented AWS Lambda API to deliver cloud maturity metrics for 
-        all 30+ cloud infrastructure systems used at Capital One, to be adopted by over 11,000 software engineers 
-        organized in over 2,000 agile teams.
-        <br />
-        Collaborated with associate and senior engineers in a scrum-based agile environment, leveraging JIRA for 
-        issue tracking and sprint management, Python for software implementation, GraphQL for complex database 
-        queries, and Jenkins for seamless deployment.
-        <br />
-        Utilized the Pytest framework to implement and execute over 50 unit tests designed with both black-box 
-        and white-box testing methodologies to validate API functionality and robustness, providing over 90% 
-        statement coverage comprehensively.
+            {
+                props.desc.split("<br />").map((line, index) => (
+                    <React.Fragment key={index}>
+                    {line}
+                    {index < props.desc.split("<br />").length - 1 && <br />}
+                    </React.Fragment>
+                ))
+            }
         </div>
-        
     </div>
     )
 }

@@ -94,16 +94,18 @@
     margin-bottom: -.25rem;
     cursor: pointer;
     min-width: 20rem;
+    max-width: 20rem;
     transition: .3s;
 }
-
+.piece-title {
+    margin-bottom: .75rem;
+}
 
 .expanded {
     font: var(--p2);
     color: var(--gray0);
     width: 100%;
     height: max-content;
-    min-height: 25rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -162,9 +164,17 @@
     display: none;
     /* opacity: 0; */
 }
+.project-img-visible {
+    transition: .3s;
+}
+.project-img-visible:hover {
+    scale: 1.05;
+    margin: 1rem 0;
+}
 
 .piece-img {
     transition: .4s;
+    cursor: pointer;
 }
 .piece-focus {
     scale: 1.05;

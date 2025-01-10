@@ -1,0 +1,40 @@
+{
+    "jobs": [
+        {
+            "id": 0,
+            "type": "swe",
+            "company": "Capital One",
+            "title": "Software Engineering Intern",
+            "start": "MAY 2024",
+            "end": "AUG 2024",
+            "desc": "Designed, developed, and deployed a fully documented AWS Lambda API to deliver cloud maturity metrics for all 30+ cloud infrastructure systems used at Capital One, to be adopted by over 11,000 software engineers organized in over 2,000 agile teams. <br /> Collaborated with associate and senior engineers in a scrum-based agile environment, leveraging JIRA for issue tracking and sprint management, Python for software implementation, GraphQL for complex database queries, and Jenkins for seamless deployment. <br /> Utilized the Pytest framework to implement and execute over 50 unit tests designed with both black-box and white-box testing methodologies to validate API functionality and robustness, providing over 90% statement coverage comprehensively."
+        },
+        {
+            "id": 1,
+            "type": "swe",
+            "company": "Rensselaer Union",
+            "title": "System Administrator",
+            "start": "OCT 2023",
+            "end": "CURRENT",
+            "desc": "Overseeing the operations of the Rensselaer Student Union's IT infrastructure, including Linux servers, Windows machines, and in-house solutions, enabling over 250 full-time and student employees. <br /> Maintaining the Rensselaer Student Union’s club management system, utilized by over 200 various student groups and organizations."
+        },
+        {
+            "id": 2,
+            "type": "all",
+            "company": "Samoth",
+            "title": "Founder, Executive Director",
+            "start": "AUG 2023",
+            "end": "CURRENT",
+            "desc": "Founded a 20+ member creative media collective, overseeing the end-to-end production of plot-driven photo and video projects, from concept development through final delivery. <br /> Hosting and maintaining portfolio website designed utilizing Figma and built using HTML/CSS and Javascript, dynamically showcasing 20+ visual deliverables. <br /> Directed 3 cross-functional project teams in integrating fashion, photography, videography, and audio design to craft emotionally resonant and argumentatively impactful media. <br /> Managing all operational aspects, including brand identity development, team onboarding, project scheduling, and comprehensive documentation, ensuring cohesive workflow and creative consistency."
+        },
+        {
+            "id": 3,
+            "type": "design",
+            "company": "RPI BSA Fashion",
+            "title": "Graphic Designer",
+            "start": "OCT 2024",
+            "end": "CURRENT",
+            "desc": "..."
+        }
+    ]
+  }
