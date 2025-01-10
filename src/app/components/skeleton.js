@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./skeleton.css";
 import Mark from "./mark";
 import Navbar from "./navbar";
@@ -8,8 +8,7 @@ export default function Skeleton(props) {
   const markRef = useRef(null);
   const markWidth = 1000;
   const markHeight = .843 * markWidth;
-
-
+  const [isMobile, setMobile] = useState(false);
 
   useEffect(() => {
     if (props.page == 'about') { //center mark for about page
@@ -24,6 +23,12 @@ export default function Skeleton(props) {
          if (markRef.current) {
              markRef.current.style.top = `${yPos}px`;
          }
+    }
+
+    if (window.innerWidth <= 768) {
+      setMobile(true);
+      const rootUrl = window.location.origin;
+      window.location.replace(rootUrl+"/mobile");
     }
 
     function opacitySpikeTimer() {

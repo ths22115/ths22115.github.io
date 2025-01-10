@@ -73,12 +73,6 @@
 }
 */ 
 
-@media (max-width: 1024px) {
-  html {
-    font-size: 10px;
-  }
-}
-
 /* @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();
