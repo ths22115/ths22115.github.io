@@ -176,3 +176,9 @@ a {
   font-size: .5rem;
   padding-left: .1rem;
 }
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+}

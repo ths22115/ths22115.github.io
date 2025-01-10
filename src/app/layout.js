@@ -7,7 +7,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // opacitySpikeTimer();
   return (
     <html lang="en">
       <body>
