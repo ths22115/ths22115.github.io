@@ -11,10 +11,9 @@ export default function Skeleton(props) {
   const [isMobile, setMobile] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setMobile(true);
+    if (isMobile) {
       const rootUrl = window.location.origin;
-      window.location.replace(rootUrl+"/mobile");
+        window.location.replace(rootUrl+"/mobile");
     }
 
     if (props.page == 'about') { //center mark for about page
@@ -32,6 +31,10 @@ export default function Skeleton(props) {
     }
 
     function opacitySpikeTimer() {
+      if (window.innerWidth <= 768) {
+        setMobile(true);
+      }
+
       if (markRef.current) {
         const randomTime = Math.random() * 3500;
         const randomPeak = Math.random() * 0.04 + 0.03;
@@ -51,7 +54,7 @@ export default function Skeleton(props) {
     }
 
     opacitySpikeTimer();
-  }, [props.page, markHeight, markWidth]);
+  }, [isMobile, props.page, markHeight, markWidth]);
 
   return (
     <div className={"skeleton"}>
