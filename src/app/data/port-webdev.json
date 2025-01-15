@@ -9,7 +9,7 @@
             "link": "https://samoth.us",
             "repo": "https://github.com/samothMedia/samothSite",
             "date": "AUG 2024",
-            "desc": "Designed and developed a portfolio website built for Samoth, a creative media collective created to provide young passionate creatives a platform to exercise their niches in an organized, collaborative environment."
+            "desc": "Designed and developed a portfolio site for Samoth, providing an interactive gallery to experience Samoth’s various visual project deliverables, garnering roughly 500 active users in one year."
         },
         {
             "id": 1,
@@ -20,7 +20,7 @@
             "link": "https://finder.eastus.cloudapp.azure.com/finder/",
             "repo": "",
             "date": "DEC 2024",
-            "desc": "Designed and frontend developed with an 4 other students to produce and deploy Finder (FIN-dur), a secure web application designed to safely match lost items, found around the RPI campus, with the descriptions submitted by those who have lost them, providing RPI students, faculty and staff a quick and effective online lost and found service."
+            "desc": "Engineered Finder, a lost-and-found web application for RPI, collaborating with 4 peers to implement secure user authentication, automated item-matching algorithms, and a responsive UI to be utilized by 9,000+ students, faculty, and staff."
         },
         {
             "id": 2,
@@ -32,6 +32,17 @@
             "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
             "date": "NOV 2023",
             "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
+        },
+        {
+            "id": 3,
+            "img": "",
+            "imgCount": 0,
+            "title": "Berle Farm",
+            "type": "UX Study",
+            "link": "https://docs.google.com/document/d/1nKWsS5NsULjNOkDp8jKbAsSTak8XK1OxJiEdiIcD3Jc/edit?tab=t.0",
+            "repo": "",
+            "date": "APR 2024",
+            "desc": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, delivering a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders." 
         }
     ]
   }

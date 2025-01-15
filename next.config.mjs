@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization
   },
-  assetPrefix: isProd ? '/miles-thomas.com/' : '',
-  basePath: isProd ? '/miles-thomas.com' : '',
+  assetPrefix: isProd ? '/ths22115.github.io/' : '',
+  basePath: isProd ? '/ths22115.github.io' : '',
   output: 'export'
 };
 

@@ -8,13 +8,6 @@
             "desc": ""
         },
         {
-            "id": 1,
-            "title": "Form Element Photography",
-            "type": "Graphic Design Coursework",
-            "date": "SEPT 2024",
-            "desc": ""
-        },
-        {
             "id": 2,
             "title": "BSA Fashion Show Committee 2025 Reveal",
             "type": "Client Work",
@@ -22,10 +15,10 @@
             "desc": ""
         },
         {
-            "id": 3,
-            "title": "Form Element Photography",
-            "type": "Graphic Design Coursework",
-            "date": "NOV 2024",
+            "id": 8,
+            "title": "BSA Fashion Show Casting Call Poster",
+            "type": "Client Work",
+            "date": "Oct 2024",
             "desc": ""
         },
         {
@@ -43,19 +36,11 @@
             "desc": ""
         },
         {
-            "id": 5,
-            "title": "Form Element Photography",
-            "type": "Graphic Design Coursework",
+            "id": 9,
+            "title": "BSA Fashion Show Committee 2025 Reveal",
+            "type": "Client Work",
             "date": "NOV 2024",
             "desc": ""
-        },
-        {
-            "id": 6,
-            "title": "Form Element Photography",
-            "type": "Graphic Design Coursework",
-            "date": "DEC 2024",
-            "desc": ""
         }
-        
     ]
   }

@@ -27,8 +27,8 @@ const Navbar = (props) => {
                     <Link href={'/port'}>PORTFOLIO</Link>
                     {props.page == 'port' ? 
                     (<ul className={"sublist port-list"}>
-                        <li id={"port-webdev"} className={"tab port-tab " + (props.portSection == "webdev" ? "tab-active" : "")} onClick={props.updatePortSection}>( WEB DEV )</li> 
-                        <li id={"port-design"} className={"tab port-tab " + (props.portSection == "design" ? "tab-active" : "")} onClick={props.updatePortSection}>( DESIGN )</li>
+                        <li id={"port-webdev"} className={"tab port-tab " + (props.portSection == "webdev" ? "tab-active" : "")} onClick={props.updatePortSection}>( UI/UX )</li> 
+                        <li id={"port-design"} className={"tab port-tab " + (props.portSection == "design" ? "tab-active" : "")} onClick={props.updatePortSection}>( GRAPHIC )</li>
                     </ul>)
                     : ''}
                 </li>

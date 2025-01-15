@@ -26,7 +26,7 @@ export default function Project(props) {
             <div className="project-subtitle">
                 <div className="project-type">
                    {props.link != "" ? 
-                        <a className={"hyperlink"} href={props.link}>{props.type}<div className={"hyperlink-arrow"}>&#8599;</div></a>
+                        <a className={"hyperlink"} target="_blank" href={props.link}>{props.type}<div className={"hyperlink-arrow"}>&#8599;</div></a>
                         : props.type
                    } 
                 </div>
