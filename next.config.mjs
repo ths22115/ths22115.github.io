@@ -1,11 +1,12 @@
 const isProd = process.env.NODE_ENV === 'production';
+console.log(process.env.NODE_ENV)
 const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true, // Disable default image optimization
   },
-  // assetPrefix: isProd ? '/ths22115.github.io/' : '',
-  // basePath: isProd ? '/ths22115.github.io' : '',
+  // assetPrefix: !isProd ? '',
+  // basePath: !isProd ? ''
   // output: 'export'
 };
 

@@ -7,7 +7,7 @@ export default function Landing() {
     <div>
     <Skeleton page={'landing'} />
     <div className="text landing-text">
-      Hi. I create that of which emobides me.</div>
+      Hi. I create that which embodies me.</div>
     </div>
   );
 }
