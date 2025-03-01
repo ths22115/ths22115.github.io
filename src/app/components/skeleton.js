@@ -13,7 +13,7 @@ export default function Skeleton(props) {
   useEffect(() => {
     if (isMobile) {
       const rootUrl = window.location.origin;
-        window.location.replace(rootUrl+"/mobile");
+      // window.location.replace(rootUrl+"/mobile");
     }
 
     if (props.page == 'about') { //center mark for about page
@@ -59,8 +59,8 @@ export default function Skeleton(props) {
   return (
     <div className={"skeleton"}>
       <div className={"noise-wrapper"}></div>
-      <Navbar page={props.page} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} portSection={props.portSection} updatePortSection={props.updatePortSection}/>
-      <Mark ref={markRef} page={props.page} size={markWidth} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
+      <Navbar page={props.page} isMobile={isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} portSection={props.portSection} updatePortSection={props.updatePortSection}/>
+      <Mark ref={markRef} page={props.page} size={markWidth} isMobile={isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
     </div>
   );
 }
