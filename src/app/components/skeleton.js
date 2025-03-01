@@ -8,11 +8,11 @@ export default function Skeleton(props) {
   const markRef = useRef(null);
   const markWidth = 1000;
   const markHeight = .843 * markWidth;
-  const [isMobile, setMobile] = useState(false);
+  const [isMobile, setMobile] = useState(true);
 
   useEffect(() => {
     if (isMobile) {
-      const rootUrl = window.location.origin;
+      // const rootUrl = window.location.origin;
       // window.location.replace(rootUrl+"/mobile");
     }
 
@@ -31,9 +31,9 @@ export default function Skeleton(props) {
     }
 
     function opacitySpikeTimer() {
-      if (window.innerWidth <= 768) {
-        setMobile(true);
-      }
+      // if (window.innerWidth <= 768) {
+      //   setMobile(true);
+      // }
 
       if (markRef.current) {
         const randomTime = Math.random() * 3500;
