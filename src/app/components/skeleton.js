@@ -8,12 +8,12 @@ export default function Skeleton(props) {
   const markRef = useRef(null);
   const markWidth = 1000;
   const markHeight = .843 * markWidth;
-  const [isMobile, setMobile] = useState(false);
+  const [isMobile, setMobile] = useState(true);
 
   useEffect(() => {
     if (isMobile) {
-      const rootUrl = window.location.origin;
-        window.location.replace(rootUrl+"/mobile");
+      // const rootUrl = window.location.origin;
+      // window.location.replace(rootUrl+"/mobile");
     }
 
     if (props.page == 'about') { //center mark for about page
@@ -31,9 +31,9 @@ export default function Skeleton(props) {
     }
 
     function opacitySpikeTimer() {
-      if (window.innerWidth <= 768) {
-        setMobile(true);
-      }
+      // if (window.innerWidth <= 768) {
+      //   setMobile(true);
+      // }
 
       if (markRef.current) {
         const randomTime = Math.random() * 3500;
@@ -59,8 +59,8 @@ export default function Skeleton(props) {
   return (
     <div className={"skeleton"}>
       <div className={"noise-wrapper"}></div>
-      <Navbar page={props.page} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} portSection={props.portSection} updatePortSection={props.updatePortSection}/>
-      <Mark ref={markRef} page={props.page} size={markWidth} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
+      <Navbar page={props.page} isMobile={isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} portSection={props.portSection} updatePortSection={props.updatePortSection}/>
+      <Mark ref={markRef} page={props.page} size={markWidth} isMobile={isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
     </div>
   );
 }
