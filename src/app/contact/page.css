@@ -1,3 +1,7 @@
+.contact-text {
+    z-index: 20;
+}
+
 .contact-subtext {
     min-width: 10rem;
 }
