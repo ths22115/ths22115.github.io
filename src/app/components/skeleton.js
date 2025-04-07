@@ -11,10 +11,10 @@ export default function Skeleton(props) {
   const [isMobile, setMobile] = useState(true);
 
   useEffect(() => {
-    if (isMobile) {
+    // if (isMobile) {
       // const rootUrl = window.location.origin;
       // window.location.replace(rootUrl+"/mobile");
-    }
+    // }
 
     if (props.page == 'about') { //center mark for about page
         const xPos = (window.innerWidth/2) - (markWidth/2);
@@ -54,13 +54,13 @@ export default function Skeleton(props) {
     }
 
     opacitySpikeTimer();
-  }, [isMobile, props.page, markHeight, markWidth]);
+  }, [props.page, markHeight, markWidth]);
 
   return (
     <div className={"skeleton"}>
       <div className={"noise-wrapper"}></div>
       <Navbar page={props.page} isMobile={isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} portSection={props.portSection} updatePortSection={props.updatePortSection}/>
-      {/* <Mark ref={markRef} page={props.page} size={markWidth} isMobile={isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/> */}
+      <Mark ref={markRef} page={props.page} size={markWidth} isMobile={isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
     </div>
   );
 }

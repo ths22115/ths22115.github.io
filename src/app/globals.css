@@ -111,6 +111,12 @@ a {
   transition: opacity 1s ease, scale 1s ease;
   z-index: 5;
 }
+.mark-mobile {
+  left: -6.25rem;
+  bottom: -3.25rem;
+  pointer-events: none;
+}
+
 .mark:not(.mark-focus, .mark-about, .mark-contact, .mark:hover) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 }
@@ -125,9 +131,11 @@ a {
 } */
 
 .mark-landing, .mark-contact {
-  bottom: -250px;
-  right: -300px;
-  z-index: 20;
+  :not(.mark-mobile) {
+    bottom: -250px;
+    right: -300px;
+    z-index: 20;
+  }
 }
 
 .mark-about {
@@ -177,8 +185,21 @@ a {
   padding-left: .1rem;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   html {
-    font-size: 10px;
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .text {
+    padding: 6rem 3.25rem 0 0;
+    max-width: 60dvw;
+    text-align: right;
   }
 }

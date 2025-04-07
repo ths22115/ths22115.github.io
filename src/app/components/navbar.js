@@ -4,6 +4,9 @@ import Link from 'next/link';
 import "./navbar.css";
 
 const Navbar = (props) => {
+    if (props.isMobile && (props.page == "exp" || props.page == "port")) {
+        return (<div className="nav"></div>)
+    }
     return (
         <div className="nav">
             <ul className="nav-list">

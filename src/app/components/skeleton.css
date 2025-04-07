@@ -54,6 +54,13 @@
   opacity: .3;
 }
 
+@media screen and (max-width: 768px) {
+  .skeleton {
+    grid-template-columns: 3fr 7fr;
+    padding: 3.25rem;
+  }
+}
+
 /* Enable hover only on non-touch devices */
 /* @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
