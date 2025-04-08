@@ -111,11 +111,6 @@ a {
   transition: opacity 1s ease, scale 1s ease;
   z-index: 5;
 }
-.mark-mobile {
-  left: -6.25rem;
-  bottom: -3.25rem;
-  pointer-events: none;
-}
 
 .mark:not(.mark-focus, .mark-about, .mark-contact, .mark:hover) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
@@ -170,6 +165,27 @@ a {
   scale: 1.04;
 }
 
+.mark-mobile {
+  left: -6.25rem;
+  bottom: -3.25rem;
+  pointer-events: none;
+}
+.mark-about.mark-mobile {
+  left: -21rem;
+  top: 10rem;
+
+}
+.mark-contact.mark-mobile {
+  top: 45%;
+  left: 50%;
+  opacity: .021;
+  scale: .56;
+  /* opacity: .4;
+  scale: .2; */
+}
+
+
+
 .hyperlink {
   display: flex;
   flex-direction: row;
@@ -198,8 +214,14 @@ a {
   }
 
   .text {
-    padding: 6rem 3.25rem 0 0;
+    padding: 6rem 2.25rem 0 0;
     max-width: 60dvw;
     text-align: right;
+  }
+  .subtext {
+    text-align: right;
+  }
+  .hyperlink {
+    justify-content: flex-end;
   }
 }

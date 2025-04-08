@@ -6,28 +6,40 @@ import Navbar from "./navbar";
 
 export default function Skeleton(props) {
   const markRef = useRef(null);
-  const markWidth = 1000;
+  const markWidth = props.isMobile ? 800 : 1000;
   const markHeight = .843 * markWidth;
   const [isMobile, setMobile] = useState(true);
 
   useEffect(() => {
-    // if (isMobile) {
+    if (isMobile) {
       // const rootUrl = window.location.origin;
       // window.location.replace(rootUrl+"/mobile");
-    // }
 
-    if (props.page == 'about') { //center mark for about page
+      if (props.page == 'contact') { //center mark for about page
+        const yShift = 0;
+        const xPos = (360/2) - (markWidth/2);
+        const yPos = (800/2) - (markHeight/2) + yShift;
+        console.log(window.innerWidth)
+        console.log(window.innerHeight)
+        if (markRef.current) {
+            markRef.current.style.left = `${xPos}px`;
+            markRef.current.style.top = `${yPos}px`;
+        }
+      }
+    } else {
+      if (props.page == 'about') { //center mark for about page
         const xPos = (window.innerWidth/2) - (markWidth/2);
         const yPos = (window.innerHeight/2) - (markHeight/2);
         if (markRef.current) {
             markRef.current.style.left = `${xPos}px`;
             markRef.current.style.top = `${yPos}px`;
         }
-    } else if (props.page == 'exp' || props.page == 'port') { // mark to x-scroll position
-         const yPos = (window.innerHeight/2) - (markHeight/2);
-         if (markRef.current) {
-             markRef.current.style.top = `${yPos}px`;
-         }
+      } else if (props.page == 'exp' || props.page == 'port') { // mark to x-scroll position
+          const yPos = (window.innerHeight/2) - (markHeight/2);
+          if (markRef.current) {
+              markRef.current.style.top = `${yPos}px`;
+          }
+      }
     }
 
     function opacitySpikeTimer() {
@@ -57,7 +69,7 @@ export default function Skeleton(props) {
   }, [props.page, markHeight, markWidth]);
 
   return (
-    <div className={"skeleton"}>
+    <div className={"skeleton" + (isMobile ? " mobile " : "") + (props.page != "landing" ? " nonlanding" : "")}>
       <div className={"noise-wrapper"}></div>
       <Navbar page={props.page} isMobile={isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} portSection={props.portSection} updatePortSection={props.updatePortSection}/>
       <Mark ref={markRef} page={props.page} size={markWidth} isMobile={isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>

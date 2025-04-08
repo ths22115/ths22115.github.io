@@ -4,11 +4,46 @@ import Link from 'next/link';
 import "./navbar.css";
 
 const Navbar = (props) => {
-    if (props.isMobile && (props.page == "exp" || props.page == "port")) {
-        return (<div className="nav"></div>)
+    
+    if (props.isMobile && props.page != "landing") {
+        const pageDisplayName = {
+            "landing": "LANDING",
+            "contact": "CONTACT",
+            "about": "ABOUT",
+            "exp": "EXPERIENCE",
+            "port": "PORTFOLIO"
+        }
+
+        const currPage = pageDisplayName[props.page]
+        const nestedNav = props.page == "exp" || props.page == "port"
+
+        return (
+            <div className="nav mobile nonlanding">
+                <div className={"mobile nav-button " + (nestedNav ? "nested-button" : "")}> {currPage}
+                    { nestedNav ? (
+                        props.page == 'port' ? (
+                            <ul className={"sublist exp-list mobile"}>
+                                <li id={"exp-all"} className={"tab exp-tab mobile " + (props.expFilter == "all" ? "tab-active" : "")} onClick={props.updateExpFilter}>( ALL )</li>
+                                <li id={"exp-swe"} className={"tab exp-tab mobile " + (props.expFilter == "swe" ? "tab-active" : "")} onClick={props.updateExpFilter}>( SWE )</li> 
+                                <li id={"exp-design"} className={"tab exp-tab mobile " + (props.expFilter == "design" ? "tab-active" : "")} onClick={props.updateExpFilter}>( DESIGN )</li>     
+                            </ul>
+                            
+                        ) : (
+                            <ul className={"sublist exp-list mobile"}>
+                                <li id={"port-webdev"} className={"tab port-tab mobile " + (props.portSection == "webdev" ? "tab-active" : "")} onClick={props.updatePortSection}>( UI/UX )</li> 
+                                <li id={"port-design"} className={"tab port-tab mobile " + (props.portSection == "design" ? "tab-active" : "")} onClick={props.updatePortSection}>( GRAPHIC )</li>
+                            </ul>
+                        )
+                    ) : '' }
+                </div>
+                <div className="nav-button mobile home-nav-icon">
+                    <Link href={'/'}>&larr;</Link>
+                </div>
+            </div>         
+        )
     }
     return (
-        <div className="nav">
+        <div className={"nav" + (props.isMobile ? " mobile" : "")}>
             <ul className="nav-list">
                 <li className={"nav-button " + (props.page == 'landing' ? 'active' : '')}>
                     <Link href={'/'}>HOME</Link>
