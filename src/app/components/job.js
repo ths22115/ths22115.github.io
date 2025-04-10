@@ -32,7 +32,8 @@ export default function Job(props) {
     console.log(props.company + ": " + props.type)
  
     return (
-    <div id={props.id} className={"job " + (props.type == "all" || props.filter == "all" || props.filter == props.type ? "job-visible" : "")} onMouseEnter={jobPreview} onMouseLeave={jobDefault} onClick={props.onClick}>
+    <div id={props.id} className={"job" + (props.type == "all" || props.filter == "all" || props.filter == props.type ? " job-visible" : "") 
+        + (props.isMobile ? " mobile" : "")} onMouseEnter={jobPreview} onMouseLeave={jobDefault} onClick={props.onClick}>
         <div className={"job-company"}>{props.company}</div>
         <div className={"job-preview " + ((preview || isFocused()) ? "job-preview-active" : "") }>
             <div className={"job-title"}>{props.title}</div> 

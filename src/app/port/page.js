@@ -14,6 +14,7 @@ export default function Portfolio() {
   const [sectionChange, setSectionChange] = useState(false);
   const [displayChange, setDisplayChange] = useState(false);
   const [detailsChange, setDetailsChange] = useState(false);
+  const [isMobile, setMobile] = useState(true);
 
   const [pieceTitle, setPieceTitle] = useState("");
   const [pieceType, setPieceType] = useState("");
@@ -81,7 +82,7 @@ export default function Portfolio() {
  
   return (
     <div>
-    <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection}/>
+    <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} isMobile={isMobile} updateIsMobile={setMobile}/>
     <div className={"port-container " + (sectionChange ? "filter-trans" : "")}>
       <div className={"display project-display " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
         {

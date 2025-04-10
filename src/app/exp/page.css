@@ -19,6 +19,9 @@
 .resume::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
+.resume.mobile {
+    padding-right: 2.25rem;
+}
 
 .job-list {
     height: fit-content;
@@ -42,6 +45,9 @@
 .filter-trans {
     opacity: 0;
 }
+.job-list.mobile {
+    row-gap: 2rem;
+}
 
 .job {
     width: 100%;
@@ -61,9 +67,11 @@
 .job:not(.job-visible) {
     display: none;
 }
-
 .job-visible {
 
+}
+.job.mobile {
+    text-align: right;
 }
 
 
@@ -74,6 +82,9 @@
     margin-bottom: -.25rem;
     /* line-height: 1; */
     /* font-weight: bold; */
+}
+.job-company.mobile {
+    font-size: 1.75rem;
 }
 
 .job-preview {
@@ -172,4 +183,11 @@
 .exp-key-item:not(.exp-key-current) {
     color: var(--gray30);
     opacity: .6;
+}
+
+@media screen and (max-width: 768px) {
+    .job-company {
+        font-size: 2rem;
+    }
+    
 }
