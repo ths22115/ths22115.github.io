@@ -20,13 +20,14 @@
     display: none;  /* Safari and Chrome */
 }
 .resume.mobile {
+    width: 20.5rem;
     padding-right: 2.25rem;
 }
 
 .job-list {
     height: fit-content;
     min-height: 100svh;
-    width: max-content;
+    width: 100%;
     /* min-width: 450px; */
     /* margin-right: 3rem; */
     display: flex;
@@ -190,4 +191,17 @@
         font-size: 2rem;
     }
     
+}
+
+@media screen and (max-width: 768px) {
+    .job-preview {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .job-title {
+        width: max-content;
+    }
+    .job-date {
+        font-size: .75rem;
+    }
 }

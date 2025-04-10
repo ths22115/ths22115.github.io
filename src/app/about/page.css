@@ -1,4 +1,5 @@
 .about-subtext {
     font: var(--p);
     color: var(--gray0);
+    width: 100%;
 }

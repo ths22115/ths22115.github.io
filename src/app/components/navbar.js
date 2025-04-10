@@ -21,7 +21,9 @@ const Navbar = (props) => {
         }
 
         return (
-            <div className={"nav mobile nonlanding" + (nestedNav && props.focus > -1 ? " focus" : "")}>
+            <div className={"nav mobile nonlanding" 
+            // + (nestedNav && props.focus > -1 ? " focus" : "")
+            }>
                 { nestedNav ? (
                         props.page == 'exp' ? (
                             <ul className={"sublist exp-list mobile"}>
