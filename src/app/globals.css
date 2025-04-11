@@ -215,10 +215,15 @@ a {
   }
 
   .text {
-    padding: 6rem 2.25rem 0 0;
-    max-width: 60dvw;
+    padding: 2.25rem 2.25rem 0 0;
+    max-width: 19rem;
     text-align: right;
   }
+
+  .landing-text {
+    max-width: 15rem;
+  }
+
   .subtext {
     text-align: right;
   }

@@ -24,7 +24,32 @@ const Navbar = (props) => {
             <div className={"nav mobile nonlanding" 
             // + (nestedNav && props.focus > -1 ? " focus" : "")
             }>
-                { nestedNav ? (
+                <div className="nav-mobile-text">
+                    <div className="title mius mobile">
+                        <Link href={'/'}>MIUS THOMAS</Link>
+                    </div>
+                    { nestedNav ? (
+                        <div className="nav-mobile-nested">
+                            <div className={"mobile nav-button " + (nestedNav ? "nested-button" : "")}> {currPage} </div>
+                            { props.page == 'exp' ? (
+                                <ul className={"sublist exp-list mobile"}>
+                                    <li id={"exp-all"} className={"tab exp-tab mobile " + (props.expFilter == "all" ? "tab-active" : "")} onClick={props.updateExpFilter}>( ALL )</li>
+                                    <li id={"exp-swe"} className={"tab exp-tab mobile " + (props.expFilter == "swe" ? "tab-active" : "")} onClick={props.updateExpFilter}>( SWE )</li> 
+                                    <li id={"exp-design"} className={"tab exp-tab mobile " + (props.expFilter == "design" ? "tab-active" : "")} onClick={props.updateExpFilter}>( DESIGN )</li>     
+                                </ul>
+                            ) : (
+                                <ul className={"sublist exp-list mobile"}>
+                                    <li id={"port-webdev"} className={"tab port-tab mobile " + (props.portSection == "webdev" ? "tab-active" : "")} onClick={props.updatePortSection}>( UI/UX )</li> 
+                                    <li id={"port-design"} className={"tab port-tab mobile " + (props.portSection == "design" ? "tab-active" : "")} onClick={props.updatePortSection}>( GRAPHIC )</li>
+                                </ul>
+                            )}
+                        </div>
+                    ) : (
+                        <div className={"mobile nav-button " + (nestedNav ? "nested-button" : "")}> {currPage} </div>
+                    )
+                    }
+                </div>
+                {/* { nestedNav ? (
                         props.page == 'exp' ? (
                             <ul className={"sublist exp-list mobile"}>
                                 <li id={"exp-all"} className={"tab exp-tab mobile " + (props.expFilter == "all" ? "tab-active" : "")} onClick={props.updateExpFilter}>( ALL )</li>
@@ -39,7 +64,7 @@ const Navbar = (props) => {
                             </ul>
                         )
                 ) : '' }
-                <div className={"mobile nav-button " + (nestedNav ? "nested-button" : "")}> {currPage} </div>
+                <div className={"mobile nav-button " + (nestedNav ? "nested-button" : "")}> {currPage} </div> */}
                 <div className="nav-button mobile home-nav-icon">
                     <Link href={'/'}>&larr;</Link>
                 </div>

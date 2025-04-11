@@ -13,17 +13,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    row-gap: .75rem;
+    justify-content: space-between;
+    /* row-gap: .75rem; */
     padding-bottom: .25rem;
-    transition: 
+    /* transition:  */
         /* transform .5s ease-in-out, */
-            opacity .5s ease-in-out;
+            /* opacity .5s ease-in-out; */
 }
 .nav.mobile.nonlanding.focus {
     opacity: 0;
     pointer-events: none;
     /* transform: translateX(-8rem); */
+}
+.nav-mobile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    row-gap: .75rem;
 }
 
 .title {
@@ -42,6 +49,11 @@
     /* font-size: 5rem; */
     font-weight: bolder;
     /* line-height: .5; */
+}
+.mius.mobile {
+    writing-mode: vertical-lr;
+    font-size: 3.75rem;
+    line-height: 75%;
 }
 
 .nav-list {
@@ -75,7 +87,7 @@ opacity: 1;
 
 .nav-button.mobile {
     color: var(--grayo);
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     opacity: 1;
     writing-mode: vertical-rl;
     text-align: right;
@@ -83,8 +95,17 @@ opacity: 1;
 .mobile.home-nav-icon {
     writing-mode: horizontal-tb;
     margin-top: 1.25rem;
+    font-size: 2rem;
 }
 
+
+.nav-mobile-nested {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 0;
+    align-items: flex-start;
+    justify-content: center;
+}
 .nested-button {
     display: flex;
     /* width: 100%; */
