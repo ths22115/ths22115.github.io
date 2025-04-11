@@ -42,13 +42,13 @@ export default function Job(props) {
                 <div className={"job-end"}>{props.end}</div> )
             </div>
         </div>
-        <div className={"job-desc " + (isFocused() ? "job-desc-active" : "") }>
+        <div className={"job-desc " + (isFocused() || props.isMobile ? "job-desc-active" : "") }>
             {
                 props.desc.split("<br />").map((line, index) => (
-                    <React.Fragment key={index}>
-                    {line}
-                    {index < props.desc.split("<br />").length - 1 && <br />}
-                    </React.Fragment>
+                    <a className={"job-desc-block"} key={index}>
+                    {line.toLowerCase()}
+                    {/* {index < props.desc.split("<br />").length - 1 && <br />} */}
+                    </a>
                 ))
             }
         </div>
