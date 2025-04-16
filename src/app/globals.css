@@ -221,7 +221,7 @@ a {
   }
 
   .landing-text {
-    max-width: 15rem;
+    max-width: 17rem;
   }
 
   .subtext {
@@ -229,5 +229,11 @@ a {
   }
   .hyperlink {
     justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 12px;
   }
 }

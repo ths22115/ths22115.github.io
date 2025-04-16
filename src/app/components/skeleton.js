@@ -70,7 +70,11 @@ export default function Skeleton(props) {
 	}, [props.isMobile, props.page, markHeight, markWidth]);
 
 	return (
-		<div className={"skeleton" + (props.isMobile ? " mobile " : "") + (props.page != "landing" ? " nonlanding" : "")}>
+		<div className={"skeleton" + (props.isMobile ? " mobile " : "") + 
+		// (props.page != "landing" ? 
+		" nonlanding"
+		//  : "")
+		 }>
 			<div className={"noise-wrapper"}></div>
 			<Navbar page={props.page} isMobile={props.isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} 
 			portSection={props.portSection} updatePortSection={props.updatePortSection} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>

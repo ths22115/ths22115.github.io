@@ -48,8 +48,8 @@ transition: .4s;
     scale: 1.02; 
 }
 .resume.mobile {
-    width: 20.5rem;
-    padding-right: 2.25rem;
+    width: 19rem;
+    padding: 2.25rem 2.25rem 2.25rem 0;
 }
 
 .job-list {
@@ -63,7 +63,7 @@ transition: .4s;
     row-gap: 4rem;
     /* overflow-x: hidden;
     overflow-y: scroll; */
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
     /* padding-left: 6.25rem; */
     transition: 
         height 2s ease-out,
