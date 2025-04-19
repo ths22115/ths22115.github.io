@@ -14,19 +14,19 @@ export default function Skeleton(props) {
 			// const rootUrl = window.location.origin;
 			// window.location.replace(rootUrl+"/mobile");
 
-			if (props.page == 'contact') { // center mark for mobile contact page
-				const yShift = 0;
-				const xPos = (window.innerWidth/2) - (markWidth/2);
-				const yPos = (window.innerHeight/2) - (markHeight/2) + yShift;
-				// const xPos = (360/2) - (markWidth/2);
-				// const yPos = (800/2) - (markHeight/2) + yShift;
-				// console.log(window.innerWidth)
-				// console.log(window.innerHeight)
-				if (markRef.current) {
-						markRef.current.style.left = `${xPos}px`;
-						markRef.current.style.top = `${yPos}px`;
-				}
-			}
+			// if (props.page == 'contact') { // center mark for mobile contact page
+			// 	const yShift = 0;
+			// 	const xPos = (window.innerWidth/2) - (markWidth/2);
+			// 	const yPos = (window.innerHeight/2) - (markHeight/2) + yShift;
+			// 	// const xPos = (360/2) - (markWidth/2);
+			// 	// const yPos = (800/2) - (markHeight/2) + yShift;
+			// 	// console.log(window.innerWidth)
+			// 	// console.log(window.innerHeight)
+			// 	if (markRef.current) {
+			// 			markRef.current.style.left = `${xPos}px`;
+			// 			markRef.current.style.top = `${yPos}px`;
+			// 	}
+			// }
 		} else {
 			if (props.page == 'about') { // center mark for about page
 				const xPos = (window.innerWidth/2) - (markWidth/2);
