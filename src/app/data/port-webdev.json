@@ -24,17 +24,6 @@
         },
         {
             "id": 2,
-            "img": "hackRPI-X",
-            "imgCount": 4,
-            "title": "HACKRPI X",
-            "type": "Web Application",
-            "link": "",
-            "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
-            "date": "NOV 2023",
-            "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
-        },
-        {
-            "id": 3,
             "img": "",
             "imgCount": 0,
             "title": "Berle Farm",
@@ -43,6 +32,17 @@
             "repo": "",
             "date": "APR 2024",
             "desc": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, delivering a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders." 
+        },
+        {
+            "id": 3,
+            "img": "hackRPI-X",
+            "imgCount": 4,
+            "title": "HACKRPI X",
+            "type": "Web Application",
+            "link": "",
+            "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
+            "date": "NOV 2023",
+            "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
         }
     ]
   }
