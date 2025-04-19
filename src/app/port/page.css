@@ -221,6 +221,10 @@
             height 2s ease-out,
             opacity .2s ease-in-out;
     }
+    .section:not(.section-active) {
+        display: none;
+        opacity: 0;
+    }
     
     .project {
         margin-bottom: .7rem;
@@ -234,5 +238,21 @@
 
     .project-img {
         margin-bottom: .25rem;
+    }
+
+    .piece-details {
+        position: relative;
+        padding: .5rem 0 0 0;
+    }
+    .details {
+        width: 100%;
+        min-height: 0;
+    }
+
+    .piece-title {
+        font-size: 1.3rem;
+        width: 100%;
+        min-width: 0;
+        margin-bottom: .125rem;
     }
 }

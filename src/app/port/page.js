@@ -89,7 +89,7 @@ export default function Portfolio() {
             <li id={"port-webdev"} className={"tab port-tab " + (portSection == "webdev" ? "tab-active" : "")} onClick={updatePortSection}>( UI/UX )</li> 
             <li id={"port-design"} className={"tab port-tab " + (portSection == "design" ? "tab-active" : "")} onClick={updatePortSection}>( GRAPHIC )</li>
           </ul>
-          <div className={"section project-section " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
+          <div className={"section project-section " + (portSection == "webdev" ? "section-active " : "") + (displayChange ? "filter-trans" : "")}>
           { webdevData.projects.flatMap(project =>
                 <div className="project-container">
                 <Project key={project.id} id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
@@ -103,15 +103,13 @@ export default function Portfolio() {
           )}
           </div>
 
-          {/*
-          <div className={"section piece-section " + (portSection == "design" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
+          <div className={"section piece-section " + (portSection == "design" ? "section-active " : "") + (displayChange ? "filter-trans" : "")}>
           { designData.pieces.map((piece) => 
-                <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title} type={piece.type} date={piece.date} 
-                desc={piece.desc} onClick={focusPiece} focus={portFocus} />
+                <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title.toUpperCase()} type={piece.type} date={piece.date} 
+                desc={piece.desc} onClick={focusPiece} focus={portFocus} isMobile={isMobile} />
                 // including piece details in component?
           )}
           </div>
-          */}
           
           {/* <div className={"display project-display " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
             { webdevData.projects.flatMap(project =>
