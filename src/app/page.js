@@ -8,7 +8,7 @@ export default function Landing() {
     <div>
     <Skeleton page={'landing'} isMobile={isMobile} updateIsMobile={setMobile} />
     <div className="text landing-text">
-      Hi. I create that which embodies me.</div>
+      Software engineer and designer who creates that which embodies them.</div>
     </div>
   );
 }

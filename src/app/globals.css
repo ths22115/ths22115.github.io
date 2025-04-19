@@ -28,6 +28,7 @@ body {
   height: 100dvh;
   overflow-x: hidden;
   overflow-y: hidden;
+  background-color: #171717;
 }
 
 body {
@@ -217,7 +218,7 @@ a {
   .text {
     padding: 2.25rem 2.25rem 0 0;
     max-width: 19rem;
-    text-align: right;
+    /* text-align: right; */
   }
 
   .landing-text {
@@ -225,15 +226,16 @@ a {
   }
 
   .subtext {
-    text-align: right;
+    /* text-align: right; */
   }
   .hyperlink {
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-height: 670px), screen and (max-width: 350px) {
   html {
     font-size: 12px;
   }
 }
+

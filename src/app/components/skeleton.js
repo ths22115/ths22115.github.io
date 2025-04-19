@@ -76,6 +76,16 @@ export default function Skeleton(props) {
 		//  : "")
 		 }>
 			<div className={"noise-wrapper"}></div>
+			<div className={"scanlines"}></div>
+			{ props.isMobile ? (
+			<div className={"noise"}></div>
+			) : ""}
+			{ props.isMobile ? (
+			<div className={"noise"}></div>
+			) : ""}
+			{ props.isMobile ? (
+			<div className={"noise"}></div>
+			) : ""}
 			<Navbar page={props.page} isMobile={props.isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} 
 			portSection={props.portSection} updatePortSection={props.updatePortSection} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
 			<Mark ref={markRef} page={props.page} size={markWidth} isMobile={props.isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>

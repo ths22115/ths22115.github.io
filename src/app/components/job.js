@@ -46,7 +46,7 @@ export default function Job(props) {
             {
                 props.desc.split("<br />").map((line, index) => (
                     <a className={"job-desc-block"} key={index}>
-                    {line.toLowerCase()}
+                    {line}
                     {/* {index < props.desc.split("<br />").length - 1 && <br />} */}
                     </a>
                 ))

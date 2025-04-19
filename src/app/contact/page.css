@@ -5,3 +5,10 @@
 .contact-subtext {
     min-width: 10rem;
 }
+
+
+@media screen and (max-width: 768px) {
+    .contact-subtext {
+      min-width: 19rem
+    }
+}
