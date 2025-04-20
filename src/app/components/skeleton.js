@@ -10,6 +10,14 @@ export default function Skeleton(props) {
 	const markHeight = .843 * markWidth;
 
 	useEffect(() => {
+		if (props.page == 'about') {
+			if (window.innerWidth <= 768) {
+				// console.log("window is mobile")
+			  	props.updateIsMobile(true)
+				alert("isMobile =" + props.isMobile)
+			}
+		}
+
 		if (props.isMobile) {
 		} else {
 			if (props.page == 'about') { // center mark for about page
