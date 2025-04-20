@@ -11,22 +11,6 @@ export default function Skeleton(props) {
 
 	useEffect(() => {
 		if (props.isMobile) {
-			// const rootUrl = window.location.origin;
-			// window.location.replace(rootUrl+"/mobile");
-
-			// if (props.page == 'contact') { // center mark for mobile contact page
-			// 	const yShift = 0;
-			// 	const xPos = (window.innerWidth/2) - (markWidth/2);
-			// 	const yPos = (window.innerHeight/2) - (markHeight/2) + yShift;
-			// 	// const xPos = (360/2) - (markWidth/2);
-			// 	// const yPos = (800/2) - (markHeight/2) + yShift;
-			// 	// console.log(window.innerWidth)
-			// 	// console.log(window.innerHeight)
-			// 	if (markRef.current) {
-			// 			markRef.current.style.left = `${xPos}px`;
-			// 			markRef.current.style.top = `${yPos}px`;
-			// 	}
-			// }
 		} else {
 			if (props.page == 'about') { // center mark for about page
 				const xPos = (window.innerWidth/2) - (markWidth/2);
@@ -44,9 +28,11 @@ export default function Skeleton(props) {
 		}
 
 		function opacitySpikeTimer() {
-			// if (window.innerWidth <= 768) {
-			//   props.updateIsMobile(true);
-			// }
+			// console.log("window width: " + window.innerWidth)
+			if (window.innerWidth <= 768) {
+				// console.log("window is mobile")
+			  	props.updateIsMobile(true);
+			}
 
 			if (markRef.current) {
 				const randomTime = Math.random() * 3500;
@@ -70,13 +56,11 @@ export default function Skeleton(props) {
 	}, [props.isMobile, props.page, markHeight, markWidth]);
 
 	return (
-		<div className={"skeleton" + (props.isMobile ? " mobile " : "") + 
-		// (props.page != "landing" ? 
-		" nonlanding"
-		//  : "")
-		 }>
+		<div className={"skeleton" + (props.isMobile ? " mobile nonlanding" : "") }>
 			<div className={"noise-wrapper"}></div>
+			{ props.isMobile ? (
 			<div className={"scanlines"}></div>
+			) : "" }
 			{ props.isMobile ? (
 			<div className={"noise"}></div>
 			) : ""}

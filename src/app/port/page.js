@@ -14,7 +14,7 @@ export default function Portfolio() {
   const [sectionChange, setSectionChange] = useState(false);
   const [displayChange, setDisplayChange] = useState(false);
   const [detailsChange, setDetailsChange] = useState(false);
-  const [isMobile, setMobile] = useState(true);
+  const [isMobile, setMobile] = useState(false);
 
   const [pieceTitle, setPieceTitle] = useState("");
   const [pieceType, setPieceType] = useState("");

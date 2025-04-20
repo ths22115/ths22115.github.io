@@ -11,7 +11,7 @@ export default function Experience() {
   const [jobFocus, setJobFocus] = useState(-1);
   const [jobFilter, setJobFilter] = useState("all");
   const [filterChange, setfilterChange] = useState(false);
-  const [isMobile, setMobile] = useState(true);
+  const [isMobile, setMobile] = useState(false);
   
   const data = ExpData;
   console.log(data)

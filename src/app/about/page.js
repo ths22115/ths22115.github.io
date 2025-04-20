@@ -4,7 +4,7 @@ import "./page.css";
 import Skeleton from './../components/skeleton';
 
 export default function About() {
-const [isMobile, setMobile] = useState(true);
+const [isMobile, setMobile] = useState(false);
 
   return (
     <div>
@@ -24,7 +24,6 @@ const [isMobile, setMobile] = useState(true);
           Passionate UI/UX designer, web developer, creative, soccer player, and Manchester United fan.
           </div>
       </div>
-        
     </div>
   );
 }

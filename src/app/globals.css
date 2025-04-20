@@ -28,7 +28,6 @@ body {
   height: 100dvh;
   overflow-x: hidden;
   overflow-y: hidden;
-  background-color: #171717;
 }
 
 body {
@@ -114,14 +113,14 @@ a {
   z-index: 5;
 }
 
-.mark:not(.mark-focus, .mark-about, .mark-contact, .mark-mobile, .mark:hover) {
+.mark:not(.mark-focus, .mark-about, .mark-contact, .mark-mobile) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 }
 .mark:hover {
   scale: 1.02;
 }
 .mark.mark-landing:hover {
-  scale: 1.2;
+  scale: 1.1;
 }
 /* .mark-landing:not(.mark-landing:hover) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
@@ -192,6 +191,7 @@ a {
 @media screen and (max-width: 768px) {
   html {
     font-size: 14px;
+    background-color: #303030;
   }
 
   .text {

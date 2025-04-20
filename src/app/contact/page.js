@@ -4,7 +4,7 @@ import "./page.css";
 import Skeleton from '../components/skeleton';
 
 export default function Contact() {
-  const [isMobile, setMobile] = useState(true);
+  const [isMobile, setMobile] = useState(false);
 
   return (
     <div>

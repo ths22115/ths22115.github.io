@@ -37,6 +37,7 @@
 }
 .noise-wrapper {
 	position: absolute;
+	display: block;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -47,6 +48,7 @@
 }
 .noise-wrapper::before {
 	content: '';
+	display: block;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -58,7 +60,7 @@
 	60% 60%/3000px 3000px;
 	background-blend-mode: difference;
 	animation: tv-nosignal .2s infinite alternate;
-	opacity: .3;
+	opacity: .35;
 }
 
 .scanlines {

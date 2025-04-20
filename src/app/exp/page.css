@@ -7,7 +7,7 @@
     /* margin-right: 3rem; */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: flex-start;
     column-gap: .25rem;
     overflow-y: scroll;
@@ -55,7 +55,7 @@ transition: .4s;
 .job-list {
     height: fit-content;
     min-height: 100svh;
-    width: 100%;
+    width: max-content;
     /* min-width: 450px; */
     /* margin-right: 3rem; */
     display: flex;
@@ -63,7 +63,7 @@ transition: .4s;
     row-gap: 4rem;
     /* overflow-x: hidden;
     overflow-y: scroll; */
-    /* padding: 2rem 0; */
+    padding: 2rem 0;
     /* padding-left: 6.25rem; */
     transition: 
         height 2s ease-out,
@@ -85,7 +85,7 @@ transition: .4s;
 .job {
     width: 100%;
     height: max-content;
-    max-height: 30%;
+    /* max-height: 30%; */
     display: flex;
     flex-direction: column;
     row-gap: 0;
@@ -227,6 +227,7 @@ transition: .4s;
 @media screen and (max-width: 768px) {
     .resume {
         overflow-y: hidden;
+        align-items: flex-start;
     }
 
     .job-filter {
@@ -241,6 +242,11 @@ transition: .4s;
         /* position: fixed; */
         /* margin-top: 2.25rem; */
         column-gap: .5rem;
+    }
+
+    .job-list {
+        width: 100%;
+        padding: 0;
     }
 
     .job {
