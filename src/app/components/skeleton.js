@@ -10,30 +10,35 @@ export default function Skeleton(props) {
 	const markHeight = .843 * markWidth;
 
 	useEffect(() => {
-		if (props.page == 'about') {
-			if (window.innerWidth <= 768) {
-				// console.log("window is mobile")
-			  	props.updateIsMobile(true)
-			}
-			alert("isMobile =" + props.isMobile)
-		}
+		// if (props.page == 'about') {
+		// 	if (window.innerWidth <= 768) {
+		// 	  	props.updateIsMobile(true)
+		// 	}
+		// 	alert("isMobile =" + props.isMobile)
+		// }
 
-		if (props.isMobile) {
-		} else {
-			if (props.page == 'about') { // center mark for about page
-				const xPos = (window.innerWidth/2) - (markWidth/2);
-				const yPos = (window.innerHeight/2) - (markHeight/2);
+		// setTimeout(function() { 
+			if (props.isMobile) {
 				if (markRef.current) {
-						markRef.current.style.left = `${xPos}px`;
-						markRef.current.style.top = `${yPos}px`;
+					markRef.current.style.left = '';
+					markRef.current.style.top = '';
 				}
-			} else if (props.page == 'exp' || props.page == 'port') { // mark to x-scroll position
+			} else {
+				if (props.page == 'about') { // center mark for about page
+					const xPos = (window.innerWidth/2) - (markWidth/2);
 					const yPos = (window.innerHeight/2) - (markHeight/2);
 					if (markRef.current) {
+							markRef.current.style.left = `${xPos}px`;
 							markRef.current.style.top = `${yPos}px`;
 					}
+				} else if (props.page == 'exp' || props.page == 'port') { // mark to x-scroll position
+						const yPos = (window.innerHeight/2) - (markHeight/2);
+						if (markRef.current) {
+								markRef.current.style.top = `${yPos}px`;
+						}
+				}
 			}
-		}
+		// }, 100);
 
 		function opacitySpikeTimer() {
 			// console.log("window width: " + window.innerWidth)
