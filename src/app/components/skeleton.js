@@ -3,11 +3,13 @@ import React, { useRef, useEffect, useState } from "react";
 import "./skeleton.css";
 import Mark from "./mark";
 import Navbar from "./navbar";
+// import Audio from "./../../../public/vhs"
 
 export default function Skeleton(props) {
 	const markRef = useRef(null);
 	const markWidth = props.isMobile ? 800 : 1000;
 	const markHeight = .843 * markWidth;
+	// const audio = require("../../../../public/vhs");
 
 	useEffect(() => {
 		// if (props.page == 'about') {
@@ -86,6 +88,7 @@ export default function Skeleton(props) {
 			<Navbar page={props.page} isMobile={props.isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} 
 			portSection={props.portSection} updatePortSection={props.updatePortSection} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
 			<Mark ref={markRef} page={props.page} size={markWidth} isMobile={props.isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
+			<audio src={"/vhs.mp3"} autoPlay preload="auto" loop></audio>
 		</div>
 	);
 }
