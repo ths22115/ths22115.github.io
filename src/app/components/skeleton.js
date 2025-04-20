@@ -14,8 +14,8 @@ export default function Skeleton(props) {
 			if (window.innerWidth <= 768) {
 				// console.log("window is mobile")
 			  	props.updateIsMobile(true)
-				alert("isMobile =" + props.isMobile)
 			}
+			alert("isMobile =" + props.isMobile)
 		}
 
 		if (props.isMobile) {
