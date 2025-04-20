@@ -10,17 +10,18 @@ const [isMobile, setMobile] = useState(false);
     <div>
       <Skeleton page={'about'} isMobile={isMobile} updateIsMobile={setMobile} />
       <div className="text about-text">
-        <div className="subtext about-subtext">
+        <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
           20 y/o nothern VA born DE resident.
           </div>
-        <div className="subtext about-subtext">
+        <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
+          {/* {isMobile ? "LOL" : "Third year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation."} */}
           Third year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation. 
         </div>
-        <div className="subtext about-subtext">
+        <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
           Pursing a B.S. of Computer Science with concentrations in 
           Information Technology & Web Science, Visualization & Graphics, and Graphic Design.
         </div>
-        <div className="subtext about-subtext">
+        <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
           Passionate UI/UX designer, web developer, creative, soccer player, and Manchester United fan.
           </div>
       </div>
