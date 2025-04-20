@@ -14,6 +14,7 @@ export default function Portfolio() {
   const [sectionChange, setSectionChange] = useState(false);
   const [displayChange, setDisplayChange] = useState(false);
   const [detailsChange, setDetailsChange] = useState(false);
+  const [isMobile, setMobile] = useState(false);
 
   const [pieceTitle, setPieceTitle] = useState("");
   const [pieceType, setPieceType] = useState("");
@@ -78,38 +79,95 @@ export default function Portfolio() {
       setSectionChange(false)
     }, 200);
   }
+
+  if (isMobile) {
+    return (
+      <div>
+        <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} isMobile={isMobile} updateIsMobile={setMobile}/>
+        <div className={"port-container mobile " + (sectionChange ? "filter-trans " : "")}>
+          <ul className="section-selection">
+            <li id={"port-webdev"} className={"tab port-tab " + (portSection == "webdev" ? "tab-active" : "")} onClick={updatePortSection}>( UI/UX )</li> 
+            <li id={"port-design"} className={"tab port-tab " + (portSection == "design" ? "tab-active" : "")} onClick={updatePortSection}>( GRAPHIC )</li>
+          </ul>
+          <div className={"section project-section " + (portSection == "webdev" ? "section-active " : "") + (displayChange ? "filter-trans" : "")}>
+          { webdevData.projects.flatMap(project =>
+                <div className="project-container">
+                <Project key={project.id} id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
+                repo={project.repo}  date={project.date} desc={project.desc} onClick={focusProject} focus={portFocus} isMobile={isMobile} />
+                { Array(project.imgCount).fill(null).map((_, index) => (
+                  <ProjectDisplay key={project.title + (index+1)} src={"/" + project.img + (index+1) + ".jpg"} project={project.id} 
+                  focus={portFocus} isMobile={isMobile} />
+                )) }
+                </div>
+                
+          )}
+          </div>
+
+          <div className={"section piece-section " + (portSection == "design" ? "section-active " : "") + (displayChange ? "filter-trans" : "")}>
+          { designData.pieces.map((piece) => 
+                <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title.toUpperCase()} type={piece.type} date={piece.date} 
+                desc={piece.desc} onClick={focusPiece} focus={portFocus} isMobile={isMobile} />
+                // including piece details in component?
+          )}
+          </div>
+          
+          {/* <div className={"display project-display " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
+            { webdevData.projects.flatMap(project =>
+                Array(project.imgCount).fill(null).map((_, index) => (
+                  <ProjectDisplay key={project.title + (index+1)} src={"/" + project.img + (index+1) + ".jpg"} project={project.id} focus={portFocus}/>
+                ))
+            )}
+          </div>
+          <div className={"details project-details " + (portSection == "webdev" ? "details-active" : "")}>
+            { webdevData.projects.map((project) =>
+                <Project key={project.id} id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
+                repo={project.repo}  date={project.date} desc={project.desc} onClick={focusProject} focus={portFocus} />
+              )}
+          </div> */}
+
+          {/* <div className={"display piece-display " + (portSection == "design" ? "display-active " : "")}>
+            { designData.pieces.map((piece) => 
+                <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title} type={piece.type} date={piece.date} 
+                desc={piece.desc} onClick={focusPiece} focus={portFocus} />
+            )}
+          </div>
+          <div className={"details piece-details " + (portSection == "design" ? "details-active " : "") + (detailsChange ? "filter-trans" : "")}>
+            <div className="piece-title">{pieceTitle}</div>
+            <div className={"expanded piece-expanded"}>
+                <div className="piece-subtitle">
+                    <div className="piece-type">{pieceType}</div>
+                    <div className="piece-date">{pieceDate}</div>
+                </div>
+                <div className="piece-desc">{pieceDesc}</div>
+            </div>
+          </div> */}
+        </div>
+    </div>
+    )
+  }
  
   return (
     <div>
-    <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection}/>
-    <div className={"port-container " + (sectionChange ? "filter-trans" : "")}>
+    <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} isMobile={isMobile} updateIsMobile={setMobile}/>
+    <div className={"port-container " + (sectionChange ? "filter-trans " : "") + (isMobile ? "mobile" : "")}>
       <div className={"display project-display " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
-        {
-          webdevData.projects.flatMap(project =>
+        { webdevData.projects.flatMap(project =>
             Array(project.imgCount).fill(null).map((_, index) => (
               <ProjectDisplay key={project.title + (index+1)} src={"/" + project.img + (index+1) + ".jpg"} project={project.id} focus={portFocus}/>
             ))
-          )
-        }
+        )}
       </div>
       <div className={"details project-details " + (portSection == "webdev" ? "details-active" : "")}>
-        {
-          webdevData.projects.map((project) =>
+        { webdevData.projects.map((project) =>
             <Project key={project.id} id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
             repo={project.repo}  date={project.date} desc={project.desc} onClick={focusProject} focus={portFocus} />
-          )
-        }
+          )}
       </div>
       <div className={"display piece-display " + (portSection == "design" ? "display-active " : "")}>
-        {
-          designData.pieces.map((piece) => 
+        { designData.pieces.map((piece) => 
             <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title} type={piece.type} date={piece.date} 
             desc={piece.desc} onClick={focusPiece} focus={portFocus} />
-          )
-        }
-        {/* <Piece id={0} src={"samothSite1.jpg"} onClick={focusPiece} focus={portFocus}/>
-        <Piece id={1} src={"samothSite2.jpg"} onClick={focusPiece} focus={portFocus}/>
-        <Piece id={2} src={"samothSite3.jpg"} onClick={focusPiece} focus={portFocus}/> */}
+        )}
       </div>
       <div className={"details piece-details " + (portSection == "design" ? "details-active " : "") + (detailsChange ? "filter-trans" : "")}>
         <div className="piece-title">{pieceTitle}</div>

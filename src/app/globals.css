@@ -83,67 +83,71 @@ a {
 
 @keyframes mark-opacity-landing {
   0% {
-    opacity: .016;
+    opacity: .07;
   }
 
   100% {
-      opacity: .025;
+      opacity: .13;
   }
 }
 
-@keyframes mark-opacity {
+/* @keyframes mark-opacity {
   0% {
-    opacity: .02;
+    opacity: .05;
   }
 
   100% {
-      opacity: .010;
+      opacity: .15;
   }
-}
+} */
 
 .mark {
   position: absolute;
   bottom: -300px;
   right: -300px;
-  opacity: .013;
+  opacity: .18;
   transform: translate(0, 0);
   pointer-events: all;
   transition: opacity 1s ease, scale 1s ease;
+  mix-blend-mode: overlay;
   z-index: 5;
 }
-.mark:not(.mark-focus, .mark-about, .mark-contact, .mark:hover) {
+
+.mark:not(.mark-focus, .mark-about, .mark-contact, .mark-mobile) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 }
 .mark:hover {
   scale: 1.02;
 }
 .mark.mark-landing:hover {
-  scale: 1.2;
+  scale: 1.1;
 }
 /* .mark-landing:not(.mark-landing:hover) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 } */
 
 .mark-landing, .mark-contact {
-  bottom: -250px;
-  right: -300px;
-  z-index: 20;
+  :not(.mark-mobile) {
+    bottom: -250px;
+    right: -300px;
+    z-index: 20;
+  }
 }
 
 .mark-about {
   top: 45%;
   left: 50%;
-  opacity: .018;
+  opacity: .17;
   scale: .9;
   /* transform: translateX(-50%); */
 }
 .mark-about:hover {
-  opacity: .03;
+  opacity: .25;
   scale: .95;
 }
 
 .mark-contact:hover {
-  opacity: .035;
+  opacity: .25;
   scale: 1.08;
 }
 
@@ -152,13 +156,13 @@ a {
   top: 50%;
   left: -300px;
   animation: none;
-  opacity: .016;
+  opacity: .12;
 }
 
 .mark-focus {
   /* animation: none; */
   /* transition: opacity 1s ease; */
-  opacity: .035;
+  opacity: .3;
   scale: 1.04;
 }
 
@@ -177,8 +181,63 @@ a {
   padding-left: .1rem;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   html {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+    background-color: #303030;
+  }
+
+  .text {
+    padding: 2.25rem 2.25rem 0 0;
+    max-width: 19rem;
+    /* text-align: right; */
+  }
+
+  .landing-text {
+    max-width: 17rem;
+  }
+
+  .mark.mark-landing {
+    animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
+  }
+
+  .mark-mobile {
+    left: -8rem;
+    bottom: -6rem;
+    pointer-events: none;
+  }
+  .mark-about.mark-mobile {
+    left: -12rem;
+    top: 19rem;
+    scale: .7;
+  }
+  .mark-contact.mark-mobile {
+    left: -9rem;
+    bottom: -10rem;
+    opacity: .4;
+  }
+
+  .mark-port.mark-mobile, .mark-exp.mark-mobile {
+      left: -61%;
+      top: 3.6rem;
+      pointer-events: none;
+      opacity: .4;
+  }
+  .mark-exp.mark-mobile {
+    opacity: .17;
+  }
+}
+
+@media screen and (max-height: 670px), screen and (max-width: 350px) {
+  html {
+    font-size: 12px;
+  }
+}
+

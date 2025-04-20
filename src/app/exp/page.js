@@ -11,6 +11,7 @@ export default function Experience() {
   const [jobFocus, setJobFocus] = useState(-1);
   const [jobFilter, setJobFilter] = useState("all");
   const [filterChange, setfilterChange] = useState(false);
+  const [isMobile, setMobile] = useState(false);
   
   const data = ExpData;
   console.log(data)
@@ -43,16 +44,22 @@ export default function Experience() {
 
   return (
     <div>
-    <Skeleton page={'exp'} expFocus={jobFocus} expFilter={jobFilter} updateExpFilter={updateJobFilter} />
-    <div className="resume">
-      <div className={"job-list " + (filterChange ? "filter-trans" : "")}>
-        {
-        data.jobs.map((job) =>
-        <Job key={job.id} id={job.id} type={job.type} company={job.company.toUpperCase()} title={job.title.toUpperCase()}  start={job.start} end={job.end} 
-        desc={job.desc} onClick={focusJob} focus={jobFocus} filter={jobFilter} />)
-        }
+      <Skeleton page={'exp'} expFocus={jobFocus} expFilter={jobFilter} updateExpFilter={updateJobFilter} isMobile={isMobile} updateIsMobile={setMobile} />
+      <div className={"resume " + (isMobile ? "mobile" : "")}>
+        { isMobile ? (
+        <ul className="job-filter">
+          <li id={"exp-all"} className={"tab exp-tab " + (jobFilter == "all" ? "tab-active" : "")} onClick={updateJobFilter}>( ALL )</li>
+          <li id={"exp-swe"} className={"tab exp-tab " + (jobFilter == "swe" ? "tab-active" : "")} onClick={updateJobFilter}>( SWE )</li> 
+          <li id={"exp-design"} className={"tab exp-tab " + (jobFilter == "design" ? "tab-active" : "")} onClick={updateJobFilter}>( DESIGN )</li>
+        </ul>
+        ) : "" }
+        <div className={"job-list" + (filterChange ? " filter-trans " : "") + (isMobile ? " mobile" : "")}>
+          { data.jobs.map((job) =>
+            <Job key={job.id} id={job.id} type={job.type} company={job.company.toUpperCase()} title={job.title.toUpperCase()}  start={job.start} end={job.end} 
+            desc={job.desc} onClick={focusJob} focus={jobFocus} filter={jobFilter} isMobile={isMobile} />)
+          }
+        </div>
       </div>
-    </div>
     </div>
   );
 }

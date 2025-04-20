@@ -1,5 +1,5 @@
 .about-subtext {
     font: var(--p);
     color: var(--gray0);
-    text-align: left;
+    width: 100%;
 }
