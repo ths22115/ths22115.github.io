@@ -188,7 +188,7 @@
     .port-container.mobile {
         justify-content: flex-start;
         flex-direction: column;
-        width: 19rem;
+        width: 75%;
         padding: 2.25rem 2.25rem 2.25rem 0;
         overflow-y: hidden;
     }
@@ -201,9 +201,6 @@
         font: var(--p2);
         color: var(--gray30);
         font-weight: normal;
-        /* padding-left: 2.5rem; */
-        /* position: fixed; */
-        /* margin-top: 2.25rem; */
         column-gap: .5rem;
     }
 
@@ -237,6 +234,11 @@
         min-width: 0;
     }
 
+    .project-desc {
+        width: 100%;
+        max-width: none;
+    }
+
     .project-img {
         margin-bottom: .25rem;
     }
@@ -256,4 +258,11 @@
         min-width: 0;
         margin-bottom: .125rem;
     }
+}
+
+@media screen and (max-width: 330px) {
+    .port-container.mobile {
+        width: 70%;
+    }
+    
 }

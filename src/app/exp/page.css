@@ -47,10 +47,7 @@ transition: .4s;
     background: rgba(0, 0, 0, .95);
     scale: 1.02; 
 }
-.resume.mobile {
-    width: 19rem;
-    padding: 2.25rem 2.25rem 2.25rem 0;
-}
+
 
 .job-list {
     height: fit-content;
@@ -74,13 +71,7 @@ transition: .4s;
 .filter-trans {
     opacity: 0;
 }
-.job-list.mobile {
-    row-gap: 2rem;
-    margin-top: .5rem;
-    /* margin-bottom: .5rem; */
-    padding-bottom: 15rem;
-    overflow-y: scroll;
-}
+
 
 .job {
     width: 100%;
@@ -103,10 +94,6 @@ transition: .4s;
 .job-visible {
 
 }
-.job.mobile {
-    text-align: left;
-}
-
 
 .job-company {
     font: var(--p);
@@ -115,9 +102,6 @@ transition: .4s;
     margin-bottom: -.25rem;
     /* line-height: 1; */
     /* font-weight: bold; */
-}
-.job-company.mobile {
-    font-size: 1.75rem;
 }
 
 .job-preview {
@@ -225,7 +209,9 @@ transition: .4s;
 }
 
 @media screen and (max-width: 768px) {
-    .resume {
+    .resume.mobile {
+        width: 75%;
+        padding: 2.25rem 2.25rem 2.25rem 0;
         overflow-y: hidden;
         align-items: flex-start;
     }
@@ -244,13 +230,18 @@ transition: .4s;
         column-gap: .5rem;
     }
 
-    .job-list {
+    .job-list.mobile {
         width: 100%;
+        row-gap: 2rem;
+        margin-top: .5rem;
         padding: 0;
+        padding-bottom: 15rem;
+        overflow-y: scroll;
     }
 
     .job {
         max-height: none;
+        text-align: left;
     }
 
     .job-company {
@@ -258,6 +249,7 @@ transition: .4s;
         line-height: 100%;
         margin-bottom: .25rem;
     }
+
     .job-preview {
         flex-direction: column;
         align-items: flex-start;
@@ -272,4 +264,11 @@ transition: .4s;
     .job-desc {
         align-items: flex-start;
     }
+}
+
+@media screen and (max-width: 330px) {
+    .resume.mobile {
+        width: 68%;
+    }
+    
 }

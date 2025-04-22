@@ -192,7 +192,7 @@ opacity: 1;
     font: var(--p);
     color: var(--gray30);
     font-weight: normal;
-    opacity: .4;
+    opacity: .65;
     list-style-type: none;
     transition: .5s;
     cursor: pointer;
@@ -202,6 +202,7 @@ opacity: 1;
 }
 .tab-active {
     color: var(--gray0);
+    text-shadow: 0 0 1.5px #00000085;
     opacity: 1;
     /* font-weight: bold; */
 }
@@ -214,6 +215,12 @@ opacity: 1;
     font-weight: normal;
     padding-left: 2.5rem;
     /* margin-top: 1rem; */
+}
+
+@media screen and (max-height: 768) {
+    .tab {
+        font-size: 1.25rem;
+    }
 }
 
 @media screen and (max-height: 700px) {
