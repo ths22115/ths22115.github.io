@@ -23,6 +23,7 @@ export default function Portfolio() {
 
   const webdevData = WebDevData;
   const designData = DesignData;
+  const transDelay = 200
 
   function focusProject(e) {
     // if(e.target.className)
@@ -37,7 +38,7 @@ export default function Portfolio() {
     setTimeout(function() { 
       setPortFocus(portFocus == projectElem.id ? -1 : projectElem.id)
       setDisplayChange(false)
-    }, 200);
+    }, transDelay);
   }
 
   function focusPiece(pieceProps) {
@@ -63,7 +64,7 @@ export default function Portfolio() {
         setPieceDesc(pieceProps.desc)
       }
       setDetailsChange(false)
-    }, 200);
+    }, transDelay);
   }
 
   function updatePortSection(e) {
@@ -77,19 +78,19 @@ export default function Portfolio() {
       setPieceDate("")
       setPieceDesc("")
       setSectionChange(false)
-    }, 200);
+    }, transDelay);
   }
 
   if (isMobile) {
     return (
       <div>
         <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} isMobile={isMobile} updateIsMobile={setMobile}/>
-        <div className={"port-container mobile " + (sectionChange ? "filter-trans " : "")}>
+        <div className={"port-container mobile"}>
           <ul className="section-selection">
             <li id={"port-webdev"} className={"tab port-tab " + (portSection == "webdev" ? "tab-active" : "")} onClick={updatePortSection}>( UI/UX )</li> 
             <li id={"port-design"} className={"tab port-tab " + (portSection == "design" ? "tab-active" : "")} onClick={updatePortSection}>( GRAPHIC )</li>
           </ul>
-          <div className={"section project-section " + (portSection == "webdev" ? "section-active " : "") + (displayChange ? "filter-trans" : "")}>
+          <div className={"section project-section " + (portSection == "webdev" ? "section-active " : "")}>
           { webdevData.projects.flatMap(project =>
                 <div className="project-container">
                 <Project key={project.id} id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
@@ -110,37 +111,6 @@ export default function Portfolio() {
                 // including piece details in component?
           )}
           </div>
-          
-          {/* <div className={"display project-display " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
-            { webdevData.projects.flatMap(project =>
-                Array(project.imgCount).fill(null).map((_, index) => (
-                  <ProjectDisplay key={project.title + (index+1)} src={"/" + project.img + (index+1) + ".jpg"} project={project.id} focus={portFocus}/>
-                ))
-            )}
-          </div>
-          <div className={"details project-details " + (portSection == "webdev" ? "details-active" : "")}>
-            { webdevData.projects.map((project) =>
-                <Project key={project.id} id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
-                repo={project.repo}  date={project.date} desc={project.desc} onClick={focusProject} focus={portFocus} />
-              )}
-          </div> */}
-
-          {/* <div className={"display piece-display " + (portSection == "design" ? "display-active " : "")}>
-            { designData.pieces.map((piece) => 
-                <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title} type={piece.type} date={piece.date} 
-                desc={piece.desc} onClick={focusPiece} focus={portFocus} />
-            )}
-          </div>
-          <div className={"details piece-details " + (portSection == "design" ? "details-active " : "") + (detailsChange ? "filter-trans" : "")}>
-            <div className="piece-title">{pieceTitle}</div>
-            <div className={"expanded piece-expanded"}>
-                <div className="piece-subtitle">
-                    <div className="piece-type">{pieceType}</div>
-                    <div className="piece-date">{pieceDate}</div>
-                </div>
-                <div className="piece-desc">{pieceDesc}</div>
-            </div>
-          </div> */}
         </div>
     </div>
     )

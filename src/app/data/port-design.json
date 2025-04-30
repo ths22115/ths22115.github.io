@@ -8,10 +8,24 @@
             "desc": ""
         },
         {
-            "id": 2,
-            "title": "BSA Fashion Show Committee 2025 Reveal",
+            "id": 11,
+           "title": "BSA Eco-Futurism Fashion Show Main Graphic",
             "type": "Client Work",
-            "date": "JAN 2025",
+            "date": "FEB 2025",
+            "desc": ""
+        },
+        {
+            "id": 10,
+            "title": "BSA Eco-Futurism Fashion Show Alternate Graphic",
+            "type": "Client Work",
+            "date": "FEB 2025",
+            "desc": ""
+        },
+        {
+            "id": 12,
+            "title": "BSA Eco-Futurism Fashion Show Main Graphic (Landscape)",
+            "type": "Client Work",
+            "date": "FEB 2025",
             "desc": ""
         },
         {
@@ -22,7 +36,22 @@
             "desc": ""
         },
         {
+            "id": 2,
+            "title": "BSA Fashion Show Committee 2025 Reveal",
+            "type": "Client Work",
+            "date": "JAN 2025",
+            "desc": ""
+        },
+        
+        {
             "id": 7,
+            "title": "BSA Fashion Show Committee 2025 Reveal",
+            "type": "Client Work",
+            "date": "NOV 2024",
+            "desc": ""
+        },
+        {
+            "id": 9,
             "title": "BSA Fashion Show Committee 2025 Reveal",
             "type": "Client Work",
             "date": "NOV 2024",
@@ -33,13 +62,6 @@
             "title": "'Get Out The Vote' Poster",
             "type": "Graphic Design Coursework",
             "date": "SEPT 2024",
-            "desc": ""
-        },
-        {
-            "id": 9,
-            "title": "BSA Fashion Show Committee 2025 Reveal",
-            "type": "Client Work",
-            "date": "NOV 2024",
             "desc": ""
         }
     ]
