@@ -11,7 +11,7 @@ const [isMobile, setMobile] = useState(false);
       <Skeleton page={'about'} isMobile={isMobile} updateIsMobile={setMobile} />
       <div className="text about-text">
         <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
-          20 y/o nothern VA born DE resident.
+          20-year-old Northern Virginia native based in Greater Philadelphia.
           </div>
         <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
           {/* {isMobile ? "LOL" : "Third year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation."} */}
