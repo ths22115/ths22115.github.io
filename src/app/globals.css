@@ -179,6 +179,14 @@ a {
 .hyperlink-arrow {
   font-size: .5rem;
   padding-left: .1rem;
+  z-index: 20;
+}
+
+.footer {
+  position: absolute;
+  bottom: 1.5rem;
+  font-size: .65rem;
+  opacity: .75;
 }
 
 @media screen and (max-width: 1024px) {
