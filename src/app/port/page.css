@@ -26,6 +26,7 @@
 }
 
 .details {
+    position: fixed;
     height: fit-content;
     min-height: 100svh;
     width: max-content;
@@ -59,15 +60,13 @@
     row-gap: 2rem;
     padding: 2rem 0;
     transition: .2s ease-in-out;
-    /* background-color: aqua; */
-    /* overflow-y: scroll; */
-    
+    margin-right: 25rem;
 }
-.project-display {  
+/* .project-display {  
 }
 .piece-display {  
     margin-right: 25rem;
-}
+} */
 .display:not(.display-active) {
     display: none;
     opacity: 0;
@@ -182,6 +181,25 @@
 }
 .piece-fade {
     opacity: .6;
+}
+
+@media screen and (max-width: 1250px) {
+    html {
+        font-size: 14px;
+    }
+
+    .display {
+        width: 38%;
+        margin-right: 25rem;
+    }
+}
+
+@media screen and (max-width: 1055px) {
+    .display {
+        width: 30vw;
+        margin-right: 23.5rem;
+        margin-right: 34vw;
+    }
 }
 
 @media screen and (max-width: 768px) {

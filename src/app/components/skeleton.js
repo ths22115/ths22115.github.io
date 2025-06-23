@@ -86,6 +86,9 @@ export default function Skeleton(props) {
 			<Navbar page={props.page} isMobile={props.isMobile} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} 
 			portSection={props.portSection} updatePortSection={props.updatePortSection} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
 			<Mark ref={markRef} page={props.page} size={markWidth} isMobile={props.isMobile} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
+			{ !props.isMobile ? (
+			<div className={"footer" + (props.page == "port" ? " footer-port" : "")}>&copy; Miles Mckinley Thomas. All rights reserved.</div>
+			) : ""}
 		</div>
 	);
 }
