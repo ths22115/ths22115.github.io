@@ -3,6 +3,15 @@
         {
             "id": 0,
             "type": "swe",
+            "company": "Continental Finance",
+            "title": "Software Development Intern",
+            "start": "JUN 2025",
+            "end": "AUG 2025",
+            "desc": "Developed a full-stack internal dashboard using React, Node.js, TailwindCSS, and .NET/C# to provide near real-time monitoring and management of 10K+ daily business events across 100+ workflows, reducing intervention time by over 85% with over 4x faster execution.<br />Led the design of high-fidelity Figma mockups for multiple end-to-end workflows, shaping the frontend using iterative methodology to ensure user-centric, intuitive experiences, streamlining engineering handoff, and reducing frontend implementation time by 15%.<br />Collaborated cross-functionally with senior engineers, QA analysts, and business analysts to deliver 8 features across 3 two-week scrum-agile sprints in Azure DevOps, delivering high-quality releases with consistently minimal post-deployment issues."
+        },
+        {
+            "id": 1,
+            "type": "swe",
             "company": "Capital One",
             "title": "Software Engineering Intern",
             "start": "MAY 2024",
@@ -10,7 +19,7 @@
             "desc": "Designed, developed, and deployed a fully documented AWS Lambda API to deliver cloud maturity metrics for all 30+ cloud infrastructure systems used at Capital One, to be adopted by over 11,000 software engineers organized in over 2,000 agile teams.<br />Collaborated with associate and senior engineers in a scrum-based agile environment, leveraging JIRA for issue tracking and sprint management, Python for software implementation, GraphQL for complex database queries, and Jenkins for seamless deployment.<br />Utilized the Pytest framework to implement and execute over 50 unit tests designed with both black-box and white-box testing methodologies to validate API functionality and robustness, providing over 90% statement coverage comprehensively."
         },
         {
-            "id": 1,
+            "id": 2,
             "type": "swe",
             "company": "Rensselaer Union",
             "title": "System Administrator",
@@ -19,7 +28,7 @@
             "desc": "Overseeing the operations of the Rensselaer Student Union's IT infrastructure, including Linux servers, Windows machines, and in-house solutions, enabling over 250 full-time and student employees.<br />Maintaining the Rensselaer Student Union’s club management system, utilized by over 200 various student groups and organizations."
         },
         {
-            "id": 2,
+            "id": 3,
             "type": "design",
             "company": "Samoth",
             "title": "Founder, Executive Director",
@@ -28,7 +37,7 @@
             "desc": "Founded a 20+ member creative media collective, overseeing the end-to-end production of plot-driven photo and video projects, from concept development through final delivery.<br />Hosting and maintaining portfolio website designed utilizing Figma and built using HTML/CSS and Javascript, dynamically showcasing 20+ visual deliverables.<br />Directed 3 cross-functional project teams in integrating fashion, photography, videography, and audio design to craft emotionally resonant and argumentatively impactful media.<br />Managing all operational aspects, including brand identity development, team onboarding, project scheduling, and comprehensive documentation, ensuring cohesive workflow and creative consistency."
         },
         {
-            "id": 3,
+            "id": 4,
             "type": "design",
             "company": "RPI BSA Fashion",
             "title": "Graphic Designer",
