@@ -15,11 +15,11 @@ const [isMobile, setMobile] = useState(false);
           </div>
         <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
           {/* {isMobile ? "LOL" : "Third year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation."} */}
-          Third year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation. 
+          Fourth year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation. 
         </div>
         <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
-          Pursing a B.S. of Computer Science with concentrations in 
-          Information Technology & Web Science, Visualization & Graphics, and Graphic Design.
+          Pursing a B.S. in Computer Science with minors in 
+          Information Technology & Web Science and Graphic Design.
         </div>
         <div className={"subtext about-subtext" + isMobile ? " mobile" : ""}>
           Passionate UI/UX designer, web developer, creative, soccer player, and Manchester United fan.
