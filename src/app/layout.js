@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from 'next/script';
+import RouteTransition from './components/RouteTransition';
 
 export const metadata = {
   title: "MIUS THOMAS",
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {/* <Script src="https://unpkg.com/react-scan/dist/auto.global.js" /> */}
-        {children}
+        <RouteTransition>
+          {children}
+        </RouteTransition>
       </body>
     </html>
   );
