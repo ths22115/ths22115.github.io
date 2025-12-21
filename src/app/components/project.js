@@ -24,6 +24,7 @@ export default function Project(props) {
         <div className="project-company" onClick={props.onClick}>{props.title}</div>
         <div className={"expanded project-expanded " + (isFocused() || props.isMobile ? "project-expanded-visible" : "")}>
             <div className="project-subtitle">
+              <div className="project-date">{props.date}</div>
                 <div className="project-type">
                    {props.link != "" ? 
                         <a className={"hyperlink"} target="_blank" href={props.link}>{props.type}<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a>
@@ -31,7 +32,7 @@ export default function Project(props) {
                    } 
                 </div>
                 {props.repo != "" && !props.isMobile ? <div className="project-repo"><a className={"hyperlink"} href={props.repo}>GITHUB REPO<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a></div> : ""}
-                <div className="project-date">{props.date}</div>
+                
             </div>
             <div className="project-desc">
                 {
