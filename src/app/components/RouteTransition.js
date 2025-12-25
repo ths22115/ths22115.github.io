@@ -43,9 +43,7 @@ export default function RouteTransition({ children }) {
               </div>
           </div>
       )}
-      <div>
-        {children}
-      </div>
+      {children}
     </>
   )
 }
