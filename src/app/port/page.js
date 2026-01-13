@@ -91,9 +91,9 @@ export default function Portfolio() {
             <li id={"port-design"} className={"tab port-tab " + (portSection == "design" ? "tab-active" : "")} onClick={updatePortSection}>( GRAPHIC )</li>
           </ul>
           <div className={"section project-section " + (portSection == "webdev" ? "section-active " : "")}>
-          { webdevData.projects.flatMap(project =>
-                <div className="project-container">
-                <Project key={project.id} id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
+          { webdevData.projects.map(project =>
+                <div key={project.id} className="project-container">
+                <Project id={project.id} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 
                 repo={project.repo}  date={project.date} desc={project.desc} onClick={focusProject} focus={portFocus} isMobile={isMobile} />
                 { Array(project.imgCount).fill(null).map((_, index) => (
                   <ProjectDisplay key={project.title + (index+1)} src={"/" + project.img + (index+1) + ".jpg"} project={project.id} 

@@ -1,48 +1,59 @@
 {
-    "projects": [
-        {
-            "id": 0,
-            "img": "samoth",
-            "imgCount": 3,
-            "title": "Samoth",
-            "type": "Portfolio Website",
-            "link": "https://samoth.us",
-            "repo": "https://github.com/samothMedia/samothSite",
-            "date": "AUG 2024",
-            "desc": "Designed and developed a portfolio site for Samoth, providing an interactive gallery to experience Samoth’s various visual project deliverables, garnering roughly 500 active users in one year."
-        },
-        {
-            "id": 1,
-            "img": "finder",
-            "imgCount": 8,
-            "title": "Finder",
-            "type": "Web Application",
-            "link": "https://finder.eastus.cloudapp.azure.com/finder/",
-            "repo": "",
-            "date": "DEC 2024",
-            "desc": "Engineered Finder, a lost-and-found web application for RPI, collaborating with 4 peers to implement secure user authentication, automated item-matching algorithms, and a responsive UI to be utilized by 9,000+ students, faculty, and staff."
-        },
-        {
-            "id": 2,
-            "img": "berleFarm",
-            "imgCount": 3,
-            "title": "Berle Farm",
-            "type": "UX Study",
-            "link": "https://docs.google.com/document/d/1Unr9Xl6fputrr_ItA9wSKNImhZ_nvs3Snj6Y3FT-JP8/edit?usp=sharing",
-            "repo": "",
-            "date": "APR 2024",
-            "desc": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, delivering a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders." 
-        },
-        {
-            "id": 3,
-            "img": "hackRPI-X",
-            "imgCount": 4,
-            "title": "HACKRPI X",
-            "type": "Web Application",
-            "link": "",
-            "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
-            "date": "NOV 2023",
-            "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
-        }
+  "projects": [
+      {
+        "id": 0,
+        "img": "cfc",
+        "imgCount": 3,
+        "title": "CFC Event Manager",
+        "type": "Web Application",
+        "link": "",
+        "repo": "",
+        "date": "AUG 2025",
+        "desc": "Developed a fullstack internal dashboard using React, Node.js, TailwindCSS, and C#/.NET, seamlessly integrating frontend and backend systems to provide near real-time monitoring and management of 10K+ daily business events across 100+ operational processes, significantly reducing manual intervention.<br />Led the design of high-fidelity Figma mockups for multiple end-to-end workflows, shaping the frontend using an iterative methodology to ensure user-centric, intuitive experiences, streamlining engineering handoff and reducing frontend implementation time by 15%."
+      },
+      {
+          "id": 1,
+          "img": "samoth",
+          "imgCount": 3,
+          "title": "Samoth",
+          "type": "Portfolio Website",
+          "link": "https://samoth.us",
+          "repo": "https://github.com/samothMedia/samothSite",
+          "date": "AUG 2024",
+          "desc": "Designed and developed a portfolio site for Samoth, providing an interactive gallery to experience Samoth’s various visual project deliverables, garnering roughly 500 active users in one year."
+      },
+      {
+          "id": 2,
+          "img": "finder",
+          "imgCount": 8,
+          "title": "Finder",
+          "type": "Web Application",
+          "link": "https://finder.eastus.cloudapp.azure.com/finder/",
+          "repo": "",
+          "date": "DEC 2024",
+          "desc": "Engineered Finder, a lost-and-found web application for RPI, collaborating with 4 peers to implement secure user authentication, automated item-matching algorithms, and a responsive UI to be utilized by 9,000+ students, faculty, and staff."
+      },
+      {
+          "id": 3,
+          "img": "berleFarm",
+          "imgCount": 3,
+          "title": "Berle Farm",
+          "type": "UX Study",
+          "link": "https://docs.google.com/document/d/1Unr9Xl6fputrr_ItA9wSKNImhZ_nvs3Snj6Y3FT-JP8/edit?usp=sharing",
+          "repo": "",
+          "date": "APR 2024",
+          "desc": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, delivering a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders." 
+      },
+      {
+          "id": 4,
+          "img": "hackRPI-X",
+          "imgCount": 4,
+          "title": "HACKRPI X",
+          "type": "Web Application",
+          "link": "",
+          "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
+          "date": "NOV 2023",
+          "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
+      }
     ]
   }
