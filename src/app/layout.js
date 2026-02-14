@@ -1,6 +1,6 @@
 import "./globals.css";
 import Script from 'next/script';
-import RouteTransition from './components/RouteTransition';
+import RouteTransition from './components/route-trans';
 
 export const metadata = {
   title: "MIUS THOMAS",

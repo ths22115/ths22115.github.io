@@ -5,7 +5,6 @@ import Skeleton from '../components/skeleton';
 
 export default function Contact() {
   const [isMobile, setMobile] = useState(false);
-
   return (
     <div>
     <Skeleton page={'contact'} isMobile={isMobile} updateIsMobile={setMobile} />

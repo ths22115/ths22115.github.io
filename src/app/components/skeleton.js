@@ -66,7 +66,7 @@ export default function Skeleton(props) {
 		}
 
 		opacitySpikeTimer();
-	}, [props.isMobile, props.page, markHeight, markWidth]);
+	}, [props, markHeight, markWidth]);
 
 	return (
 		<div className={"skeleton" + (props.isMobile ? " mobile nonlanding" : "") }>

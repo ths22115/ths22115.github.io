@@ -13,15 +13,12 @@
   pointer-events: none;
 }
 
-.route-transition-overlay.fade-out {
-  animation: fadeOut 0.3s ease-in-out;
+.route-transition-overlay.mobile {
+  background-color: #8f8f8f;
 }
 
-.route-transition-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.route-transition-overlay.fade-out {
+  animation: fadeOut 0.3s ease-in-out;
 }
 
 .trans-wordmark {
@@ -32,38 +29,10 @@
   mix-blend-mode: overlay;
   /* object-fit: contain; */
 }
-
-.route-transition-spinner {
-  width: 50px;
-  height: 50px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.trans-wordmark.mobile {
+  height: auto;
+  width: 60%;
+  z-index: 15;
 }
 
 @keyframes tv-nosignal {
@@ -82,6 +51,7 @@
 	opacity: 1;
 	overflow: hidden;
 	z-index: 100;
+  /* background-color: #8f8f8f; */
 }
 .trans-noise-wrapper::before {
 	content: '';
