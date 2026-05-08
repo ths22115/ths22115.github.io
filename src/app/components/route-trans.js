@@ -6,9 +6,11 @@ import Image from 'next/image'
 
 export default function RouteTransition({ children }) {
   const pathname = usePathname()
-  const [isTransitioning, setIsTransitioning] = useState(true)
+  const [isTransitioning, setIsTransitioning] = useState(false)
   const prevPathnameRef = useRef(pathname)
   const [isMobile, setIsMobile] = useState(true)
+  const transitionDuration = 400
+  const mobileTransitionDuration = 800
 
   useEffect(() => {
     if (window.innerWidth <= 768) {
@@ -25,7 +27,7 @@ export default function RouteTransition({ children }) {
       // hide transition after 800ms
       const hideTimer = setTimeout(() => {
         setIsTransitioning(false)
-      }, 400)
+      }, isMobile ? mobileTransitionDuration : transitionDuration)
 
       return () => {
         clearTimeout(hideTimer)
@@ -41,11 +43,14 @@ export default function RouteTransition({ children }) {
               <div className="trans-noise-wrapper"></div>
               <div className={"trans-scanlines"}></div>
               <div className={"trans-noise"}></div>
-              <Image src="/miusWordmarkBlack.png" alt="Mius Thomas Logo" width={900} height={923} className="trans-wordmark" />
+              <Image src="/miusWordmarkBlack.svg" alt="Mius Thomas Logo" width={900} height={923} className="trans-wordmark" />
           </div>
         ) : (
           <div className={"route-transition-overlay mobile"}>
+            <div className={"trans-noise-wrapper mobile"}></div>
             <div className={"trans-scanlines mobile"}></div>
+            <div className={"trans-noise mobile"}></div>
+            <div className={"trans-noise mobile"}></div>
             <div className={"trans-noise mobile"}></div>
             <Image src="/miusWordmarkBlack.svg" alt="Mius Thomas Logo" width={900} height={923} className="trans-wordmark mobile" />
           </div>
