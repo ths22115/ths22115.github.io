@@ -108,7 +108,8 @@ a {
   opacity: .18;
   transform: translate(0, 0);
   pointer-events: all;
-  transition: opacity 1s ease, scale 1s ease;
+  transition: opacity .6s ease-in-out, scale .6s ease-in-out, filter .6s ease;
+  filter: invert(0);
   mix-blend-mode: overlay;
   z-index: 5;
 }
@@ -249,3 +250,21 @@ a {
   }
 }
 
+.mark.static-off {
+  animation: none;
+  filter: invert(1);
+  mix-blend-mode: difference;
+  z-index: 500;
+  opacity: 1;
+  pointer-events: none;
+  top: unset;
+  right: unset;
+  left: -22rem;
+  bottom: -17.1rem;
+  scale: unset;
+}
+
+.mark.static-off.mark-about {
+  filter: invert(.25);
+  opacity: .5;
+}

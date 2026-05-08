@@ -7,6 +7,7 @@ import ProjectDisplay from '../components/project-display';
 import Piece from '../components/piece';
 import WebDevData from '../data/port-webdev.json'
 import DesignData from '../data/port-design.json'
+import { useMobile } from "../contexts/mobile-context";
 
 export default function Portfolio() {
   const [portFocus, setPortFocus] = useState(-1);
@@ -14,7 +15,7 @@ export default function Portfolio() {
   const [sectionChange, setSectionChange] = useState(false);
   const [displayChange, setDisplayChange] = useState(false);
   const [detailsChange, setDetailsChange] = useState(false);
-  const [isMobile, setMobile] = useState(false);
+  const { isMobile } = useMobile();
 
   const [pieceTitle, setPieceTitle] = useState("");
   const [pieceType, setPieceType] = useState("");
@@ -84,7 +85,7 @@ export default function Portfolio() {
   if (isMobile) {
     return (
       <div>
-        <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} isMobile={isMobile} updateIsMobile={setMobile}/>
+        <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} />
         <div className={"port-container mobile"}>
           <ul className="section-selection">
             <li id={"port-webdev"} className={"tab port-tab " + (portSection == "webdev" ? "tab-active" : "")} onClick={updatePortSection}>( UI/UX )</li> 
@@ -118,7 +119,7 @@ export default function Portfolio() {
  
   return (
     <div>
-    <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} isMobile={isMobile} updateIsMobile={setMobile}/>
+    <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} />
     <div className={"port-container " + (sectionChange ? "filter-trans " : "") + (isMobile ? "mobile" : "")}>
       <div className={"display project-display " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
         { webdevData.projects.flatMap(project =>

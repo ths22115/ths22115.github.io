@@ -12,7 +12,6 @@
     column-gap: .25rem;
     overflow-y: scroll;
     padding-right: 5rem;
-    z-index: 10;
     transition: opacity .2s ease-in-out;
     column-gap: 3.75rem;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -155,6 +154,8 @@
 
 .project-img, .piece-img {
     width: 100%;
+    position: relative;
+    z-index: 999;
     /* aspect-ratio: 1; */
     /* transition: .5s; */
     /* display: none; */

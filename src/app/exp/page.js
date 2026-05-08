@@ -4,6 +4,7 @@ import "./page.css";
 import Skeleton from '../components/skeleton';
 import Job from '../components/job';
 import ExpData from '../data/exp.json'
+import { useMobile } from "../contexts/mobile-context";
 // import getData from '@/lib/getdata'
 // import { usePathname } from 'next/navigation'
 
@@ -11,7 +12,7 @@ export default function Experience() {
   const [jobFocus, setJobFocus] = useState(-1);
   const [jobFilter, setJobFilter] = useState("all");
   const [filterChange, setfilterChange] = useState(false);
-  const [isMobile, setMobile] = useState(false);
+  const { isMobile } = useMobile();
   
   const data = ExpData;
   console.log(data)
@@ -44,7 +45,7 @@ export default function Experience() {
 
   return (
     <div>
-      <Skeleton page={'exp'} expFocus={jobFocus} expFilter={jobFilter} updateExpFilter={updateJobFilter} isMobile={isMobile} updateIsMobile={setMobile} />
+      <Skeleton page={'exp'} expFocus={jobFocus} expFilter={jobFilter} updateExpFilter={updateJobFilter} />
       <div className={"resume " + (isMobile ? "mobile" : "")}>
         { isMobile ? (
         <ul className="job-filter">

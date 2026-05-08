@@ -1,13 +1,12 @@
 'use client'
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import "./page.css";
 import Skeleton from '../components/skeleton';
 
 export default function Contact() {
-  const [isMobile, setMobile] = useState(false);
   return (
     <div>
-    <Skeleton page={'contact'} isMobile={isMobile} updateIsMobile={setMobile} />
+    <Skeleton page={'contact'} />
     <div className="text contact-text">
         <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"mailto:milesmckinleythomas@gmail.com"}>EMAIL<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a></div>
         <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"https://www.linkedin.com/in/mius-thomas/"}>LINKEDIN<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a></div>

@@ -2,15 +2,18 @@
 import React from "react";
 import Link from 'next/link';
 import "./navbar.css";
-import { useState } from "react";
+import { useStaticEffects } from "../contexts/static-effects-context";
+import { useMobile } from "../contexts/mobile-context";
 
 const Navbar = (props) => {
-    const [isStatic, setIsStatic] = useState(true)
+    const { isStaticEnabled, toggleStaticEffects } = useStaticEffects();
+    const { isMobile } = useMobile();
+
     function toggleStatic() {
-        setIsStatic(!isStatic)
+        toggleStaticEffects();
     }
 
-    if (props.isMobile 
+    if (isMobile 
         // && props.page != "landing"
     ) {
         const pageDisplayName = {
@@ -40,10 +43,10 @@ const Navbar = (props) => {
                         <div className="nav-mobile-links">
                             <div className="nav-mobile-rows">
                                 <div 
-                                  className={`static-toggle mobile ${isStatic ? "static-on" : ""}`}
+                                  className={`static-toggle mobile ${isStaticEnabled ? "static-on" : ""}`}
                                   onClick={toggleStatic}
                                 >
-                                  ( {isStatic ? "STATIC ON" : "STATIC OFF"} )
+                                  ( {isStaticEnabled ? "STATIC ON" : "STATIC OFF"} )
                                 </div>
                             </div>
                             <div className="nav-mobile-rows">
@@ -69,7 +72,7 @@ const Navbar = (props) => {
         )
     }
     return (
-        <div className={"nav" + (props.isMobile ? " mobile" : "")}>
+        <div className={"nav" + (isMobile ? " mobile" : "")}>
             <ul className="nav-list">
                 <li className={"nav-button " + (props.page == 'landing' ? 'active' : '')}>
                     <Link href={'/'}>HOME</Link>

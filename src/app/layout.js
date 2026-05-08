@@ -1,6 +1,9 @@
 import "./globals.css";
 import Script from 'next/script';
 import RouteTransition from './components/route-trans';
+import GlobalMark from "./components/global-mark";
+import { StaticEffectsProvider } from "./contexts/static-effects-context";
+import { MobileProvider } from "./contexts/mobile-context";
 
 export const metadata = {
   title: "MIUS THOMAS",
@@ -15,9 +18,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {/* <Script src="https://unpkg.com/react-scan/dist/auto.global.js" /> */}
-        <RouteTransition>
-          {children}
-        </RouteTransition>
+        <MobileProvider>
+          <StaticEffectsProvider>
+            <RouteTransition>
+              {children}
+            </RouteTransition>
+            <GlobalMark />
+          </StaticEffectsProvider>
+        </MobileProvider>
       </body>
     </html>
   );
