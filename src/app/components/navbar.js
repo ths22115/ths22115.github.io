@@ -2,8 +2,14 @@
 import React from "react";
 import Link from 'next/link';
 import "./navbar.css";
+import { useState } from "react";
 
 const Navbar = (props) => {
+    const [isStatic, setIsStatic] = useState(true)
+    function toggleStatic() {
+        setIsStatic(!isStatic)
+    }
+
     if (props.isMobile 
         // && props.page != "landing"
     ) {
@@ -30,27 +36,34 @@ const Navbar = (props) => {
                     <div className="title mius mobile">
                         <Link href={'/'}>MIUS THOMAS</Link>
                     </div>
-                    {/* { props.page == "landing" ? ( */}
-                        <div className="nav-mobile-grid">
-                            <div className="nav-mobile-links">
-                                <div className="nav-mobile-rows">
-                                    { Object.keys(pageDisplayName).map((page, index) =>
-                                    index < 2 &&
-                                    <div key={index} className={"nav-button mobile mius-var" + (currPage == pageDisplayName[page] ? " active" : "")}>
-                                        <Link href={`/${page == "landing" ? "" : page}`}>{pageDisplayName[page]}</Link>
-                                    </div>
-                                    )}
-                                </div>
-                                <div className="nav-mobile-rows">
-                                    { Object.keys(pageDisplayName).map((page, index) =>
-                                    index >= 2 &&
-                                    <div key={index} className={"nav-button mobile mius-var" + (currPage == pageDisplayName[page] ? " active" : "")}>
-                                        <Link href={`/${page == "landing" ? "" : page}`}>{pageDisplayName[page]}</Link>
-                                    </div>
-                                    )}
+                    <div className="nav-mobile-grid">
+                        <div className="nav-mobile-links">
+                            <div className="nav-mobile-rows">
+                                <div 
+                                  className={`static-toggle mobile ${isStatic ? "static-on" : ""}`}
+                                  onClick={toggleStatic}
+                                >
+                                  ( {isStatic ? "STATIC ON" : "STATIC OFF"} )
                                 </div>
                             </div>
+                            <div className="nav-mobile-rows">
+                                { Object.keys(pageDisplayName).map((page, index) =>
+                                index < 2 &&
+                                <div key={index} className={"nav-button mobile mius-var" + (currPage == pageDisplayName[page] ? " active" : "")}>
+                                    <Link href={`/${page == "landing" ? "" : page}`}>{pageDisplayName[page]}</Link>
+                                </div>
+                                )}
+                            </div>
+                            <div className="nav-mobile-rows">
+                                { Object.keys(pageDisplayName).map((page, index) =>
+                                index >= 2 &&
+                                <div key={index} className={"nav-button mobile mius-var" + (currPage == pageDisplayName[page] ? " active" : "")}>
+                                    <Link href={`/${page == "landing" ? "" : page}`}>{pageDisplayName[page]}</Link>
+                                </div>
+                                )}
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>         
         )
