@@ -45,7 +45,7 @@ export default function Experience() {
 
   return (
     <div>
-      <Skeleton page={'exp'} expFocus={jobFocus} expFilter={jobFilter} updateExpFilter={updateJobFilter} />
+      <Skeleton page={'exp'} />
       <div className={"resume " + (isMobile ? "mobile" : "")}>
         { isMobile ? (
         <ul className="job-filter">

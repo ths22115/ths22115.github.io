@@ -34,7 +34,7 @@ export default function GlobalMark() {
       return undefined;
     }
 
-    if (isMobile) {
+    if (isMobile || !isStaticEnabled) {
       markElement.style.left = "";
       markElement.style.top = "";
     } else {

@@ -26,8 +26,7 @@ export default function Skeleton(props) {
           ))
       )}
 
-			<Navbar page={props.page} expFilter={props.expFilter} updateExpFilter={props.updateExpFilter} 
-			portSection={props.portSection} updatePortSection={props.updatePortSection} focus={(props.page == 'exp' ? props.expFocus : props.portFocus)}/>
+			<Navbar page={props.page} />
 			{ !isMobile ? (
 			<div className={"footer" + (props.page == "port" ? " footer-port" : "")}>&copy; Miles Mckinley Thomas. All rights reserved.</div>
 			) : ""}

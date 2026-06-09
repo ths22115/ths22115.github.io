@@ -85,7 +85,7 @@ export default function Portfolio() {
   if (isMobile) {
     return (
       <div>
-        <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} />
+        <Skeleton page={"port"} />
         <div className={"port-container mobile"}>
           <ul className="section-selection">
             <li id={"port-webdev"} className={"tab port-tab " + (portSection == "webdev" ? "tab-active" : "")} onClick={updatePortSection}>( UI/UX )</li> 
@@ -119,7 +119,7 @@ export default function Portfolio() {
  
   return (
     <div>
-    <Skeleton page={"port"} portFocus={portFocus} portSection={portSection} updatePortSection={updatePortSection} />
+    <Skeleton page={"port"} />
     <div className={"port-container " + (sectionChange ? "filter-trans " : "") + (isMobile ? "mobile" : "")}>
       <div className={"display project-display " + (portSection == "webdev" ? "display-active " : "") + (displayChange ? "filter-trans" : "")}>
         { webdevData.projects.flatMap(project =>

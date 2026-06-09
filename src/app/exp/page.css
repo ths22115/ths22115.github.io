@@ -98,7 +98,7 @@ transition: .4s;
 .job-company {
     font: var(--p);
     font-size: 3rem;
-    color: var(--gray0);
+    color: var(--grayo);
     margin-bottom: -.25rem;
     /* line-height: 1; */
     /* font-weight: bold; */
@@ -129,7 +129,7 @@ transition: .4s;
 .job-title {
     font: var(--p2);
     /* font-size: 3rem; */
-    color: var(--gray0);
+    color: var(--grayo);
 }
 
 .job-desc {
@@ -210,8 +210,8 @@ transition: .4s;
 
 @media screen and (max-width: 768px) {
     .resume.mobile {
-        width: 75%;
-        padding: 2.25rem 2.25rem 2.25rem 0;
+        width: 73%;
+        padding: 2.25rem 1.875rem 2.25rem 0;
         overflow-y: hidden;
         align-items: flex-start;
     }
