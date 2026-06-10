@@ -211,17 +211,13 @@
       padding-right: 2rem;
     }
 
-    .project-details {
-      max-width: 15rem;
-    }
-
     .project-display {
       width: 32.5vw;
       margin-right: 18rem;
     }
 
     .piece-details, .project-details {
-      max-width: 14rem;
+      max-width: 100%;
     }
 
     .piece-display {
@@ -271,8 +267,8 @@
         row-gap: 2rem;
         overflow-x: hidden;
         overflow-y: scroll;
-        margin-top: .5rem;
-        padding-bottom: 15rem;
+        margin-top: .625rem;
+        padding-bottom: 7.5rem;
         transition: 
             height .2s ease-out,
             opacity .2s ease-in-out;

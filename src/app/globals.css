@@ -178,8 +178,8 @@ a {
 }
 
 .hyperlink-arrow {
-  font-size: .5rem;
-  padding-left: .1rem;
+  font-size: .625rem;
+  padding-left: .25rem;
   z-index: 20;
 }
 
