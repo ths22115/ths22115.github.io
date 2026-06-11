@@ -53,15 +53,11 @@ transition: .4s;
     height: fit-content;
     min-height: 100svh;
     width: max-content;
-    /* min-width: 450px; */
-    /* margin-right: 3rem; */
     display: flex;
     flex-direction: column;
     row-gap: 4rem;
-    /* overflow-x: hidden;
-    overflow-y: scroll; */
     padding: 2rem 0;
-    /* padding-left: 6.25rem; */
+    line-height: 1.5em;
     transition: 
         height 2s ease-out,
         opacity .2s ease-in-out;
@@ -100,8 +96,7 @@ transition: .4s;
     font-size: 3rem;
     color: var(--grayo);
     margin-bottom: -.25rem;
-    /* line-height: 1; */
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 
 .job-preview {
@@ -140,16 +135,16 @@ transition: .4s;
     height: max-content;
     width: 100%;
     max-width: 33rem;
-    margin-top: .4rem;
+    /* margin-top: .4rem; */
     opacity: 1;
     transition: 
         font-size .5s ease-in-out,
         /* height .5s ease-out, */
         opacity .3s ease-in-out .3s;
-    row-gap: .5rem;
+    row-gap: .625rem;
     /* background-color: aqua;
     opacity: .5; */
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
 }
 .job-desc:not(.job-desc-active) {
     transition: 
@@ -219,7 +214,6 @@ transition: .4s;
     .job-list.mobile {
         width: 100%;
         row-gap: 2rem;
-        margin-top: .5rem;
         padding: 0;
         padding-bottom: 15rem;
         overflow-y: scroll;
@@ -245,7 +239,7 @@ transition: .4s;
         width: max-content;
     }
     .job-date {
-        font-size: .75rem;
+        font-size: .875rem;
     }
     .job-desc {
         align-items: flex-start;

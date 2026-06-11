@@ -55,7 +55,7 @@
   font: var(--h2);
   color: var(--gray30);
   font-size: 1.125rem;
-  font-weight: normal;
+  font-weight: bold;
   opacity: .6;
   list-style-type: none;
   line-height: 1.5rem;

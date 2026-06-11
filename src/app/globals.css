@@ -26,8 +26,8 @@ html,
 body {
   width: 100vw;
   height: 100lvh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
+  overscroll-behavior: none;
   background-color: var(--bgrnd);
 }
 
@@ -103,7 +103,7 @@ a {
 } */
 
 .mark {
-  position: absolute;
+  position: fixed;
   bottom: -300px;
   right: -300px;
   opacity: .18;

@@ -87,6 +87,7 @@
 .project-company, .piece-title {
     font: var(--p);
     font-size: 3rem;
+    font-weight: bold;
     color: var(--grayo);
     margin-bottom: -.25rem;
     cursor: pointer;
@@ -243,7 +244,7 @@
         justify-content: flex-start;
         flex-direction: column;
         width: 75%;
-        padding: 2.25rem 2.25rem 2.25rem 0;
+        padding-right: 2.25rem;
         overflow-y: hidden;
     }
 
@@ -256,8 +257,7 @@
         row-gap: 2rem;
         overflow-x: hidden;
         overflow-y: scroll;
-        margin-top: .625rem;
-        padding-bottom: 7.5rem;
+        padding: 2.5rem 0;
         transition: 
             height .2s ease-out,
             opacity .2s ease-in-out;
