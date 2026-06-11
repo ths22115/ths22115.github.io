@@ -247,17 +247,6 @@
         overflow-y: hidden;
     }
 
-    .section-selection {
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        align-items: flex-start;
-        font: var(--p2);
-        color: var(--gray30);
-        font-weight: normal;
-        column-gap: .5rem;
-    }
-
     .section {
         height: fit-content;
         min-height: 100svh;

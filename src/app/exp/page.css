@@ -216,20 +216,6 @@ transition: .4s;
         align-items: flex-start;
     }
 
-    .job-filter {
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        align-items: flex-start;
-        font: var(--p2);
-        color: var(--gray30);
-        font-weight: normal;
-        /* padding-left: 2.5rem; */
-        /* position: fixed; */
-        /* margin-top: 2.25rem; */
-        column-gap: .5rem;
-    }
-
     .job-list.mobile {
         width: 100%;
         row-gap: 2rem;

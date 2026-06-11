@@ -8,14 +8,14 @@ import Piece from '../components/piece';
 import WebDevData from '../data/port-webdev.json'
 import DesignData from '../data/port-design.json'
 import { useMobile } from "../contexts/mobile-context";
+import { usePort } from "../contexts/port-context";
 
 export default function Portfolio() {
   const [portFocus, setPortFocus] = useState(-1);
-  const [portSection, setPortSection] = useState("webdev");
-  const [sectionChange, setSectionChange] = useState(false);
   const [displayChange, setDisplayChange] = useState(false);
   const [detailsChange, setDetailsChange] = useState(false);
   const { isMobile } = useMobile();
+  const { portSection, sectionChange } = usePort();
 
   const [pieceTitle, setPieceTitle] = useState("");
   const [pieceType, setPieceType] = useState("");
@@ -68,29 +68,19 @@ export default function Portfolio() {
     }, transDelay);
   }
 
-  function updatePortSection(e) {
-    // console.log(e.target) 
-    setSectionChange(true)
-    setTimeout(function() { 
-      setPortSection(e.target.id.split("-")[1])
-      setPortFocus(-1)
-      setPieceTitle("")
-      setPieceType("")
-      setPieceDate("")
-      setPieceDesc("")
-      setSectionChange(false)
-    }, transDelay);
-  }
+  useEffect(() => {
+    setPortFocus(-1);
+    setPieceTitle("");
+    setPieceType("");
+    setPieceDate("");
+    setPieceDesc("");
+  }, [portSection]);
 
   if (isMobile) {
     return (
       <div>
         <Skeleton page={"port"} />
         <div className={"port-container mobile"}>
-          <ul className="section-selection">
-            <li id={"port-webdev"} className={"tab port-tab " + (portSection == "webdev" ? "tab-active" : "")} onClick={updatePortSection}>( UI/UX )</li> 
-            <li id={"port-design"} className={"tab port-tab " + (portSection == "design" ? "tab-active" : "")} onClick={updatePortSection}>( GRAPHIC )</li>
-          </ul>
           <div className={"section project-section " + (portSection == "webdev" ? "section-active " : "") + (displayChange ? "filter-trans" : "")}>
           { webdevData.projects.map((project) => 
                 <Project key={project.id} id={project.id} img={project.img} imgCount={project.imgCount} title={project.title.toUpperCase()} type={project.type.toUpperCase()} link={project.link} 

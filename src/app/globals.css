@@ -25,9 +25,10 @@
 html,
 body {
   width: 100vw;
-  height: 100dvh;
+  height: 100lvh;
   overflow-x: hidden;
   overflow-y: hidden;
+  background-color: var(--bgrnd);
 }
 
 body {
@@ -202,7 +203,6 @@ a {
 @media screen and (max-width: 768px) {
   html {
     font-size: 14px;
-    background-color: #303030;
   }
 
   .text {
