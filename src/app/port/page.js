@@ -13,14 +13,8 @@ import { usePort } from "../contexts/port-context";
 export default function Portfolio() {
   const [portFocus, setPortFocus] = useState(-1);
   const [displayChange, setDisplayChange] = useState(false);
-  const [detailsChange, setDetailsChange] = useState(false);
   const { isMobile } = useMobile();
   const { portSection, sectionChange } = usePort();
-
-  const [pieceTitle, setPieceTitle] = useState("");
-  const [pieceType, setPieceType] = useState("");
-  const [pieceDate, setPieceDate] = useState("");
-  const [pieceDesc, setPieceDesc] = useState("");
 
   const webdevData = WebDevData;
   const designData = DesignData;
@@ -42,38 +36,8 @@ export default function Portfolio() {
     }, transDelay);
   }
 
-  function focusPiece(pieceProps) {
-    // console.log(piece)
-    console.log(pieceProps)
-    // while(projectElem.className.split(" ")[0] !== "project") {
-    //   projectElem = projectElem.parentElement
-    // }
-
-    setDetailsChange(true)
-    setTimeout(function() { 
-      if (portFocus == pieceProps.id) {
-        setPortFocus(-1)
-        setPieceTitle("")
-        setPieceType("")
-        setPieceDate("")
-        setPieceDesc("")
-      } else {
-        setPortFocus(pieceProps.id)
-        setPieceTitle(pieceProps.title)
-        setPieceType(pieceProps.type)
-        setPieceDate(pieceProps.date)
-        setPieceDesc(pieceProps.desc)
-      }
-      setDetailsChange(false)
-    }, transDelay);
-  }
-
   useEffect(() => {
     setPortFocus(-1);
-    setPieceTitle("");
-    setPieceType("");
-    setPieceDate("");
-    setPieceDesc("");
   }, [portSection]);
 
   if (isMobile) {
@@ -91,8 +55,7 @@ export default function Portfolio() {
           <div className={"section piece-section " + (portSection == "design" ? "section-active " : "") + (displayChange ? "filter-trans" : "")}>
           { designData.pieces.map((piece) => 
                 <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title.toUpperCase()} type={piece.type} date={piece.date} 
-                desc={piece.desc} onClick={focusPiece} focus={portFocus} isMobile={isMobile} />
-                // including piece details in component?
+                desc={piece.desc} isMobile={isMobile} />
           )}
           </div>
         </div>
@@ -120,18 +83,8 @@ export default function Portfolio() {
       <div className={"display piece-display " + (portSection == "design" ? "display-active " : "")}>
         { designData.pieces.map((piece) => 
             <Piece key={piece.id} id={piece.id} src={"/design" + piece.id + ".jpg"} title={piece.title} type={piece.type} date={piece.date} 
-            desc={piece.desc} onClick={focusPiece} focus={portFocus} />
+            desc={piece.desc} />
         )}
-      </div>
-      <div className={"details piece-details " + (portSection == "design" ? "details-active " : "") + (detailsChange ? "filter-trans" : "")}>
-        <div className="piece-title">{pieceTitle}</div>
-        <div className={"expanded piece-expanded"}>
-            <div className="piece-subtitle">
-                <div className="piece-type">{pieceType}</div>
-                <div className="piece-date">{pieceDate}</div>
-            </div>
-            <div className="piece-desc">{pieceDesc}</div>
-        </div>
       </div>
     </div>
     </div>

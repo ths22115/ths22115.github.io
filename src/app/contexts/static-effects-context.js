@@ -5,7 +5,7 @@ import React, { createContext, useContext, useMemo, useState } from "react";
 const StaticEffectsContext = createContext(null);
 
 export function StaticEffectsProvider({ children }) {
-  const [isStaticEnabled, setIsStaticEnabled] = useState(false);
+  const [isStaticEnabled, setIsStaticEnabled] = useState(true);
 
   const value = useMemo(
     () => ({

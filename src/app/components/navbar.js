@@ -6,6 +6,8 @@ import { usePort } from "../contexts/port-context";
 import { useExp } from "../contexts/exp-context";
 import Logotype from "./logotype";
 
+const pageStrings = ["landing", "about", "exp", "port", "contact", "port-details"];
+
 const pageDisplayName = {
   landing: "HOME",
   about: "ME",
@@ -51,7 +53,7 @@ const Navbar = ({ page }) => {
   }
 
   function getNestedNavState(pageKey) {
-    if (pageKey === "port") {
+    if (pageKey === "port" || pageKey === "port-details") {
       return { tabs: nestedNavTabs.port, activeTab: portSection, updateTab: updatePortSection };
     }
     if (pageKey === "exp") {
@@ -78,6 +80,7 @@ const Navbar = ({ page }) => {
                 "nav-link"
                 + (currPage == pageDisplayName[pageKey] ? " active" : "")
                 + (pageKey == "port" || pageKey == "exp" ? " nested-nav-link" : "")
+                + (pageKey == "port" && page === "port-details" ? " active" : "")
               }
             >
               <Link

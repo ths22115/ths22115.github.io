@@ -23,10 +23,37 @@
         },
         {
             "id": 12,
-            "title": "BSA Eco-Futurism Fashion Show Main Graphic (Landscape)",
+            "title": "BSA Eco-Futurism Fashion Show Event Graphic",
             "type": "Client Work",
             "date": "FEB 2025",
-            "desc": ""
+            "desc": "",
+            "background": "The BSA Eco-Futurism Fashion Show is a yearly event that showcases the work of the BSA Fashion Show Committee. The event is held in the spring and features a variety of fashion shows, including eco-friendly fashion, futurism fashion, and more.",
+            "process": "The process of creating the event graphic involved a lot of research into the BSA Eco-Futurism Fashion Show and the fashion show industry. I also looked at a lot of other event graphics to get a sense of what is possible.",
+            "processImages": [
+                  {
+                      "src": "/design10.jpg",
+                      "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
+                  },
+                  {
+                      "src": "/design4.jpg",
+                      "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
+                  },
+                  {
+                      "src": "/design12.jpg",
+                      "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
+                  }
+            ],
+            "result": "The result is a graphic that is both visually appealing and informative. It is a graphic that is both visually appealing and informative. It is a graphic that is both visually appealing and informative.",
+            "resultImages": [
+                {
+                    "src": "/design10.jpg",
+                    "alt": "BSA Eco-Futurism Fashion Show Alternate Event Graphic"
+                },
+                {
+                    "src": "/design12.jpg",
+                    "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
+                }
+            ]
         },
         {
             "id": 8,

@@ -292,7 +292,7 @@
     }
 
     .piece-img {
-        pointer-events: none;
+        cursor: pointer;
     }
     .piece-details {
         position: relative;

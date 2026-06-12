@@ -1,0 +1,135 @@
+.piece-page-container {
+  z-index: 999;
+  width: 70%;
+  height: 100svh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2.25rem 1.875rem 2.25rem 0;
+  overflow-y: auto;
+  color: var(--grayo);
+}
+
+.piece-back-link {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-bottom: 0.5rem;
+  font: var(--p2);
+  transition: opacity 0.2s ease-in-out;
+  z-index: 20;
+}
+
+.piece-back-link:hover {
+  opacity: 0.6;
+}
+
+.piece-page-container .piece-details {
+  position: relative;
+  /* padding-bottom: 2.25rem; */
+  width: 100%;
+  max-width: none;
+}
+
+.piece-expanded {
+  row-gap: 1rem;
+  padding-bottom: 2.25rem;
+  font-size: 1rem;
+  line-height: 1.625em;
+}
+
+.piece-page-img {
+  width: 100%;
+  max-width: none;
+  transition: 0.3s;
+}
+
+.piece-page-title {
+  font: var(--p);
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  min-width: 0;
+  max-width: none;
+}
+
+.piece-subtitle {
+  text-transform: uppercase;
+}
+
+.piece-header {
+  font: var(--p2);
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.piece-images {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 1rem;
+}
+
+.piece-image {
+  width: 100%;
+  max-width: none;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 331px) {
+  .piece-page-container {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .piece-page-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    column-gap: 3.75rem;
+    row-gap: 0;
+    padding: 5rem 5rem 2rem 0;
+  }
+
+  .piece-back-link {
+    position: fixed;
+    top: 5.5rem;
+    left: 2rem;
+    margin-bottom: 0;
+  }
+
+  .piece-page-img {
+    width: 32.5vw;
+    max-width: 32rem;
+  }
+
+  .piece-page-container .piece-details {
+    width: auto;
+    max-width: 20rem;
+  }
+
+  .piece-page-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 1056px) {
+  .piece-page-img {
+    width: 40%;
+  }
+
+  .piece-page-title {
+    font-size: 2.25rem;
+  }
+}
