@@ -9,8 +9,6 @@ export default function Piece(props) {
     id: props.id,
     title: props.title,
     type: props.type,
-    date: props.date,
-    desc: props.desc,
   };
 
   if (props.isMobile) {
@@ -19,12 +17,13 @@ export default function Piece(props) {
         <Link href={pieceHref}>
           <img
             id={props.id}
-            className="piece-img"
+            className="piece-img piece-gallery-img"
             src={props.src}
             alt={props.title}
           />
         </Link>
-        <PieceDetails piece={piece} />
+        <div className="piece-gallery-title">{piece.title}</div>
+        <div className="piece-gallery-type">{piece.type}</div>
       </div>
     );
   }
@@ -33,7 +32,7 @@ export default function Piece(props) {
     <Link href={pieceHref}>
       <img
         id={props.id}
-        className="piece-img"
+        className="piece-img piece-gallery-img"
         src={props.src}
         alt={props.title}
       />
