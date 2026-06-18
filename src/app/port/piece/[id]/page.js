@@ -2,11 +2,11 @@ import { notFound } from "next/navigation";
 import { getAllPieces, getPieceById, getAdjacentPieces } from "../../../lib/pieces";
 import PiecePage from "./piece-page";
 
-// export function generateStaticParams() {
-//   return getAllPieces().map((piece) => ({
-//     id: String(piece.id),
-//   }));
-// }
+export function generateStaticParams() {
+  return getAllPieces().map((piece) => ({
+    id: String(piece.id),
+  }));
+}
 
 export async function generateMetadata({ params }) {
   const { id } = await params;

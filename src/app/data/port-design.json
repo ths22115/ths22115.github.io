@@ -1,95 +1,55 @@
 {
-    "pieces": [
-        {
-            "id": 0,
-            "title": "Music Event Poster",
-            "type": "Graphic Design Coursework",
-            "date": "OCT 2024",
-            "desc": ""
-        },
-        {
-            "id": 11,
-           "title": "BSA Eco-Futurism Fashion Show Main Graphic",
-            "type": "Client Work",
-            "date": "FEB 2025",
-            "desc": ""
-        },
-        {
-            "id": 10,
-            "title": "BSA Eco-Futurism Fashion Show Alternate Graphic",
-            "type": "Client Work",
-            "date": "FEB 2025",
-            "desc": ""
-        },
-        {
-            "id": 12,
-            "title": "BSA Eco-Futurism Fashion Show Event Graphic",
-            "type": "Client Work",
-            "date": "FEB 2025",
-            "desc": "",
-            "background": "The BSA Eco-Futurism Fashion Show is a yearly event that showcases the work of the BSA Fashion Show Committee. The event is held in the spring and features a variety of fashion shows, including eco-friendly fashion, futurism fashion, and more.",
-            "process": "The process of creating the event graphic involved a lot of research into the BSA Eco-Futurism Fashion Show and the fashion show industry. I also looked at a lot of other event graphics to get a sense of what is possible.",
-            "processImages": [
-                  {
-                      "src": "/design10.jpg",
-                      "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
-                  },
-                  {
-                      "src": "/design4.jpg",
-                      "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
-                  },
-                  {
-                      "src": "/design12.jpg",
-                      "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
-                  }
-            ],
-            "result": "The result is a graphic that is both visually appealing and informative. It is a graphic that is both visually appealing and informative. It is a graphic that is both visually appealing and informative.",
-            "resultImages": [
-                {
-                    "src": "/design10.jpg",
-                    "alt": "BSA Eco-Futurism Fashion Show Alternate Event Graphic"
-                },
-                {
-                    "src": "/design12.jpg",
-                    "alt": "BSA Eco-Futurism Fashion Show Event Graphic"
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "title": "BSA Fashion Show Casting Call Poster",
-            "type": "Client Work",
-            "date": "Oct 2024",
-            "desc": ""
-        },
-        {
-            "id": 2,
-            "title": "BSA Fashion Show Committee 2025 Reveal",
-            "type": "Client Work",
-            "date": "JAN 2025",
-            "desc": ""
-        },
-        
-        {
-            "id": 7,
-            "title": "BSA Fashion Show Committee 2025 Reveal",
-            "type": "Client Work",
-            "date": "NOV 2024",
-            "desc": ""
-        },
-        {
-            "id": 9,
-            "title": "BSA Fashion Show Committee 2025 Reveal",
-            "type": "Client Work",
-            "date": "NOV 2024",
-            "desc": ""
-        },
-        {
-            "id": 4,
-            "title": "'Get Out The Vote' Poster",
-            "type": "Graphic Design Coursework",
-            "date": "SEPT 2024",
-            "desc": ""
-        }
-    ]
-  }
+  "pieces": [
+    {
+      "id": 0,
+      "title": "Rock Renaissance Event Poster",
+      "type": ["print"],
+      "date": "OCT 2024",
+      "thumbnail": "/design0.jpg",
+      "background": "A poster design created for a graphic design coursework assignment, promoting a fictional music event with emphasis on hierarchy, typography, and visual rhythm.",
+      "process": "Explored multiple layout directions in sketch and digital draft form, iterating on type scale, contrast, and image treatment before settling on a final composition.",
+      "processImages": [
+        { "src": "/design0.jpg", "alt": "Music Event Poster" }
+      ],
+      "result": "A finished print-ready poster that communicates event details clearly while maintaining a strong graphic identity.",
+      "resultImages": [
+        { "src": "/design0.jpg", "alt": "Music Event Poster" }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "BSA Eco-Futurism Fashion Show Event Graphic",
+      "type": ["brand", "print", "digital"],
+      "date": "FEB 2025",
+      "thumbnail": "/design12.jpg",
+      "background": "The BSA Eco-Futurism Fashion Show is a yearly event that showcases the work of the BSA Fashion Show Committee. The event is held in the spring and features a variety of fashion shows, including eco-friendly fashion, futurism fashion, and more.",
+      "process": "The process of creating the event graphic involved a lot of research into the BSA Eco-Futurism Fashion Show and the fashion show industry. I also looked at a lot of other event graphics to get a sense of what is possible.",
+      "processImages": [
+        { "src": "/design10.jpg", "alt": "BSA Eco-Futurism Fashion Show Event Graphic" },
+        { "src": "/design4.jpg", "alt": "BSA Eco-Futurism Fashion Show Event Graphic" },
+        { "src": "/design12.jpg", "alt": "BSA Eco-Futurism Fashion Show Event Graphic" }
+      ],
+      "result": "The result is a graphic that is both visually appealing and informative. It is a graphic that is both visually appealing and informative. It is a graphic that is both visually appealing and informative.",
+      "resultImages": [
+        { "src": "/design10.jpg", "alt": "BSA Eco-Futurism Fashion Show Alternate Event Graphic" },
+        { "src": "/design12.jpg", "alt": "BSA Eco-Futurism Fashion Show Event Graphic" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "'Get Out The Vote' Poster",
+      "type": ["print"],
+      "date": "SEPT 2024",
+      "thumbnail": "/design4.jpg",
+      "background": "A poster design created for a graphic design coursework assignment centered on civic engagement and voter participation.",
+      "process": "Iterated on messaging hierarchy, visual symbolism, and typographic voice to produce a poster that communicates urgency and action.",
+      "processImages": [
+        { "src": "/design4.jpg", "alt": "Get Out The Vote Poster" }
+      ],
+      "result": "A finished poster design that advocates for voter participation through bold graphic communication.",
+      "resultImages": [
+        { "src": "/design4.jpg", "alt": "Get Out The Vote Poster" }
+      ]
+    }
+  ]
+}
