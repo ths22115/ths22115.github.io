@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import "./page.css";
+import "./about.css";
 import Skeleton from './../components/skeleton';
 import { useMobile } from "../contexts/mobile-context";
 

@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import "./page.css";
+import "./contact.css";
 import Skeleton from '../components/skeleton';
 
 export default function Contact() {

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import "./page.css";
+import "./exp.css";
 import Skeleton from '../components/skeleton';
 import Job from '../components/job';
 import ExpData from '../data/exp.json'

@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import Skeleton from "../../../components/skeleton";
 import PieceDetails from "../../../components/piece-details";
 import { usePort } from "../../../contexts/port-context";
-import "../../page.css";
-import "./page.css";
+import "../../port.css";
+import "./piece.css";
 
 export default function PiecePage({ piece, prevPiece, nextPiece }) {
   const { portSection, updatePortSection } = usePort();
