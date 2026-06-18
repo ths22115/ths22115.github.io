@@ -181,7 +181,7 @@
 
     .piece-gallery-title {
       font: var(--p);
-      font-size: 1.25rem;
+      font-size: 2rem;
       font-weight: bold;
       color: var(--grayo);
       width: 100%;
@@ -192,7 +192,7 @@
 
     .piece-gallery-type {
       font: var(--p2);
-      font-size: .875rem;
+      font-size: 1rem;
       color: var(--grayo);
       width: 100%;
       min-width: 0;
