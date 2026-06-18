@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAllPieces, getPieceById, getAdjacentPieces } from "../../../lib/pieces";
-import PiecePage from "./piece-page";
+import PieceDetailView from "./piece-detail-view";
 
 // export function generateStaticParams() {
 //   return getAllPieces().map((piece) => ({
@@ -31,5 +31,5 @@ export default async function Page({ params }) {
 
   const { prevPiece, nextPiece } = getAdjacentPieces(id);
 
-  return <PiecePage piece={piece} prevPiece={prevPiece} nextPiece={nextPiece} />;
+  return <PieceDetailView piece={piece} prevPiece={prevPiece} nextPiece={nextPiece} />;
 }

@@ -5,9 +5,9 @@ import Skeleton from "../../../components/skeleton";
 import PieceDetails from "../../../components/piece-details";
 import { usePort } from "../../../contexts/port-context";
 import "../../port.css";
-import "./piece.css";
+import "./piece-detail.css";
 
-export default function PiecePage({ piece, prevPiece, nextPiece }) {
+export default function PieceDetailView({ piece, prevPiece, nextPiece }) {
   const { portSection, updatePortSection } = usePort();
 
   useEffect(() => {

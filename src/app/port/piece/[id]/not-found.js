@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Skeleton from "../../../components/skeleton";
-import "./piece.css";
+import "./piece-detail.css";
 
 export default function NotFound() {
   return (
