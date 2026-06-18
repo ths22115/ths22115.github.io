@@ -7,7 +7,7 @@ export default function NotFound() {
     <div>
       <Skeleton page="port" />
       <div className="piece-page-container">
-        <Link href="/port" className="piece-back-link">
+        <Link href="/port" className="piece-nav-link">
           &larr; BACK TO WORK
         </Link>
         <div className="piece-page-title">Piece not found.</div>

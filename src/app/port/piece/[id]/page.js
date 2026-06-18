@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getAllPieces, getPieceById } from "../../../lib/pieces";
+import { getAllPieces, getPieceById, getAdjacentPieces } from "../../../lib/pieces";
 import PiecePage from "./piece-page";
 
 // export function generateStaticParams() {
@@ -29,5 +29,7 @@ export default async function Page({ params }) {
     notFound();
   }
 
-  return <PiecePage piece={piece} />;
+  const { prevPiece, nextPiece } = getAdjacentPieces(id);
+
+  return <PiecePage piece={piece} prevPiece={prevPiece} nextPiece={nextPiece} />;
 }

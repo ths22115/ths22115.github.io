@@ -1,4 +1,6 @@
-export default function PieceDetails({ piece, titleClassName = "piece-title" }) {
+import Link from "next/link";
+
+export default function PieceDetails({ piece, titleClassName = "piece-title", prevPiece, nextPiece }) {
   return (
     <div className="details details-active piece-details">
       <div className={titleClassName}>{piece.title}</div>
@@ -39,6 +41,18 @@ export default function PieceDetails({ piece, titleClassName = "piece-title" }) 
             ))}
         </div> : null}
       </div>
+      {prevPiece && nextPiece ? (
+        <nav className="piece-nav-links">
+          <Link href={`/port/piece/${prevPiece.id}`} className="piece-nav-link piece-nav-link-prev">
+            <span className="">(- PREV</span>
+            <span className="piece-nav-link-title">{prevPiece.title}</span>
+          </Link>
+          <Link href={`/port/piece/${nextPiece.id}`} className="piece-nav-link">
+            <span className="piece-nav-link-next">NEXT -)</span>
+            <span className="piece-nav-link-title">{nextPiece.title}</span>
+          </Link>
+        </nav>
+      ) : null}
     </div>
   );
 }
