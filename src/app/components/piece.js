@@ -1,15 +1,10 @@
 'use client';
 
 import Link from "next/link";
-import PieceDetails from "./piece-details";
+import { formatPieceType } from "../lib/piece-format";
 
 export default function Piece(props) {
   const pieceHref = `/port/piece/${props.id}`;
-  const piece = {
-    id: props.id,
-    title: props.title,
-    type: props.type,
-  };
 
   if (props.isMobile) {
     return (
@@ -22,8 +17,8 @@ export default function Piece(props) {
             alt={props.title}
           />
         </Link>
-        <div className="piece-gallery-title">{piece.title}</div>
-        <div className="piece-gallery-type">{piece.type}</div>
+        <div className="piece-gallery-title">{props.title}</div>
+        <div className="piece-gallery-type">{formatPieceType(props.type)}</div>
       </div>
     );
   }

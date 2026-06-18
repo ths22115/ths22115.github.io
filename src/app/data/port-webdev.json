@@ -1,59 +1,116 @@
 {
-  "projects": [
-      {
-        "id": 0,
-        "img": "cfc",
-        "imgCount": 3,
-        "title": "CFC Event Manager",
-        "type": "Web Application",
-        "link": "",
-        "repo": "",
-        "date": "AUG 2025",
-        "desc": "Developed a fullstack internal dashboard using React, Node.js, TailwindCSS, and C#/.NET, seamlessly integrating frontend and backend systems to provide near real-time monitoring and management of 10K+ daily business events across 100+ operational processes, significantly reducing manual intervention.<br />Led the design of high-fidelity Figma mockups for multiple end-to-end workflows, shaping the frontend using an iterative methodology to ensure user-centric, intuitive experiences, streamlining engineering handoff and reducing frontend implementation time by 15%."
-      },
-      {
-          "id": 1,
-          "img": "samoth",
-          "imgCount": 3,
-          "title": "Samoth",
-          "type": "Portfolio Website",
-          "link": "https://samoth.us",
-          "repo": "https://github.com/samothMedia/samothSite",
-          "date": "AUG 2024",
-          "desc": "Designed and developed a portfolio site for Samoth, providing an interactive gallery to experience Samoth’s various visual project deliverables, garnering roughly 500 active users in one year."
-      },
-      {
-          "id": 2,
-          "img": "finder",
-          "imgCount": 8,
-          "title": "Finder",
-          "type": "Web Application",
-          "link": "https://finder.eastus.cloudapp.azure.com/finder/",
-          "repo": "",
-          "date": "DEC 2024",
-          "desc": "Engineered Finder, a lost-and-found web application for RPI, collaborating with 4 peers to implement secure user authentication, automated item-matching algorithms, and a responsive UI to be utilized by 9,000+ students, faculty, and staff."
-      },
-      {
-          "id": 3,
-          "img": "berleFarm",
-          "imgCount": 3,
-          "title": "Berle Farm",
-          "type": "UX Study",
-          "link": "https://docs.google.com/document/d/1Unr9Xl6fputrr_ItA9wSKNImhZ_nvs3Snj6Y3FT-JP8/edit?usp=sharing",
-          "repo": "",
-          "date": "APR 2024",
-          "desc": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, delivering a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders." 
-      },
-      {
-          "id": 4,
-          "img": "hackRPI-X",
-          "imgCount": 4,
-          "title": "HACKRPI X",
-          "type": "Web Application",
-          "link": "",
-          "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
-          "date": "NOV 2023",
-          "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
-      }
-    ]
-  }
+  "pieces": [
+    {
+      "id": 100,
+      "title": "CFC Event Manager",
+      "type": ["web app"],
+      "date": "AUG 2025",
+      "thumbnail": "/cfc1.jpg",
+      "link": "",
+      "repo": "",
+      "background": "Continental Finance needed an internal dashboard to monitor and manage high-volume business event workflows across operational teams.",
+      "process": "Developed a fullstack internal dashboard using React, Node.js, TailwindCSS, and C#/.NET, seamlessly integrating frontend and backend systems. Led the design of high-fidelity Figma mockups for multiple end-to-end workflows, shaping the frontend using an iterative methodology to ensure user-centric, intuitive experiences and streamline engineering handoff.",
+      "processImages": [
+        { "src": "/cfc1.jpg", "alt": "CFC Event Manager" },
+        { "src": "/cfc2.jpg", "alt": "CFC Event Manager" }
+      ],
+      "result": "Delivered a near real-time monitoring and management tool for 10K+ daily business events across 100+ operational processes, significantly reducing manual intervention and reducing frontend implementation time by 15%.",
+      "resultImages": [
+        { "src": "/cfc1.jpg", "alt": "CFC Event Manager" },
+        { "src": "/cfc2.jpg", "alt": "CFC Event Manager" },
+        { "src": "/cfc3.jpg", "alt": "CFC Event Manager" }
+      ]
+    },
+    {
+      "id": 101,
+      "title": "Samoth",
+      "type": ["digital portfolio"],
+      "date": "AUG 2024",
+      "thumbnail": "/samoth1.jpg",
+      "link": "https://samoth.us",
+      "repo": "https://github.com/samothMedia/samothSite",
+      "background": "Samoth needed a portfolio platform to present visual project deliverables in an interactive, gallery-driven experience.",
+      "process": "Designed and developed a portfolio site with an interactive gallery structure, building the experience to showcase Samoth's visual work with clarity and navigability.",
+      "processImages": [
+        { "src": "/samoth1.jpg", "alt": "Samoth" },
+        { "src": "/samoth2.jpg", "alt": "Samoth" }
+      ],
+      "result": "Launched a live portfolio that provides an interactive gallery for Samoth's visual project deliverables, garnering roughly 500 active users in one year.",
+      "resultImages": [
+        { "src": "/samoth1.jpg", "alt": "Samoth" },
+        { "src": "/samoth2.jpg", "alt": "Samoth" },
+        { "src": "/samoth3.jpg", "alt": "Samoth" }
+      ]
+    },
+    {
+      "id": 102,
+      "title": "Finder",
+      "type": ["web app"],
+      "date": "DEC 2024",
+      "thumbnail": "/finder1.jpg",
+      "link": "",
+      "repo": "",
+      "background": "Rensselaer Polytechnic Institute needed a centralized lost-and-found platform accessible to students, faculty, and staff across campus.",
+      "process": "Engineered Finder in collaboration with four peers, implementing secure user authentication, automated item-matching algorithms, and a responsive UI designed for broad campus adoption.",
+      "processImages": [
+        { "src": "/finder1.jpg", "alt": "Finder" },
+        { "src": "/finder2.jpg", "alt": "Finder" },
+        { "src": "/finder3.jpg", "alt": "Finder" }
+      ],
+      "result": "Shipped a lost-and-found web application deployed for use by 9,000+ students, faculty, and staff.",
+      "resultImages": [
+        { "src": "/finder1.jpg", "alt": "Finder" },
+        { "src": "/finder2.jpg", "alt": "Finder" },
+        { "src": "/finder3.jpg", "alt": "Finder" },
+        { "src": "/finder4.jpg", "alt": "Finder" },
+        { "src": "/finder5.jpg", "alt": "Finder" },
+        { "src": "/finder6.jpg", "alt": "Finder" },
+        { "src": "/finder7.jpg", "alt": "Finder" },
+        { "src": "/finder8.jpg", "alt": "Finder" }
+      ]
+    },
+    {
+      "id": 103,
+      "title": "Berle Farm",
+      "type": ["ux study"],
+      "date": "APR 2024",
+      "thumbnail": "/berleFarm1.jpg",
+      "link": "https://docs.google.com/document/d/1Unr9Xl6fputrr_ItA9wSKNImhZ_nvs3Snj6Y3FT-JP8/edit?usp=sharing",
+      "repo": "",
+      "background": "Berle Farm's e-commerce site presented opportunities to improve usability, visual clarity, and the overall online shopping experience for customers.",
+      "process": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, including heuristic evaluation, user flow analysis, and iterative Figma mockups developed across key shopping workflows.",
+      "processImages": [
+        { "src": "/berleFarm1.jpg", "alt": "Berle Farm" },
+        { "src": "/berleFarm2.jpg", "alt": "Berle Farm" }
+      ],
+      "result": "Delivered a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders.",
+      "resultImages": [
+        { "src": "/berleFarm1.jpg", "alt": "Berle Farm" },
+        { "src": "/berleFarm2.jpg", "alt": "Berle Farm" },
+        { "src": "/berleFarm3.jpg", "alt": "Berle Farm" }
+      ]
+    },
+    {
+      "id": 104,
+      "title": "HACKRPI X",
+      "type": ["web app"],
+      "date": "NOV 2023",
+      "thumbnail": "/hackRPI-X1.jpg",
+      "link": "",
+      "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
+      "background": "HACKRPI X required a refreshed web presence to support event promotion, registration flows, and participant engagement for the 2023 hackathon.",
+      "process": "Designed and developed components of the HACKRPI 2023 web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team, coordinating implementation across the site.",
+      "processImages": [
+        { "src": "/hackRPI-X1.jpg", "alt": "HACKRPI X" },
+        { "src": "/hackRPI-X2.jpg", "alt": "HACKRPI X" }
+      ],
+      "result": "Contributed core site components to the HACKRPI X web application as team lead of the website development team.",
+      "resultImages": [
+        { "src": "/hackRPI-X1.jpg", "alt": "HACKRPI X" },
+        { "src": "/hackRPI-X2.jpg", "alt": "HACKRPI X" },
+        { "src": "/hackRPI-X3.jpg", "alt": "HACKRPI X" },
+        { "src": "/hackRPI-X4.jpg", "alt": "HACKRPI X" }
+      ]
+    }
+  ]
+}

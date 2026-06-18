@@ -1,53 +1,104 @@
 import Link from "next/link";
+import React from "react";
+import { formatPieceType } from "../lib/piece-format";
+
+function RichText({ text }) {
+  if (!text) {
+    return null;
+  }
+
+  const lines = text.split("<br />");
+
+  return (
+    <>
+      {lines.map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          {index < lines.length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </>
+  );
+}
+
+function ExternalLink({ href, label }) {
+  return (
+    <a className="hyperlink" target="_blank" rel="noreferrer" href={href}>
+      {label}
+      <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
+    </a>
+  );
+}
+
+function getLinkLabel(type) {
+  const types = Array.isArray(type) ? type : [type];
+
+  if (types.includes("ux study")) {
+    return "VIEW STUDY";
+  }
+
+  if (types.includes("web app") || types.includes("digital portfolio")) {
+    return "VIEW LIVE";
+  }
+
+  return "VIEW PROJECT";
+}
 
 export default function PieceDetails({ piece, titleClassName = "piece-title", prevPiece, nextPiece }) {
+  const hasLinks = piece.link || piece.repo;
+
   return (
     <div className="details details-active piece-details">
-      <div className={titleClassName}>{piece.title}</div>
+      <div className="piece-title">{piece.title}</div>
       <div className="expanded piece-expanded">
         <div className="piece-subtitle">
-          <div className="piece-type">{piece.type}</div>
+          <div className="piece-type">{formatPieceType(piece.type)}</div>
           <div className="piece-date">{piece.date}</div>
+          {hasLinks ? (
+            <>
+              {piece.link ? (
+                <ExternalLink href={piece.link} label={getLinkLabel(piece.type)} />
+              ) : null}
+              {piece.repo ? (
+                <ExternalLink href={piece.repo} label="GITHUB REPO" />
+              ) : null}
+            </>
+          ) : null}
         </div>
-        {/* {piece.desc ? <div className="piece-desc">{piece.desc}</div> : null} */}
-        {/* <div className="piece-header">Background</div> */}
-        {piece.background ? <div className="piece-background">{piece.background}</div> : null}
-        
-        {piece.process ? 
-          <div className="piece-process">
-            <div className="piece-header">Process</div>
-            {piece.process}
-          </div> 
-        : null}
 
-        {piece.processImages ? 
-          <div className="piece-images piece-process-images">
-            {piece.processImages.map((image, index) => (
-                <img className="piece-image" key={index} src={image.src} alt={image.alt} />
-            ))}
-          </div> 
-        : null}
+        <div className="piece-background">
+          <RichText text={piece.background} />
+        </div>
 
-        {piece.result ? 
-          <div className="piece-result">
-            <div className="piece-header">Result</div>
-            {piece.result}
-          </div> 
-        : null}
+        <div className="piece-process">
+          <div className="piece-header">Process</div>
+          <RichText text={piece.process} />
+        </div>
 
-        {piece.resultImages ? <div className="piece-images piece-result-images">
-            {piece.resultImages.map((image, index) => (
-                <img className="piece-image" key={index} src={image.src} alt={image.alt} />
-            ))}
-        </div> : null}
+        <div className="piece-images piece-process-images">
+          {piece.processImages.map((image, index) => (
+            <img className="piece-image" key={index} src={image.src} alt={image.alt} />
+          ))}
+        </div>
+
+        <div className="piece-result">
+          <div className="piece-header">Result</div>
+          <RichText text={piece.result} />
+        </div>
+
+        <div className="piece-images piece-result-images">
+          {piece.resultImages.map((image, index) => (
+            <img className="piece-image" key={index} src={image.src} alt={image.alt} />
+          ))}
+        </div>
       </div>
       {prevPiece && nextPiece ? (
         <nav className="piece-nav-links">
           <Link href={`/port/piece/${prevPiece.id}`} className="piece-nav-link piece-nav-link-prev">
-            <span className="">(- PREV</span>
+            <span>(- PREV</span>
             <span className="piece-nav-link-title">{prevPiece.title}</span>
           </Link>
-          <Link href={`/port/piece/${nextPiece.id}`} className="piece-nav-link">
+          <Link href={`/port/piece/${nextPiece.id}`} className="piece-nav-link piece-nav-link-next">
             <span className="piece-nav-link-next">NEXT -)</span>
             <span className="piece-nav-link-title">{nextPiece.title}</span>
           </Link>

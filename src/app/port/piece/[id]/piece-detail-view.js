@@ -11,10 +11,10 @@ export default function PieceDetailView({ piece, prevPiece, nextPiece }) {
   const { portSection, updatePortSection } = usePort();
 
   useEffect(() => {
-    if (portSection !== "design") {
-      updatePortSection("design");
+    if (portSection !== piece.section) {
+      updatePortSection(piece.section);
     }
-  }, [portSection, updatePortSection]);
+  }, [piece.section, portSection, updatePortSection]);
 
   return (
     <div>
