@@ -52,9 +52,11 @@ export default function RouteTransition({ children }) {
           <div className={"route-transition-overlay mobile"}>
             <div className={"trans-noise-wrapper mobile"}></div>
             <div className={"trans-scanlines mobile"}></div>
-            <div className={"trans-noise mobile"}></div>
-            <div className={"trans-noise mobile"}></div>
-            <div className={"trans-noise mobile"}></div>
+            <div className={"trans-noise-layers mobile"}>
+              <div className={"trans-noise mobile"}></div>
+              <div className={"trans-noise mobile"}></div>
+              <div className={"trans-noise mobile"}></div>
+            </div>
             <Image src="/miusWordmarkBlack.svg" alt="Mius Thomas Logo" width={900} height={923} className="trans-wordmark mobile" />
           </div>
         )

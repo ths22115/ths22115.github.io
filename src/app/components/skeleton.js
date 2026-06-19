@@ -21,9 +21,11 @@ export default function Skeleton(props) {
 			<div className={"scanlines"}></div>
 			) : "" }
       {showMobileStaticEffects && (
-          Array.from({ length: 3 }).map((_, index) => (
-              <div key={`noise-${index}`} className={"noise"}></div>
-          ))
+        <div className="noise-layers">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <div key={`noise-${index}`} className={"noise"}></div>
+          ))}
+        </div>
       )}
 
 			<Navbar page={props.page} />
