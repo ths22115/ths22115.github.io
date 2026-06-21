@@ -49,7 +49,7 @@ export default function PieceDetails({ piece, titleClassName = "piece-title", pr
 
   return (
     <div className="details details-active piece-details">
-      <div className="piece-title">{piece.title}</div>
+      <div className="piece-page-title piece-title">{piece.title}</div>
       <div className="expanded piece-expanded">
         <div className="piece-subtitle">
           <div className="piece-type">{formatPieceType(piece.type)}</div>

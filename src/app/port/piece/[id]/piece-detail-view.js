@@ -16,10 +16,9 @@ export default function PieceDetailView({ piece, prevPiece, nextPiece }) {
   }, [piece.section, portSection, updatePortSection]);
 
   return (
-    <div className="piece-page-container">
+    <div className="piece-page-container page-scroll">
       <PieceDetails
         piece={piece}
-        titleClassName="piece-page-title"
         prevPiece={prevPiece}
         nextPiece={nextPiece}
       />

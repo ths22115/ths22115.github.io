@@ -209,7 +209,8 @@ a {
 
   .text {
     max-width: 19rem;
-    /* text-align: right; */
+    line-height: 1.4;
+    padding: 2.25rem 1.875rem 2.25rem 0;
   }
 
   .landing-text {
@@ -262,7 +263,6 @@ a {
   filter: invert(.25);
   opacity: .5;
   mix-blend-mode: difference;
-  z-index: 500;
   pointer-events: none;
   top: unset;
   right: unset;

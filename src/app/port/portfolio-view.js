@@ -14,7 +14,7 @@ export default function PortfolioView() {
   if (isMobile) {
     return (
       <div className={"port-container mobile"}>
-        <div className={"section piece-section " + (portSection == "webdev" ? "section-active " : "")}>
+        <div className={"section piece-section " + (portSection == "webdev" ? "section-active page-scroll " : "")}>
           {webdevPieces.map((piece) => (
             <Piece
               key={piece.id}
@@ -27,7 +27,7 @@ export default function PortfolioView() {
           ))}
         </div>
 
-        <div className={"section piece-section " + (portSection == "design" ? "section-active " : "")}>
+        <div className={"section piece-section " + (portSection == "design" ? "section-active page-scroll " : "")}>
           {designPieces.map((piece) => (
             <Piece
               key={piece.id}
@@ -45,7 +45,7 @@ export default function PortfolioView() {
 
   return (
     <div className={"port-container " + (sectionChange ? "filter-trans " : "")}>
-      <div className={"display piece-display " + (portSection == "webdev" ? "display-active " : "")}>
+      <div className={"display piece-display " + (portSection == "webdev" ? "display-active page-scroll " : "")}>
         {webdevPieces.map((piece) => (
           <Piece
             key={piece.id}
@@ -56,7 +56,7 @@ export default function PortfolioView() {
           />
         ))}
       </div>
-      <div className={"display piece-display " + (portSection == "design" ? "display-active " : "")}>
+      <div className={"display piece-display " + (portSection == "design" ? "display-active page-scroll " : "")}>
         {designPieces.map((piece) => (
           <Piece
             key={piece.id}

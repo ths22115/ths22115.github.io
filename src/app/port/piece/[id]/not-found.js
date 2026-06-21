@@ -3,7 +3,7 @@ import "./piece-detail.css";
 
 export default function NotFound() {
   return (
-    <div className="piece-page-container">
+    <div className="piece-page-container page-scroll">
       <Link href="/port" className="piece-nav-link">
         &larr; BACK TO WORK
       </Link>

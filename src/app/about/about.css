@@ -1,5 +1,6 @@
 .about-subtext {
     font: var(--p);
+    line-height: 1.5;
     color: var(--grayo);
     width: 100%;
 }
