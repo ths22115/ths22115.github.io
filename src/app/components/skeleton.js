@@ -1,13 +1,17 @@
 'use client'
-import React from "react";
+import React, { useMemo } from "react";
+import { usePathname } from "next/navigation";
 import "./skeleton.css";
 import Navbar from "./navbar";
 import { useStaticEffects } from "../contexts/static-effects-context";
 import { useMobile } from "../contexts/mobile-context";
+import { getPageFromPathname } from "../lib/get-page-from-pathname";
 
-export default function Skeleton(props) {
+export default function Skeleton({ children }) {
 	const { isStaticEnabled } = useStaticEffects();
   const { isMobile } = useMobile();
+  const pathname = usePathname();
+  const page = useMemo(() => getPageFromPathname(pathname), [pathname]);
   const showMobileStaticEffects = isMobile && isStaticEnabled;
 
 	return (
@@ -28,9 +32,10 @@ export default function Skeleton(props) {
         </div>
       )}
 
-			<Navbar page={props.page} />
+			<Navbar page={page} />
+			<main className="skeleton-content">{children}</main>
 			{ !isMobile ? (
-			<div className={"footer" + (props.page == "port" ? " footer-port" : "")}>&copy; Miles Mckinley Thomas. All rights reserved.</div>
+			<div className={"footer" + (page == "port" ? " footer-port" : "")}>&copy; Miles Mckinley Thomas. All rights reserved.</div>
 			) : ""}
 		</div>
 	);

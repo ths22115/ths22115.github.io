@@ -51,18 +51,13 @@ a {
 }
 
 .text {
-  position: absolute;
-  top: 0;
-  right: 0;
   height: fit-content;
   width: max-content;
   max-width: 25rem;
   display: flex;
   flex-direction: column;
-  padding: 7rem 5rem 0 0;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: column;
   row-gap: 1.5rem;
   z-index: 10;
 }
@@ -213,7 +208,6 @@ a {
   }
 
   .text {
-    padding: 2.25rem 2.25rem 0 0;
     max-width: 19rem;
     /* text-align: right; */
   }

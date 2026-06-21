@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from "react";
-import Skeleton from "../../../components/skeleton";
 import PieceDetails from "../../../components/piece-details";
 import { usePort } from "../../../contexts/port-context";
 import "../../port.css";
@@ -17,16 +16,13 @@ export default function PieceDetailView({ piece, prevPiece, nextPiece }) {
   }, [piece.section, portSection, updatePortSection]);
 
   return (
-    <div>
-      <Skeleton page="port-details" />
-      <div className="piece-page-container">
-        <PieceDetails
-          piece={piece}
-          titleClassName="piece-page-title"
-          prevPiece={prevPiece}
-          nextPiece={nextPiece}
-        />
-      </div>
+    <div className="piece-page-container">
+      <PieceDetails
+        piece={piece}
+        titleClassName="piece-page-title"
+        prevPiece={prevPiece}
+        nextPiece={nextPiece}
+      />
     </div>
   );
 }

@@ -8,6 +8,7 @@
   align-items: flex-start;
   justify-content: space-between;
   row-gap: 1.375rem;
+  padding: 0 2.5rem 3.5rem;
 }
 
 /* NAV LOGOTYPE CONTAINER */
@@ -272,4 +273,10 @@
   mix-blend-mode: normal;
   color: var(--grayo);
   border-color: var(--grayo);
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    padding: 2.25rem 0;
+  }
 }

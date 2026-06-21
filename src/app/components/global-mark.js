@@ -5,14 +5,7 @@ import { usePathname } from "next/navigation";
 import Mark from "./mark";
 import { useMobile } from "../contexts/mobile-context";
 import { useStaticEffects } from "../contexts/static-effects-context";
-
-function getPageFromPathname(pathname) {
-  if (pathname === "/") {
-    return "landing";
-  }
-
-  return pathname.split("/")[1] || "landing";
-}
+import { getPageFromPathname } from "../lib/get-page-from-pathname";
 
 export default function GlobalMark() {
   const pathname = usePathname();
