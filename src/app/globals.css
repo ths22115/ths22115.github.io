@@ -62,6 +62,11 @@ a {
   z-index: 10;
 }
 
+.landing-text {
+  max-width: unset;
+  padding: 12rem 7rem 0 0;
+}
+
 .subtext {
   font: var(--p);
   color: var(--grayo);
