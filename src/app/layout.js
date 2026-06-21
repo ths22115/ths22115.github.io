@@ -1,7 +1,7 @@
 import "./globals.css";
 import Script from 'next/script';
 import RouteTransition from './components/route-trans';
-import SkeletonLayout from './components/skeleton-layout';
+import AppShell from './components/app-shell';
 import GlobalMark from "./components/global-mark";
 import { StaticEffectsProvider } from "./contexts/static-effects-context";
 import { MobileProvider } from "./contexts/mobile-context";
@@ -26,9 +26,9 @@ export default function RootLayout({ children }) {
             <PortProvider>
               <ExpProvider>
                 <RouteTransition>
-                  <SkeletonLayout>
+                  <AppShell>
                     {children}
-                  </SkeletonLayout>
+                  </AppShell>
                 </RouteTransition>
                 <GlobalMark />
               </ExpProvider>

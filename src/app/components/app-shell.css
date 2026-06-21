@@ -1,4 +1,4 @@
-.skeleton {
+.app-shell {
   display: flex;
   /* grid-template-rows: repeat(10, 1fr); */
   /* grid-template-columns: 1fr 1fr 9fr; */
@@ -13,7 +13,7 @@
   align-items: self-start;
 }
 
-.skeleton-content {
+.app-shell-content {
   flex: 1 1 auto;
   min-width: 0;
   height: 100%;
@@ -106,12 +106,12 @@ to {
 }
 
 @media screen and (max-width: 768px) {
-	.skeleton {
+	.app-shell {
 		padding: 0 1.875rem;
     column-gap: 1.875rem;
 	}
 
-  .skeleton-content {
+  .app-shell-content {
     padding: 2.25rem 0;
   }
 
