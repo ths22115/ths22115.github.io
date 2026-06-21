@@ -164,7 +164,7 @@
         row-gap: 2rem;
         overflow-x: hidden;
         overflow-y: scroll;
-        padding: 2.5rem 2.25rem 2.5rem 0;
+        padding: 2.25rem 1.875rem 2.25rem 0;
         transition: 
             height .2s ease-out,
             opacity .2s ease-in-out;
