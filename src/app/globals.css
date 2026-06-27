@@ -63,11 +63,6 @@ a {
   padding: 2.25rem 0 0 0;
 }
 
-.landing-text {
-  max-width: unset;
-  padding: 12rem 7rem 0 0;
-}
-
 .subtext {
   font: var(--p);
   color: var(--grayo);
@@ -217,10 +212,6 @@ a {
     max-width: 19rem;
     line-height: 1.4;
     padding: 2.25rem 1.875rem 2.25rem 0;
-  }
-
-  .landing-text {
-    max-width: 17rem;
   }
 
   .mark {
