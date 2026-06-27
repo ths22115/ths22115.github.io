@@ -48,9 +48,6 @@
 .job:not(.job-visible) {
     display: none;
 }
-.job-visible {
-
-}
 
 .job-company {
     font: var(--p);
@@ -124,10 +121,7 @@
 }
 
 .exp-filter, .exp-key {
-    /* position: fixed; */
-}
-.exp-key {
-    /* bottom: 0; */
+    position: fixed;
 }
 
 .exp-key-list {
