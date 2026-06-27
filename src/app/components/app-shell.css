@@ -70,11 +70,17 @@
   width: 100%;
   height: 100dvh;
 	pointer-events: none;
-	opacity: .4;
+	opacity: .55;
 	overflow: hidden;
 	isolation: isolate;
 	z-index: 0;
+  filter: brightness(7);
 }
+/* Safari support hack for noise wrapper */
+@supports (background: -webkit-named-image(i)) {
+  .noise-wrapper { filter: brightness(6); opacity: .3; }
+}
+
 /* SVG fractal-noise static. Renders consistently across browsers (incl. desktop
    Safari, which fails to rasterize the previous sub-pixel repeating-gradient +
    background-blend-mode: difference trick). Two opaque noise layers at different

@@ -69,15 +69,21 @@
 	overflow: hidden;
 	isolation: isolate;
 	z-index: 100;
+  filter: brightness(1.25);
   /* background-color: #8f8f8f; */
+}
+/* Safari support hack for noise wrapper */
+@supports (background: -webkit-named-image(i)) {
+  .trans-noise-wrapper { filter: brightness(4); opacity: .8; }
 }
 .trans-noise-wrapper.mobile {
   z-index: -5;
 }
 
-/* SVG fractal-noise static (see app-shell.css note): replaces the
-   sub-pixel repeating-gradient trick that desktop Safari cannot render.
-   Two layers at different grain scales, seeds, and speeds keep it chaotic. */
+/* SVG fractal-noise static replaces the
+   sub-pixel repeating-gradient trick that desktop Safari cant render
+   Two layers at different grain scales, seeds, and speeds keep it chaotic. 
+*/
 .trans-noise-wrapper::before,
 .trans-noise-wrapper::after {
 	content: '';
