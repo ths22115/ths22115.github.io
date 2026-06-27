@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d out --nojekyll --cname miles-thomas.com"
   },
   "dependencies": {
+    "framer-motion": "^12.42.0",
     "next": "15.2.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
