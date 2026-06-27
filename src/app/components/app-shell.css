@@ -45,11 +45,24 @@
 
 @keyframes tv-nosignal {
 	0%   { background-position: 0 0; }
-	20%  { background-position: -37px 41px; }
-	40%  { background-position: 58px -49px; }
-	60%  { background-position: -73px -23px; }
-	80%  { background-position: 31px 67px; }
-	100% { background-position: -19px -58px; }
+	12%  { background-position: -123px 84px; }
+	25%  { background-position: 91px -137px; }
+	37%  { background-position: -64px 151px; }
+	50%  { background-position: 173px 39px; }
+	62%  { background-position: -151px -97px; }
+	75%  { background-position: 48px -168px; }
+	87%  { background-position: -104px 112px; }
+	100% { background-position: 142px -53px; }
+}
+@keyframes tv-nosignal-b {
+	0%   { background-position: 0 0; }
+	14%  { background-position: 107px -113px; }
+	28%  { background-position: -141px 62px; }
+	42%  { background-position: 73px 162px; }
+	57%  { background-position: -94px -149px; }
+	71%  { background-position: 158px 93px; }
+	85%  { background-position: -171px -41px; }
+	100% { background-position: 61px 134px; }
 }
 .noise-wrapper {
   position: fixed;
@@ -57,26 +70,39 @@
   width: 100%;
   height: 100dvh;
 	pointer-events: none;
-	opacity: 1;
+	opacity: .4;
 	overflow: hidden;
+	isolation: isolate;
 	z-index: 0;
 }
 /* SVG fractal-noise static. Renders consistently across browsers (incl. desktop
    Safari, which fails to rasterize the previous sub-pixel repeating-gradient +
-   background-blend-mode: difference trick). */
-.noise-wrapper::before {
+   background-blend-mode: difference trick). Two opaque noise layers at different
+   grain scales, seeds, speeds, and motion vectors are combined with an element
+   mix-blend-mode (raster blend, Safari-safe) so the static stays chaotic; the
+   wrapper opacity controls how strongly it veils the page. */
+.noise-wrapper::before,
+.noise-wrapper::after {
 	content: '';
 	display: block;
 	position: absolute;
 	inset: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+	pointer-events: none;
 	background-repeat: repeat;
-	background-size: 200px 200px;
-	filter: contrast(1.5);
-	animation: tv-nosignal .2s steps(1) infinite;
-	opacity: .35;
+	filter: contrast(1.7);
+}
+.noise-wrapper::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-size: 160px 160px;
+	animation: tv-nosignal .15s steps(1) infinite;
+}
+.noise-wrapper::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-size: 110px 110px;
+	mix-blend-mode: difference;
+	animation: tv-nosignal-b .11s steps(1) infinite;
 }
 
 .scanlines {
