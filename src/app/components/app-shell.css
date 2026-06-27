@@ -29,8 +29,7 @@
   min-height: 0;
   min-width: 0;
   overflow-y: auto;
-  padding-top: 1.5rem;
-  padding-right: 2.5rem;
+  padding: 2.5rem 2.5rem 2.5rem 0;
 }
 
 /* @media (prefers-color-scheme: dark) {

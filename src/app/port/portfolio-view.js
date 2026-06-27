@@ -45,7 +45,7 @@ export default function PortfolioView() {
 
   return (
     <div className={"port-container " + (sectionChange ? "filter-trans " : "")}>
-      <div className={"display piece-display " + (portSection == "webdev" ? "display-active page-scroll " : "")}>
+      <div className={"display piece-display " + (portSection == "webdev" ? "display-active " : "")}>
         {webdevPieces.map((piece) => (
           <Piece
             key={piece.id}
@@ -56,7 +56,7 @@ export default function PortfolioView() {
           />
         ))}
       </div>
-      <div className={"display piece-display " + (portSection == "design" ? "display-active page-scroll " : "")}>
+      <div className={"display piece-display " + (portSection == "design" ? "display-active " : "")}>
         {designPieces.map((piece) => (
           <Piece
             key={piece.id}

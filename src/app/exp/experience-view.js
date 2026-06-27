@@ -22,7 +22,7 @@ export default function ExperienceView() {
   }
 
   return (
-    <div className={"job-list page-scroll" + (filterChange ? " filter-trans" : "") + (isMobile ? " mobile" : "")}>
+    <div className={"page-scroll job-list " + (filterChange ? " filter-trans" : "") + (isMobile ? " mobile" : "")}>
       { data.jobs.map((job) =>
         <Job key={job.id} id={job.id} type={job.type} company={job.company.toUpperCase()} title={job.title.toUpperCase()}  start={job.start} end={job.end} 
         desc={job.desc} onClick={focusJob} focus={jobFocus} filter={jobFilter} isMobile={isMobile} />)
