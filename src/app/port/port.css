@@ -51,15 +51,11 @@
 }
 
 .piece-title {
-    font: var(--p);
-    font-size: 2.75rem;
-    font-weight: bold;
+    font: var(--title);
     color: var(--grayo);
-    margin-bottom: .75rem;
-    min-width: 20rem;
-    max-width: 20rem;
-    transition: .3s;
     text-transform: uppercase;
+    margin-bottom: .75rem;
+    transition: .3s;
 }
 
 .expanded {

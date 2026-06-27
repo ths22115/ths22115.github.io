@@ -2,6 +2,7 @@
 
 :root {
   --ff:'all-round-gothic', Arial;
+  --title: 700 3rem/1.4em var(--ff);
   --h1: 700 1.5rem/1.4em var(--ff);
   --h2: 700 1.25rem/1.4em var(--ff);
   --p: 400 1rem/1.4em var(--ff);

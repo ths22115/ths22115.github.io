@@ -50,11 +50,9 @@
 }
 
 .job-company {
-    font: var(--p);
-    font-size: 3rem;
+    font: var(--title);
     color: var(--grayo);
     margin-bottom: -.25rem;
-    font-weight: bold;
 }
 
 .job-preview {
