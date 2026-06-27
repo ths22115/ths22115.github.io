@@ -1,9 +1,44 @@
+
 .about-subtext {
     font: var(--p);
     line-height: 1.5;
     color: var(--grayo);
     width: 100%;
 }
-/* .about-subtext.mobile {
-   display: none;
-} */
+
+@media screen and (min-width: 769px) {
+  .about-text {
+    width: 100%;
+    max-width: unset;
+    height: 100%;
+    padding: 2.5rem 2.5rem 2.5rem 0;
+    position: relative;
+    /* padding: 0 6rem 6rem 0; */
+  }
+
+  .about-subtext {
+    position: absolute;
+    width: auto;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+  }
+
+  .about-subtext:first-child{
+    right: 10%;
+    top: 35%;
+    text-align: right;
+  }
+  .about-subtext:nth-child(2){
+    right: 30%;
+    top: 38%;
+  }
+  .about-subtext:nth-child(3){
+    left: 35%;
+    top: 49%;
+    text-align: right;
+  }
+  .about-subtext:nth-child(4){
+    left: 20%;
+    top: 70%;
+  }
+}

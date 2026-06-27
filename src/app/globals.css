@@ -51,6 +51,7 @@ a {
 }
 
 .text {
+  z-index: 10;
   height: fit-content;
   width: max-content;
   max-width: 25rem;
@@ -59,7 +60,7 @@ a {
   align-items: flex-start;
   justify-content: flex-start;
   row-gap: 1.5rem;
-  z-index: 10;
+  padding: 2.25rem 0 0 0;
 }
 
 .landing-text {
