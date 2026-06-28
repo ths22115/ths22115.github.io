@@ -10,18 +10,16 @@ export default function Piece(props) {
 
   if (props.isMobile) {
     return (
-      <div>
-        <Link href={pieceHref}>
+      <Link href={pieceHref}>
           <img
             id={props.id}
             className="piece-img piece-gallery-img"
             src={props.src}
             alt={props.title}
           />
-        </Link>
         <div className="piece-gallery-title">{props.title}</div>
         <div className="piece-gallery-type">{formatPieceType(props.type)}</div>
-      </div>
+      </Link>
     );
   }
 

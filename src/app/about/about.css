@@ -1,3 +1,6 @@
+.about-text {
+  width: 100%;
+}
 
 .about-subtext {
     font: var(--p);
@@ -8,12 +11,9 @@
 
 @media screen and (min-width: 769px) {
   .about-text {
-    width: 100%;
     max-width: unset;
     height: 100%;
-    /* padding: 2.5rem 2.5rem 2.5rem 0; */
     position: relative;
-    /* padding: 0 6rem 6rem 0; */
   }
 
   .about-subtext {
