@@ -7,6 +7,7 @@
     row-gap: 4rem;
     padding-top: 1.5rem;
     line-height: 1.5em;
+    color: var(--grayo);
     transition: 
         height 2s ease-out,
         opacity .2s ease-in-out;
@@ -64,6 +65,7 @@
     column-gap: .75rem;
     text-wrap: nowrap;
     text-align: center;
+    margin-bottom: .5rem;
 }
 .job-date {
     display: flex;
@@ -75,11 +77,6 @@
 
 .job-preview:not(.job-preview-active) {
     opacity: 0;
-}
-
-.job-title {
-    font: var(--p2);
-    color: var(--grayo);
 }
 
 .job-desc {
@@ -168,6 +165,7 @@
     .job-preview {
         flex-direction: column;
         align-items: flex-start;
+        margin: .125rem 0;
     }
     .job-title {
         font-size: 1rem;
