@@ -3,6 +3,7 @@ import Script from 'next/script';
 import RouteTransition from './components/route-trans';
 import AppShell from './components/app-shell';
 import GlobalMark from "./components/global-mark";
+import Frame from "./components/frame";
 import { StaticEffectsProvider } from "./contexts/static-effects-context";
 import { MobileProvider } from "./contexts/mobile-context";
 import { PortProvider } from "./contexts/port-context";
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
                   </AppShell>
                 </RouteTransition>
                 <GlobalMark />
+                <Frame />
               </ExpProvider>
             </PortProvider>
           </StaticEffectsProvider>
