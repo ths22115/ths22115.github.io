@@ -141,12 +141,14 @@
 }
 
 .piece-card--static .piece-link:hover .piece-glitch::before {
-    mix-blend-mode: color-burn;
+    mix-blend-mode: multiply;
+    filter: saturate(.0);
     animation: piece-glitch-slice-r 3s steps(1) var(--glitch-delay, 0s) infinite;
 }
 
 .piece-card--static .piece-link:hover .piece-glitch::after {
     mix-blend-mode: multiply;
+    filter: saturate(.0);
     animation: piece-glitch-slice-b 3s steps(1) calc(var(--glitch-delay, 0s) + .15s) infinite;
 }
 

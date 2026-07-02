@@ -9,19 +9,18 @@ const { isMobile } = useMobile();
   return (
     <div className="text about-text">
       <div className={"subtext about-subtext" + (isMobile ? " mobile" : "")}>
-        20-year-old Northern Virginia native based in Greater Philadelphia{isMobile ? "." : ""}
-        </div>
-      <div className={"subtext about-subtext" + (isMobile ? " mobile" : "")}>
-        {/* {isMobile ? "LOL" : "Third year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation."} */}
-        Fourth year student at Rensselaer Polytechnic Institute w/ Spring 2026 expected graduation{isMobile ? "." : ""} 
+        21-year-old Northern Virginia native based in Greater Baltimore.
       </div>
       <div className={"subtext about-subtext" + (isMobile ? " mobile" : "")}>
-        Pursing a B.S. in Computer Science with minors in 
-        Information Technology & Web Science and Graphic Design{isMobile ? "." : ""}
+        Seeking full-time opportunities at the intersection of software engineering and design.
       </div>
       <div className={"subtext about-subtext" + (isMobile ? " mobile" : "")}>
-        Passionate UI/UX designer, web developer, creative, soccer player, and Manchester United fan{isMobile ? "." : ""}
-        </div>
+        Received a B.S. in Computer Science with minors in 
+        Information Technology & Web Science and Graphic Design from Rensselaer Polytechnic Institute.
+      </div>
+      <div className={"subtext about-subtext" + (isMobile ? " mobile" : "")}>
+        Passionate designer, web developer, stylist, soccer player, creative, and Manchester United fan.
+      </div>
     </div>
   );
 }
