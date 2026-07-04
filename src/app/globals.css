@@ -176,10 +176,10 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  transition: scale .4s;
+  transition: opacity 0.3s ease;
 }
 .hyperlink:hover {
-  scale: 1.04;
+  opacity: 0.5;
 }
 
 .hyperlink-arrow {

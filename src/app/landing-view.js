@@ -10,7 +10,7 @@ export default function LandingView() {
     <div className="text landing-text">
       {
         isMobile
-          ? "Engineer by logic.\nDesigner by instinct.\nBuilding products as beautiful as they are meaningful."
+          ? "Engineer by logic.\n\nDesigner by instinct.\n\nBuilding products as beautiful as they are meaningful."
           :
           <>
             <div className={"subtext landing-subtext"}>
