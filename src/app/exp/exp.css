@@ -1,3 +1,19 @@
+.exp-resume-link, .job-buffer-sublink {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  width: max-content;
+  align-items: baseline;
+}
+
+.exp-container {
+  height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: .75rem;
+}
+
 .job-list {
     width: 100%;
     align-self: flex-end;
@@ -8,8 +24,8 @@
     line-height: 1.5em;
     color: var(--grayo);
     transition: 
-        height 2s ease-out,
-        opacity .2s ease-in-out;
+        height .3s ease-out,
+        opacity .3s ease-in-out;
 }
 
 
@@ -51,14 +67,6 @@
 
 .job-buffer {
     cursor: default;
-}
-
-.job-buffer-sublink {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  width: max-content;
-  align-items: baseline;
 }
 
 .job-buffer .job-preview {
@@ -180,6 +188,10 @@
         align-self: flex-end;
         align-items: flex-start;
         row-gap: 2rem;
+    }
+
+    .job-list.mobile .exp-resume-link {
+        align-self: flex-start;
     }
 
     .job {

@@ -27,35 +27,46 @@ export default function ExperienceView() {
   }
 
   return (
-    <div className={"page-scroll job-list " + (filterChange ? " filter-trans" : "") + (isMobile ? " mobile" : "")}>
-      {showDesignBuffer && (
-        <div className={"job job-visible job-buffer" + (isMobile ? " mobile" : "")}>
-          <div className="job-company">COMING SOON</div>
-          <div className="job-desc job-desc-active">
-            <div className="job-desc-block job-buffer-lead">
-              Building toward full-time design roles.
+    <div className={"page-scroll exp-container"}>
+      <a
+        className="hyperlink exp-resume-link"
+        href="/resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span className="job-title">DOWNLOAD RÉSUMÉ</span>
+        <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
+      </a>
+      <div className={"job-list " + (isMobile ? "mobile " : "") + (filterChange ? "filter-trans " : "")}>
+        {showDesignBuffer && (
+          <div className={"job job-visible job-buffer" + (isMobile ? " mobile" : "")}>
+            <div className="job-company">COMING SOON</div>
+            <div className="job-desc job-desc-active">
+              <div className="job-desc-block job-buffer-lead">
+                Building toward full-time design roles.
+              </div>
+            </div>
+            <div className="job-preview job-preview-active">
+              <Link
+                href="/port"
+                className="hyperlink job-buffer-sublink"
+                onClick={() => updatePortSection("design")}
+              >
+                <span className="job-title">BROWSE DESIGN WORK</span>
+                <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
+              </Link>
+              <Link href="/contact" className="hyperlink job-buffer-sublink">
+                <span className="job-title">REACH OUT</span>
+                <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
+              </Link>
             </div>
           </div>
-          <div className="job-preview job-preview-active">
-            <Link
-              href="/port"
-              className="hyperlink job-buffer-sublink"
-              onClick={() => updatePortSection("design")}
-            >
-              <span className="job-title">BROWSE DESIGN WORK</span>
-              <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
-            </Link>
-            <Link href="/contact" className="hyperlink job-buffer-sublink">
-              <span className="job-title">REACH OUT</span>
-              <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
-            </Link>
-          </div>
-        </div>
-      )}
-      {data.jobs.map((job) =>
-        <Job key={job.id} id={job.id} type={job.type} company={job.company.toUpperCase()} title={job.title.toUpperCase()}  start={job.start} end={job.end}
-        desc={job.desc} onClick={focusJob} focus={jobFocus} filter={jobFilter} isMobile={isMobile} />)
-      }
+        )}
+        {data.jobs.map((job) =>
+          <Job key={job.id} id={job.id} type={job.type} company={job.company.toUpperCase()} title={job.title.toUpperCase()}  start={job.start} end={job.end}
+          desc={job.desc} onClick={focusJob} focus={jobFocus} filter={jobFilter} isMobile={isMobile} />)
+        }
+      </div>
     </div>
   );
 }
