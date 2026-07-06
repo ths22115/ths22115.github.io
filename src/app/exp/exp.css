@@ -121,11 +121,11 @@
 .job-desc {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     height: max-content;
     width: 100%;
-    max-width: 33rem;
+    max-width: 60%;
     opacity: 1;
     transition: 
         font-size .5s ease-in-out,
@@ -219,5 +219,6 @@
     }
     .job-desc {
         align-items: flex-start;
+        max-width: 100%;
     }
 }
