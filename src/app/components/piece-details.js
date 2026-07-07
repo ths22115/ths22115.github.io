@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { formatPieceType } from "../lib/piece-format";
+import { AnimatedPieceMedia, PieceMedia } from "../lib/piece-media";
 import { useMobile } from "../contexts/mobile-context";
 import { useStaticEffects } from "../contexts/static-effects-context";
 
@@ -84,74 +85,6 @@ function NavLinks({ prevPiece, nextPiece }) {
         <span className="piece-nav-link-title">{nextPiece.title}</span>
       </Link>
     </nav>
-  );
-}
-
-const VIDEO_EXTENSION = /\.(mp4|webm|mov)(\?.*)?$/i;
-
-function isVideoMedia(item) {
-  if (item.type === "video") {
-    return true;
-  }
-
-  if (item.type === "image") {
-    return false;
-  }
-
-  return VIDEO_EXTENSION.test(item.src);
-}
-
-function PieceMedia({ item, className, fallbackAlt }) {
-  if (isVideoMedia(item)) {
-    return (
-      <video
-        className={className}
-        src={item.src}
-        poster={item.poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-label={item.alt || fallbackAlt}
-      />
-    );
-  }
-
-  return (
-    <img
-      className={className}
-      src={item.src}
-      alt={item.alt || fallbackAlt}
-    />
-  );
-}
-
-function AnimatedPieceMedia({ item, fallbackAlt, motionProps }) {
-  if (isVideoMedia(item)) {
-    return (
-      <motion.video
-        className="piece-stage-img"
-        src={item.src}
-        poster={item.poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-label={item.alt || fallbackAlt}
-        {...motionProps}
-      />
-    );
-  }
-
-  return (
-    <motion.img
-      className="piece-stage-img"
-      src={item.src}
-      alt={item.alt || fallbackAlt}
-      {...motionProps}
-    />
   );
 }
 
