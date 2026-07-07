@@ -88,11 +88,11 @@ a {
 
 @keyframes mark-opacity-mobile {
   0% {
-    opacity: .0125;
+    opacity: .14;
   }
 
   100% {
-      opacity: .04;
+      opacity: .22;
   }
 }
 
