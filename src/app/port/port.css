@@ -52,7 +52,6 @@
 
 .display.display-buffer {
     column-count: 1;
-    max-width: min(100%, 42rem);
 }
 
 .port-section-buffer {

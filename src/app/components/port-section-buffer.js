@@ -6,14 +6,14 @@ import { usePort } from "../contexts/port-context";
 
 const BUFFER_COPY = {
   webdev: {
-    lead: "Case studies in progress. Engineering and UI/UX write-ups are being updated.",
+    lead: "Case studies are being updated. Please check back soon.",
     otherSection: "design",
-    otherLabel: "BROWSE GRAPHIC WORK",
+    // otherLabel: "BROWSE GRAPHIC WORK",
   },
   design: {
-    lead: "Building out graphic and print case studies.",
+    lead: "Case studies are being updated. Please check back soon.",
     otherSection: "webdev",
-    otherLabel: "BROWSE UI/UX WORK",
+    // otherLabel: "BROWSE UI/UX WORK",
   },
 };
 
@@ -41,14 +41,14 @@ export default function PortSectionBuffer({ section, isMobile }) {
           <span className="job-title">DOWNLOAD RÉSUMÉ</span>
           <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
         </a>
-        <Link
+        {/* <Link
           href="/port"
           className="hyperlink job-buffer-sublink"
           onClick={() => updatePortSection(copy.otherSection)}
         >
           <span className="job-title">{copy.otherLabel}</span>
           <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
-        </Link>
+        </Link> */}
         <Link href="/contact" className="hyperlink job-buffer-sublink">
           <span className="job-title">REACH OUT</span>
           <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
