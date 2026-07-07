@@ -50,6 +50,21 @@
     opacity: 0;
 }
 
+.display.display-buffer {
+    column-count: 1;
+    max-width: min(100%, 42rem);
+}
+
+.port-section-buffer {
+    cursor: default;
+    margin-bottom: 0;
+}
+
+.port-section-buffer .job-preview {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+}
+
 .piece-title {
     font: var(--title);
     color: var(--grayo);
