@@ -112,10 +112,13 @@
   row-gap: 1rem;
 }
 
-.piece-image {
+.piece-image,
+video.piece-image {
   width: 100%;
   max-width: none;
   transition: 0.3s;
+  display: block;
+  height: auto;
 }
 
 @media screen and (min-width: 769px) {
@@ -170,9 +173,11 @@
     width: 100%;
   }
 
-  .piece-stage-img {
+  .piece-stage-img,
+  video.piece-stage-img {
     width: 100%;
     display: block;
+    height: auto;
   }
 
   /* ---- Dead pixel zone (~40%) ---- */

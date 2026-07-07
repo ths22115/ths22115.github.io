@@ -87,6 +87,74 @@ function NavLinks({ prevPiece, nextPiece }) {
   );
 }
 
+const VIDEO_EXTENSION = /\.(mp4|webm|mov)(\?.*)?$/i;
+
+function isVideoMedia(item) {
+  if (item.type === "video") {
+    return true;
+  }
+
+  if (item.type === "image") {
+    return false;
+  }
+
+  return VIDEO_EXTENSION.test(item.src);
+}
+
+function PieceMedia({ item, className, fallbackAlt }) {
+  if (isVideoMedia(item)) {
+    return (
+      <video
+        className={className}
+        src={item.src}
+        poster={item.poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label={item.alt || fallbackAlt}
+      />
+    );
+  }
+
+  return (
+    <img
+      className={className}
+      src={item.src}
+      alt={item.alt || fallbackAlt}
+    />
+  );
+}
+
+function AnimatedPieceMedia({ item, fallbackAlt, motionProps }) {
+  if (isVideoMedia(item)) {
+    return (
+      <motion.video
+        className="piece-stage-img"
+        src={item.src}
+        poster={item.poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label={item.alt || fallbackAlt}
+        {...motionProps}
+      />
+    );
+  }
+
+  return (
+    <motion.img
+      className="piece-stage-img"
+      src={item.src}
+      alt={item.alt || fallbackAlt}
+      {...motionProps}
+    />
+  );
+}
+
 function getSections(piece) {
   const backgroundImages =
     piece.backgroundImages && piece.backgroundImages.length
@@ -122,7 +190,12 @@ function MobilePieceDetails({ piece, prevPiece, nextPiece }) {
 
         <div className="piece-images piece-process-images">
           {piece.processImages.map((image, index) => (
-            <img className="piece-image" key={index} src={image.src} alt={image.alt} />
+            <PieceMedia
+              key={`${image.src}-${index}`}
+              item={image}
+              className="piece-image"
+              fallbackAlt={piece.title}
+            />
           ))}
         </div>
 
@@ -133,7 +206,12 @@ function MobilePieceDetails({ piece, prevPiece, nextPiece }) {
 
         <div className="piece-images piece-result-images">
           {piece.resultImages.map((image, index) => (
-            <img className="piece-image" key={index} src={image.src} alt={image.alt} />
+            <PieceMedia
+              key={`${image.src}-${index}`}
+              item={image}
+              className="piece-image"
+              fallbackAlt={piece.title}
+            />
           ))}
         </div>
       </div>
@@ -252,14 +330,15 @@ function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
             transition={{ duration: 0.25, ease: "easeOut" }}
           >
             {active.images.map((image, index) => (
-              <motion.img
+              <AnimatedPieceMedia
                 key={`${image.src}-${index}`}
-                className="piece-stage-img"
-                src={image.src}
-                alt={image.alt || piece.title}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.06, ease: "easeOut" }}
+                item={image}
+                fallbackAlt={piece.title}
+                motionProps={{
+                  initial: { opacity: 0, y: 14 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.3, delay: index * 0.06, ease: "easeOut" },
+                }}
               />
             ))}
           </motion.div>
