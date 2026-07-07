@@ -1,20 +1,5 @@
-'use client'
-import React, { useRef, useEffect, useState } from "react";
-import "./page.css";
-import Skeleton from '../components/skeleton';
+import ContactView from "./contact-view";
 
-export default function Contact() {
-  const [isMobile, setMobile] = useState(false);
-
-  return (
-    <div>
-    <Skeleton page={'contact'} isMobile={isMobile} updateIsMobile={setMobile} />
-    <div className="text contact-text">
-        <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"mailto:milesmckinleythomas@gmail.com"}>EMAIL<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a></div>
-        <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"https://www.linkedin.com/in/mius-thomas/"}>LINKEDIN<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a></div>
-        <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"https://www.github.com/ths22115"}>GITHUB<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a></div>
-        {/* <div className="subtext contact-subtext"><a className={"hyperlink"} target="_blank" href={"https://www.instagram.com/urm1us/"}>INSTAGRAM<div className={"hyperlink-arrow"}>&#8599;&#xFE0E;</div></a></div> */}
-      </div>
-    </div>
-  );
+export default function Page() {
+  return <ContactView />;
 }

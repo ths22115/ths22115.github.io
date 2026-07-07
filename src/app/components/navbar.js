@@ -1,97 +1,127 @@
- "use client"
-import React from "react";
-import Link from 'next/link';
+"use client"
+import Link from "next/link";
 import "./navbar.css";
+import { useStaticEffects } from "../contexts/static-effects-context";
+import { usePort } from "../contexts/port-context";
+import { useExp } from "../contexts/exp-context";
+import Logotype from "./logotype";
 
-const Navbar = (props) => {
-    if (props.isMobile 
-        // && props.page != "landing"
-    ) {
-        const pageDisplayName = {
-            "port": "PORTFOLIO",
-            "exp": "EXPERIENCE",
-            "landing": "HOME",
-            "about": "ABOUT",
-            "contact": "CONTACT"
-        }
-        console.log(Object.keys(pageDisplayName))
+const pageStrings = ["landing", "about", "exp", "port", "contact", "port-details"];
 
-        const currPage = pageDisplayName[props.page]
-        const nestedNav = props.page == "exp" || props.page == "port"
-        
-        if (nestedNav && props.focus > -1) {
-
-        }
-
-        return (
-            <div className={"nav mobile nonlanding"}>
-                {/* MINI. NAV FOR NON-LANDING PAGES W/ MIUS + ALL PAGE NAMES */}
-                <div className="nav-mobile-text">
-                    <div className="title mius mobile">
-                        <Link href={'/'}>MIUS THOMAS</Link>
-                    </div>
-                    {/* { props.page == "landing" ? ( */}
-                        <div className="nav-mobile-grid">
-                            <div className="nav-mobile-links">
-                                <div className="nav-mobile-rows">
-                                    { Object.keys(pageDisplayName).map((page, index) =>
-                                    index < 2 &&
-                                    <div key={index} className={"nav-button mobile mius-var" + (currPage == pageDisplayName[page] ? " active" : "")}>
-                                        <Link href={`/${page == "landing" ? "" : page}`}>{pageDisplayName[page]}</Link>
-                                    </div>
-                                    )}
-                                </div>
-                                <div className="nav-mobile-rows">
-                                    { Object.keys(pageDisplayName).map((page, index) =>
-                                    index >= 2 &&
-                                    <div key={index} className={"nav-button mobile mius-var" + (currPage == pageDisplayName[page] ? " active" : "")}>
-                                        <Link href={`/${page == "landing" ? "" : page}`}>{pageDisplayName[page]}</Link>
-                                    </div>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>         
-        )
-    }
-    return (
-        <div className={"nav" + (props.isMobile ? " mobile" : "")}>
-            <ul className="nav-list">
-                <li className={"nav-button " + (props.page == 'landing' ? 'active' : '')}>
-                    <Link href={'/'}>HOME</Link>
-                </li>
-                <li className={"nav-button " + (props.page == 'about' ? 'active' : '')}>
-                    <Link href={'/about'}>ABOUT</Link>
-                </li>
-                <li className={"nav-button nested-button " + (props.page == 'exp' ? 'active' : '')}>
-                    <Link href={'/exp'}>EXPERIENCE</Link>
-                    {props.page == 'exp' ? 
-                    (<ul className={"sublist exp-list"}>
-                        <li id={"exp-all"} className={"tab exp-tab " + (props.expFilter == "all" ? "tab-active" : "")} onClick={props.updateExpFilter}>( ALL )</li>
-                        <li id={"exp-swe"} className={"tab exp-tab " + (props.expFilter == "swe" ? "tab-active" : "")} onClick={props.updateExpFilter}>( SWE )</li> 
-                        <li id={"exp-design"} className={"tab exp-tab " + (props.expFilter == "design" ? "tab-active" : "")} onClick={props.updateExpFilter}>( DESIGN )</li>
-                    </ul>)
-                    : ''}
-                </li>
-                <li className={"nav-button nested-button " + (props.page == 'port' ? 'active' : '')}>
-                    <Link href={'/port'}>PORTFOLIO</Link>
-                    {props.page == 'port' ? 
-                    (<ul className={"sublist port-list"}>
-                        <li id={"port-webdev"} className={"tab port-tab " + (props.portSection == "webdev" ? "tab-active" : "")} onClick={props.updatePortSection}>( UI/UX )</li> 
-                        <li id={"port-design"} className={"tab port-tab " + (props.portSection == "design" ? "tab-active" : "")} onClick={props.updatePortSection}>( GRAPHIC )</li>
-                    </ul>)
-                    : ''}
-                </li>
-                <li className={"nav-button " + (props.page == 'contact' ? 'active' : '')}>
-                    <Link href={'/contact'}>CONTACT</Link>
-                </li>
-            </ul>
-            <div className="title mius">
-                <Link href={'/'}>MIUS THOMAS</Link>
-                <div className="subtitle">SWE &#x2022; DESIGNER</div>
-            </div>
-        </div>
-    )
+const pageDisplayName = {
+  landing: "HOME",
+  about: "ME",
+  exp: "CV",
+  port: "WORK",
+  contact: "MORE",
 };
+
+const nestedNavTabs = {
+  port: [
+    { id: "webdev", label: "UI/UX" },
+    { id: "design", label: "GRAPHIC" },
+  ],
+  exp: [
+    // { id: "all", label: "*" },
+    { id: "swe", label: "SWE" },
+    { id: "design", label: "DESIGN" },
+  ],
+};
+
+function NestedNavTabButton({ label, isActive, modeClass, modeInnerClass, onClick }) {
+  return (
+    <div
+      className={`page-tab ${modeClass} ${isActive ? "active" : ""}`}
+      onClick={onClick}
+    >
+      {label}
+    </div>
+  );
+}
+
+const Navbar = ({ page }) => {
+  const { isStaticEnabled, toggleStaticEffects } = useStaticEffects();
+  const { portSection, updatePortSection } = usePort();
+  const { jobFilter, updateJobFilter, resetJobFilter } = useExp();
+  const pages = Object.keys(pageDisplayName);
+  const currPage = pageDisplayName[page];
+  const modeClass = isStaticEnabled ? "radio" : "bw";
+
+  function handleExpLinkClick(e) {
+    if (page === "exp") e.preventDefault();
+    resetJobFilter();
+  }
+
+  function getNestedNavState(pageKey) {
+    if (pageKey === "port" || pageKey === "port-details") {
+      return { tabs: nestedNavTabs.port, activeTab: portSection, updateTab: updatePortSection };
+    }
+    if (pageKey === "exp") {
+      return { tabs: nestedNavTabs.exp, activeTab: jobFilter, updateTab: updateJobFilter };
+    }
+    return null;
+  }
+
+  return (
+    <div className="nav-container">
+      <div className="nav-logotype-container">
+        <Link href="/" aria-label="Home">
+          <Logotype className="nav-logotype" />
+        </Link>
+      </div>
+      <div className={"nav-links-container"}>
+        {pages.map((pageKey) => {
+          const nestedNav = getNestedNavState(pageKey);
+
+          return (
+            <div
+              key={pageKey}
+              className={
+                "nav-link"
+                + (currPage == pageDisplayName[pageKey] ? " active" : "")
+                + (pageKey == "port" || pageKey == "exp" ? " nested-nav-link" : "")
+                + (pageKey == "port" && page === "port-details" ? " active" : "")
+              }
+            >
+              <Link
+                href={`/${pageKey == "landing" ? "" : pageKey}`}
+                onClick={pageKey === "exp" ? handleExpLinkClick : undefined}
+              >
+                {pageDisplayName[pageKey]}
+              </Link>
+              {nestedNav && page === pageKey && (
+                <div className="nested-nav-tabs">
+                  {nestedNav.tabs.map(({ id, label }) => (
+                    <NestedNavTabButton
+                      key={id}
+                      label={label}
+                      isActive={nestedNav.activeTab === id}
+                      modeClass={modeClass}
+                      onClick={() => nestedNav.updateTab(id)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <div className="viewing-mode-container">
+        <div
+          className={`viewing-mode-button bw-button ${!isStaticEnabled ? "active" : ""}`}
+          onClick={toggleStaticEffects}
+        >
+          <div className="viewing-mode-button-inner bw-button-inner">B/W</div>
+        </div>
+        <div
+          className={`viewing-mode-button radio-button ${isStaticEnabled ? "active" : ""}`}
+          onClick={toggleStaticEffects}
+        >
+          <div className="viewing-mode-button-inner radio-button-inner">TV</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default Navbar;

@@ -4,15 +4,20 @@
 
 .contact-subtext {
     min-width: 10rem;
+    font-weight: bold;
+    font-size: 1.125rem;
 }
 
 
 @media screen and (max-width: 768px) {
     .contact-text {
-        row-gap: 1rem;
-        max-width: 17.5rem;
+        width: 100%;
+        max-width: 10rem;
+        row-gap: 1.5rem;
+        
+
     }
     .contact-subtext {
-      min-width: 19rem
+      min-width: max-content;
     }
 }

@@ -2,6 +2,7 @@
 
 :root {
   --ff:'all-round-gothic', Arial;
+  --title: 700 3rem/1.4em var(--ff);
   --h1: 700 1.5rem/1.4em var(--ff);
   --h2: 700 1.25rem/1.4em var(--ff);
   --p: 400 1rem/1.4em var(--ff);
@@ -25,9 +26,10 @@
 html,
 body {
   width: 100vw;
-  height: 100dvh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  height: 100lvh;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background-color: var(--bgrnd);
 }
 
 body {
@@ -50,28 +52,21 @@ a {
 }
 
 .text {
-  position: absolute;
-  top: 0;
-  right: 0;
+  z-index: 10;
   height: fit-content;
   width: max-content;
   max-width: 25rem;
   display: flex;
   flex-direction: column;
-  padding: 7rem 5rem 0 0;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: column;
   row-gap: 1.5rem;
-  z-index: 10;
-}
-
-.landing-text {
+  padding: 2.25rem 0 0 0;
 }
 
 .subtext {
   font: var(--p);
-  color: var(--gray0);
+  color: var(--grayo);
   text-align: left;
 }
 
@@ -83,13 +78,24 @@ a {
 
 @keyframes mark-opacity-landing {
   0% {
-    opacity: .07;
+    opacity: .06;
   }
 
   100% {
-      opacity: .13;
+      opacity: .12;
   }
 }
+
+@keyframes mark-opacity-mobile {
+  0% {
+    opacity: .14;
+  }
+
+  100% {
+      opacity: .22;
+  }
+}
+
 
 /* @keyframes mark-opacity {
   0% {
@@ -102,18 +108,19 @@ a {
 } */
 
 .mark {
-  position: absolute;
+  position: fixed;
   bottom: -300px;
   right: -300px;
   opacity: .18;
   transform: translate(0, 0);
   pointer-events: all;
-  transition: opacity 1s ease, scale 1s ease;
+  transition: opacity .6s ease-in-out, scale .6s ease-in-out, filter .6s ease;
+  filter: invert(0);
   mix-blend-mode: overlay;
   z-index: 5;
 }
 
-.mark:not(.mark-focus, .mark-about, .mark-contact, .mark-mobile) {
+.mark {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 }
 .mark:hover {
@@ -127,14 +134,15 @@ a {
 } */
 
 .mark-landing, .mark-contact {
-  :not(.mark-mobile) {
+  /* :not(.mark-mobile) { */
     bottom: -250px;
     right: -300px;
     z-index: 20;
-  }
+  /* } */
 }
 
 .mark-about {
+  animation: unset;
   top: 45%;
   left: 50%;
   opacity: .17;
@@ -151,7 +159,6 @@ a {
   scale: 1.08;
 }
 
-
 .mark-port, .mark-exp {
   top: 50%;
   left: -300px;
@@ -160,31 +167,32 @@ a {
 }
 
 .mark-focus {
-  /* animation: none; */
-  /* transition: opacity 1s ease; */
+  animation: unset;
   opacity: .3;
   scale: 1.04;
-}
+} 
 
 .hyperlink {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  transition: scale .4s;
+  transition: opacity 0.3s ease;
 }
 .hyperlink:hover {
-  scale: 1.04;
+  opacity: 0.5;
 }
 
 .hyperlink-arrow {
-  font-size: .5rem;
-  padding-left: .1rem;
+  font-size: .625rem;
+  padding-left: .25rem;
   z-index: 20;
 }
 
 .footer {
   position: absolute;
+  left: 2.25rem;
   bottom: 1.5rem;
+  width: max-content;
   font-size: .65rem;
   opacity: .75;
 }
@@ -199,21 +207,20 @@ a {
 @media screen and (max-width: 768px) {
   html {
     font-size: 14px;
-    background-color: #303030;
   }
 
   .text {
-    padding: 2.25rem 2.25rem 0 0;
     max-width: 19rem;
-    /* text-align: right; */
+    line-height: 1.4;
+    padding: 2.25rem 1.875rem 2.25rem 0;
   }
 
-  .landing-text {
-    max-width: 17rem;
-  }
-
-  .mark.mark-landing {
-    animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
+  .mark {
+    top: unset;
+    right: unset;
+    left: unset;
+    bottom: unset;
+    animation: 15s ease-in-out 0s infinite alternate mark-opacity-mobile;
   }
 
   .mark-mobile {
@@ -229,18 +236,18 @@ a {
   .mark-contact.mark-mobile {
     left: -9rem;
     bottom: -10rem;
-    opacity: .4;
+    /* opacity: .4; */
   }
 
   .mark-port.mark-mobile, .mark-exp.mark-mobile {
       left: -61%;
       top: 3.6rem;
       pointer-events: none;
-      opacity: .4;
+      /* opacity: .17; */
   }
-  .mark-exp.mark-mobile {
+  /* .mark-exp.mark-mobile {
     opacity: .17;
-  }
+  } */
 }
 
 @media screen and (max-height: 670px), screen and (max-width: 350px) {
@@ -249,3 +256,35 @@ a {
   }
 }
 
+.mark.static-off {
+  animation: none;
+  filter: invert(.25);
+  opacity: .5;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  top: unset;
+  right: unset;
+  left: -22rem;
+  bottom: -17.1rem;
+  scale: unset;
+}
+
+.mark.static-off.mark-landing, .mark.static-off.mark-contact {
+  filter: invert(1);
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px){
+  .mark.static-off {
+    bottom: unset;
+    /* scale: 1.7;
+    left: 20.75rem;
+    top: 4rem; */
+
+    scale: 1.65;
+    left: unset;
+    left: 30rem;
+    /* right: 3rem; */
+    top: 9rem;
+  }
+}

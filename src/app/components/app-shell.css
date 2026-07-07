@@ -1,0 +1,222 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: minmax(0, 1fr);
+  height: 100dvh;
+  width: 100%;
+  padding-left: 2.5rem;
+  position: relative;
+  column-gap: 2.5rem;
+}
+
+.app-shell-content {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  /* padding: 0 2.5rem; */
+}
+
+.page-scroll {
+  flex: 1 1 0;
+  align-self: stretch;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 2.5rem 2.5rem 2.5rem 0;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  .page {
+	--gray-rgb: 255, 255, 255;
+	--gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+	--gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+	--button-primary-hover: #ccc;
+	--button-secondary-hover: #1a1a1a;
+  }
+} */
+
+@keyframes tv-nosignal {
+	0%   { background-position: 0 0; }
+	12%  { background-position: -123px 84px; }
+	25%  { background-position: 91px -137px; }
+	37%  { background-position: -64px 151px; }
+	50%  { background-position: 173px 39px; }
+	62%  { background-position: -151px -97px; }
+	75%  { background-position: 48px -168px; }
+	87%  { background-position: -104px 112px; }
+	100% { background-position: 142px -53px; }
+}
+@keyframes tv-nosignal-b {
+	0%   { background-position: 0 0; }
+	14%  { background-position: 107px -113px; }
+	28%  { background-position: -141px 62px; }
+	42%  { background-position: 73px 162px; }
+	57%  { background-position: -94px -149px; }
+	71%  { background-position: 158px 93px; }
+	85%  { background-position: -171px -41px; }
+	100% { background-position: 61px 134px; }
+}
+.noise-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+	pointer-events: none;
+	opacity: .55;
+	overflow: hidden;
+	isolation: isolate;
+	z-index: 0;
+  filter: brightness(7);
+}
+/* Safari support hack for noise wrapper */
+@supports (background: -webkit-named-image(i)) {
+  .noise-wrapper { filter: brightness(6); opacity: .3; }
+}
+
+/* SVG fractal-noise static. Renders consistently across browsers (incl. desktop
+   Safari, which fails to rasterize the previous sub-pixel repeating-gradient +
+   background-blend-mode: difference trick). Two opaque noise layers at different
+   grain scales, seeds, speeds, and motion vectors are combined with an element
+   mix-blend-mode (raster blend, Safari-safe) so the static stays chaotic; the
+   wrapper opacity controls how strongly it veils the page. */
+.noise-wrapper::before,
+.noise-wrapper::after {
+	content: '';
+	display: block;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	background-repeat: repeat;
+	filter: contrast(1.7);
+}
+.noise-wrapper::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-size: 160px 160px;
+	animation: tv-nosignal .15s steps(1) infinite;
+}
+.noise-wrapper::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-size: 110px 110px;
+	mix-blend-mode: difference;
+	animation: tv-nosignal-b .11s steps(1) infinite;
+}
+
+.scanlines {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100dvh;
+	pointer-events: none;
+	z-index: 300;
+	opacity: .4;
+	will-change: opacity;
+  
+	&:before {
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  pointer-events: none;
+	  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .5) 51%);
+	  background-size: 100% 4px;
+	  will-change: background, background-size;
+	  animation: scanlines .05s linear infinite;
+	}
+}
+
+@keyframes scanlines {
+from {
+	background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .5) 51%);
+		background-size: 100% 4px;
+}
+to {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 50%, transparent 51%);
+		background-size: 100% 4px;
+}
+}
+
+@media screen and (max-width: 768px) {
+	.app-shell {
+    padding: 0 0 0 1.875rem;
+    column-gap: 1.875rem;
+	}
+
+  .app-shell-content {
+    padding: 0;
+  }
+
+  .page-scroll {
+    padding: 2.25rem 1.875rem 2.25rem 0;
+  }
+
+	.scanlines {
+		opacity: .15;
+
+		&:before {
+			animation: scanlines .5s linear infinite;
+		  }
+	}
+
+	.noise-layers {
+		position: fixed;
+		inset: 0;
+		overflow: hidden;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.noise-wrapper {
+		opacity: .2;
+	}
+	
+	@keyframes noise-animation {
+		0% { transform: translate(0,0) }
+		10% { transform: translate(-5%,-5%) }
+		20% { transform: translate(-10%,5%) }
+		30% { transform: translate(5%,-10%) }
+		40% { transform: translate(-5%,15%) }
+		50% { transform: translate(-10%,5%) }
+		60% { transform: translate(15%,0) }
+		70% { transform: translate(0,10%) }
+		80% { transform: translate(-15%,0) }
+		90% { transform: translate(10%,5%) }
+		100% { transform: translate(5%,0) }
+	}
+}
+
+/* Enable hover only on non-touch devices */
+/* @media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+	background: var(--button-primary-hover);
+	border-color: transparent;
+  }
+
+  a.secondary:hover {
+	background: var(--button-secondary-hover);
+	border-color: transparent;
+  }
+
+  .footer a:hover {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+  }
+}
+*/ 
+
+/* @media (prefers-color-scheme: dark) {
+  .logo {
+	filter: invert();
+  }
+}  */

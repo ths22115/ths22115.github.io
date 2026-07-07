@@ -1,6 +1,6 @@
 // 'use client'
 // import React, { useEffect } from "react";
-// import "./page.css";
+// import "./mobile.css";
 // import noiseImg from "../../../public/noiseTransparent.png"
 
 // export default function Mobile() {

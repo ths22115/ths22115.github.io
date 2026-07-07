@@ -1,0 +1,45 @@
+.landing-text {
+  width: 100%;
+  max-width: 17rem;
+  white-space: pre-wrap;
+}
+
+.landing-subtext {
+    font: var(--p);
+    line-height: 1.5;
+    color: var(--grayo);
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .landing-text {
+    width: 100%;
+    max-width: unset;
+    height: 100%;
+    padding: 12rem 10rem 0 0;
+    position: relative;
+  }
+
+  .landing-subtext {
+    position: absolute;
+    width: auto;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+  }
+
+  .landing-subtext:first-child {
+    left: 15%;
+    top: 30%;
+    text-align: left;
+  }
+  .landing-subtext:nth-child(2) {
+    right: 18%;
+    top: 45%;
+    text-align: right;
+  }
+  .landing-subtext:nth-child(3) {
+    left: 28%;
+    top: 64%;
+    text-align: left;
+  }
+}

@@ -1,59 +1,60 @@
 {
-  "projects": [
-      {
-        "id": 0,
-        "img": "cfc",
-        "imgCount": 3,
-        "title": "CFC Event Manager",
-        "type": "Web Application",
-        "link": "",
-        "repo": "",
-        "date": "AUG 2025",
-        "desc": "Developed a fullstack internal dashboard using React, Node.js, TailwindCSS, and C#/.NET, seamlessly integrating frontend and backend systems to provide near real-time monitoring and management of 10K+ daily business events across 100+ operational processes, significantly reducing manual intervention.<br />Led the design of high-fidelity Figma mockups for multiple end-to-end workflows, shaping the frontend using an iterative methodology to ensure user-centric, intuitive experiences, streamlining engineering handoff and reducing frontend implementation time by 15%."
-      },
-      {
-          "id": 1,
-          "img": "samoth",
-          "imgCount": 3,
-          "title": "Samoth",
-          "type": "Portfolio Website",
-          "link": "https://samoth.us",
-          "repo": "https://github.com/samothMedia/samothSite",
-          "date": "AUG 2024",
-          "desc": "Designed and developed a portfolio site for Samoth, providing an interactive gallery to experience Samoth’s various visual project deliverables, garnering roughly 500 active users in one year."
-      },
-      {
-          "id": 2,
-          "img": "finder",
-          "imgCount": 8,
-          "title": "Finder",
-          "type": "Web Application",
-          "link": "https://finder.eastus.cloudapp.azure.com/finder/",
-          "repo": "",
-          "date": "DEC 2024",
-          "desc": "Engineered Finder, a lost-and-found web application for RPI, collaborating with 4 peers to implement secure user authentication, automated item-matching algorithms, and a responsive UI to be utilized by 9,000+ students, faculty, and staff."
-      },
-      {
-          "id": 3,
-          "img": "berleFarm",
-          "imgCount": 3,
-          "title": "Berle Farm",
-          "type": "UX Study",
-          "link": "https://docs.google.com/document/d/1Unr9Xl6fputrr_ItA9wSKNImhZ_nvs3Snj6Y3FT-JP8/edit?usp=sharing",
-          "repo": "",
-          "date": "APR 2024",
-          "desc": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, delivering a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders." 
-      },
-      {
-          "id": 4,
-          "img": "hackRPI-X",
-          "imgCount": 4,
-          "title": "HACKRPI X",
-          "type": "Web Application",
-          "link": "",
-          "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
-          "date": "NOV 2023",
-          "desc": "Designed and developed components of the HACKRPI 2023 (HACKRPI X) web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team." 
-      }
-    ]
-  }
+  "pieces": [
+    {
+      "id": 100,
+      "title": "CFC Event Manager",
+      "type": ["web app"],
+      "date": "AUG 2025",
+      "thumbnail": "/cfc1.jpg",
+      "link": "",
+      "repo": "",
+      "background": "Continental Finance needed an internal dashboard to monitor and manage high-volume business event workflows across operational teams.",
+      "process": "Developed a fullstack internal dashboard using React, Node.js, TailwindCSS, and C#/.NET, seamlessly integrating frontend and backend systems. Led the design of high-fidelity Figma mockups for multiple end-to-end workflows, shaping the frontend using an iterative methodology to ensure user-centric, intuitive experiences and streamline engineering handoff.",
+      "processImages": [
+        { "src": "/cfc1.jpg", "alt": "CFC Event Manager" },
+        { "src": "/cfc2.jpg", "alt": "CFC Event Manager" }
+      ],
+      "result": "Delivered a near real-time monitoring and management tool for 10K+ daily business events across 100+ operational processes, significantly reducing manual intervention and reducing frontend implementation time by 15%.",
+      "resultImages": [
+        { "src": "/cfc1.jpg", "alt": "CFC Event Manager" },
+        { "src": "/cfc2.jpg", "alt": "CFC Event Manager" },
+        { "src": "/cfc3.jpg", "alt": "CFC Event Manager" }
+      ]
+    },
+    {
+      "id": 101,
+      "title": "Needle",
+      "type": ["web app"],
+      "date": "OCT 2023",
+      "thumbnail": "/samoth1.jpg",
+      "link": "",
+      "repo": "",
+      "background": [
+        "As the editorial style and visual design magazine of a leading technological institution, The Thread sought to leverage current web technologies to thrive in an increasingly digital landscape. The Thread needed a web solution capable of providing comprehensive digital access to the organization’s editorial content, event programming, and community contributions. Additionally, a secure web-view to easily manage, tweak, add and update said events, publications and submitted content, as well as record member participation and overall club activity was also in order.",
+        "Thus, Needle was born—a web-suite that unifies public-facing storytelling, creative UI/UX design, and internal operations into one cohesive platform for viewers, contributors, and authorized club members. Built in collaboration with a five-person team across design, frontend, and backend.",
+        "The Thread exists to highlight and celebrate RPI and greater Troy's visual design and fashion culture; Needle exists to organize and facilitate that celebration and share it with the world."
+      ],
+      "process": [
+        "The Needle web-suite runs on React (TypeScript) and Tailwind on the frontend, Flask on the backend, and MongoDB Atlas with AWS S3 for structured data and asset storage. API design followed a frontend-first, entity-based methodology, iterating from page-driven routes and split databases toward a consolidated model centered on three core entries—events, images, and members—with routes prefixed by classification and each entity owning its own MongoDB collection.",
+        "The Thread persists across every public page as the suite’s signature visual anchor—serving as both header and footer while grounding the rest of the UI. Its rounded, curvy form set the tone for the public site: soft corners, bold but weighty type, thick strokes, and inset and drop shadows throughout.",
+        "Event discovery is built around a card system for browsing past style and visual-design programming—each card pairs a thumbnail with a title and event type, translated through iconography: camera for shoots, calendar for events, pen for editorial pieces, globe for external programming. The icon system carries through into event details and the admin portal. For recent and upcoming programming, I iterated on a loop component—popup, then page section—before the team cut it; a planned calendar view would have overlapped, and implementation complexity wasn’t justified alongside everything else on the roadmap.",
+        "Event details were designed mobile-first, with a viewport-tall hero thumbnail and a collapsible metadata panel to preserve vertical space on small screens. I considered extending the iconography further here but pulled back—at this level of detail, additional symbols risked confusion where the card-level system already did the work.",
+        "Admin lives entirely under /admin, gated to club officers and authorized members, with POST, PUT, and DELETE access to events, members, and images. Early mocks shared the public site’s soft visual language, but The Thread deliberately doesn’t appear in the workspace—and without it anchoring the design, the roundedness and weight fell through. What emerged instead: thin grid-like strokes and outlines, sharp sans-serif type, and a more serious tone suited to a management portal."
+      ],
+      "processImages": [
+        { "src": "/needle/needle-architecture-evolution.png", "alt": "Needle data architecture evolution: dataflow draft, schema v2, and proposed entity model" },
+        { "src": "/needle/needle-architecture-proposed-2.png", "alt": "Needle imageDB schema: S3 asset paths, event references, and personnel attribution" },
+        { "src": "/needle/needle_process_theThread-header.jpg", "alt": "The Thread visual anchor persisting as header and footer across public pages" }
+      ],
+      "result": "Delivered a club management system that streamlined the club application process and managed club operations.",
+      "resultImages": [
+        {
+          "src": "/needle/needle_result_landing.webp",
+          "alt": "Needle landing page, including The Thread visual anchor and event card system",
+          "type": "video",
+          "poster": "/needle/needle_result_landing_thumbnail.webp"
+        }
+      ]
+    }
+  ]
+}

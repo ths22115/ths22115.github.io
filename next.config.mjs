@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization
   },
+  allowedDevOrigins: ['10.0.0.228', '*.10.0.0.228'],
   // assetPrefix: !isProd ? '',
   // basePath: !isProd ? ''
   // output: 'export'

@@ -1,5 +1,13 @@
 import "./globals.css";
 import Script from 'next/script';
+import RouteTransition from './components/route-trans';
+import AppShell from './components/app-shell';
+import GlobalMark from "./components/global-mark";
+import Frame from "./components/frame";
+import { StaticEffectsProvider } from "./contexts/static-effects-context";
+import { MobileProvider } from "./contexts/mobile-context";
+import { PortProvider } from "./contexts/port-context";
+import { ExpProvider } from "./contexts/exp-context";
 
 export const metadata = {
   title: "MIUS THOMAS",
@@ -14,7 +22,21 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {/* <Script src="https://unpkg.com/react-scan/dist/auto.global.js" /> */}
-        {children}
+        <MobileProvider>
+          <StaticEffectsProvider>
+            <PortProvider>
+              <ExpProvider>
+                <RouteTransition>
+                  <AppShell>
+                    {children}
+                  </AppShell>
+                </RouteTransition>
+                <GlobalMark />
+                <Frame />
+              </ExpProvider>
+            </PortProvider>
+          </StaticEffectsProvider>
+        </MobileProvider>
       </body>
     </html>
   );
