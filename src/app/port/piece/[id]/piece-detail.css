@@ -75,7 +75,7 @@
 .piece-expanded {
   row-gap: 1rem;
   font-size: 1rem;
-  line-height: 1.625em;
+  line-height: 1.8em;
 }
 
 .piece-page-img {
@@ -153,8 +153,8 @@ video.piece-image {
 
   /* ---- Image stage (~60%) ---- */
   .piece-stage {
-    flex: 0 0 58%;
-    max-width: 58%;
+    flex: 0 0 52%;
+    max-width: 52%;
     height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
@@ -219,6 +219,7 @@ video.piece-image {
     flex: 1 1 auto;
     min-height: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
     display: flex;
@@ -278,7 +279,7 @@ video.piece-image {
   .dpz-tab-text {
     font: var(--p);
     font-size: .95rem;
-    line-height: 1.6em;
+    line-height: 2em;
     transition: opacity .35s ease, padding .35s ease, color .35s ease
   }
   .dpz-static .dpz-tab-text {

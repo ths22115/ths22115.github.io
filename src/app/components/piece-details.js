@@ -13,14 +13,15 @@ function RichText({ text }) {
     return null;
   }
 
-  const lines = text.split("<br />");
+  const content = Array.isArray(text) ? text.join("<br />") : text;
+  const lines = content.split("<br />");
 
   return (
     <>
       {lines.map((line, index) => (
         <React.Fragment key={index}>
           {line}
-          {index < lines.length - 1 && <br />}
+          {index < lines.length - 1 && <><br /> <br /></>}
         </React.Fragment>
       ))}
     </>
@@ -179,6 +180,7 @@ function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
   const stageRef = useRef(null);
+  const tabsRef = useRef(null);
   const lockRef = useRef(false);
   const accRef = useRef(0);
 
@@ -192,6 +194,9 @@ function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
   useEffect(() => {
     if (stageRef.current) {
       stageRef.current.scrollTop = 0;
+    }
+    if (tabsRef.current) {
+      tabsRef.current.scrollTop = 0;
     }
     accRef.current = 0;
   }, [activeIndex]);
@@ -220,12 +225,24 @@ function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
       }
 
       const goingDown = event.deltaY > 0;
-      const atBottom = stage.scrollTop + stage.clientHeight >= stage.scrollHeight - 2;
-      const atTop = stage.scrollTop <= 2;
-      const canScroll = goingDown ? !atBottom : !atTop;
+      const tabs = tabsRef.current;
       const overStage = stage.contains(event.target);
+      const overTabs = tabs?.contains(event.target);
 
-      if (canScroll) {
+      const stageAtBottom = stage.scrollTop + stage.clientHeight >= stage.scrollHeight - 2;
+      const stageAtTop = stage.scrollTop <= 2;
+      const stageCanScroll = goingDown ? !stageAtBottom : !stageAtTop;
+
+      const tabsAtBottom = !tabs || tabs.scrollTop + tabs.clientHeight >= tabs.scrollHeight - 2;
+      const tabsAtTop = !tabs || tabs.scrollTop <= 2;
+      const tabsCanScroll = tabs ? (goingDown ? !tabsAtBottom : !tabsAtTop) : false;
+
+      if (overTabs && tabsCanScroll) {
+        accRef.current = 0;
+        return;
+      }
+
+      if (!overTabs && stageCanScroll) {
         accRef.current = 0;
         if (!overStage) {
           event.preventDefault();
@@ -234,12 +251,29 @@ function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
         return;
       }
 
+      if (overTabs && !tabsCanScroll && stageCanScroll) {
+        accRef.current = 0;
+        event.preventDefault();
+        stage.scrollTop += event.deltaY;
+        return;
+      }
+
+      if (!overTabs && !stageCanScroll && tabsCanScroll) {
+        accRef.current = 0;
+        event.preventDefault();
+        tabs.scrollTop += event.deltaY;
+        return;
+      }
+
       event.preventDefault();
       accRef.current += event.deltaY;
 
-      if (goingDown && accRef.current > ADVANCE_THRESHOLD && activeIndex < sectionCount - 1) {
+      const canAdvanceDown = stageAtBottom && tabsAtBottom;
+      const canAdvanceUp = stageAtTop && tabsAtTop;
+
+      if (goingDown && accRef.current > ADVANCE_THRESHOLD && activeIndex < sectionCount - 1 && canAdvanceDown) {
         advance(1);
-      } else if (!goingDown && accRef.current < -ADVANCE_THRESHOLD && activeIndex > 0) {
+      } else if (!goingDown && accRef.current < -ADVANCE_THRESHOLD && activeIndex > 0 && canAdvanceUp) {
         advance(-1);
       }
     }
@@ -284,7 +318,7 @@ function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
           <Subtitle piece={piece} hasLinks={hasLinks} />
         </div>
 
-        <div className="dpz-tabs">
+        <div className="dpz-tabs" ref={tabsRef}>
           {sections.map((section, index) => {
             const isActive = index === activeIndex;
 

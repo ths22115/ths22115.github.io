@@ -23,93 +23,37 @@
     },
     {
       "id": 101,
-      "title": "Samoth",
-      "type": ["digital portfolio"],
-      "date": "AUG 2024",
+      "title": "Needle",
+      "type": ["web app"],
+      "date": "OCT 2023",
       "thumbnail": "/samoth1.jpg",
-      "link": "https://samoth.us",
-      "repo": "https://github.com/samothMedia/samothSite",
-      "background": "Samoth needed a portfolio platform to present visual project deliverables in an interactive, gallery-driven experience.",
-      "process": "Designed and developed a portfolio site with an interactive gallery structure, building the experience to showcase Samoth's visual work with clarity and navigability.",
-      "processImages": [
-        { "src": "/samoth1.jpg", "alt": "Samoth" },
-        { "src": "/samoth2.jpg", "alt": "Samoth" }
-      ],
-      "result": "Launched a live portfolio that provides an interactive gallery for Samoth's visual project deliverables, garnering roughly 500 active users in one year.",
-      "resultImages": [
-        { "src": "/samoth1.jpg", "alt": "Samoth" },
-        { "src": "/samoth2.jpg", "alt": "Samoth" },
-        { "src": "/samoth3.jpg", "alt": "Samoth" }
-      ]
-    },
-    {
-      "id": 102,
-      "title": "Finder",
-      "type": ["web app"],
-      "date": "DEC 2024",
-      "thumbnail": "/finder1.jpg",
       "link": "",
       "repo": "",
-      "background": "Rensselaer Polytechnic Institute needed a centralized lost-and-found platform accessible to students, faculty, and staff across campus.",
-      "process": "Engineered Finder in collaboration with four peers, implementing secure user authentication, automated item-matching algorithms, and a responsive UI designed for broad campus adoption.",
-      "processImages": [
-        { "src": "/finder1.jpg", "alt": "Finder" },
-        { "src": "/finder2.jpg", "alt": "Finder" },
-        { "src": "/finder3.jpg", "alt": "Finder" }
+      "background": [
+        "As the editorial style and visual design magazine of a leading technological institution, The Thread sought to leverage current web technologies to thrive in an increasingly digital landscape. The Thread needed a web solution capable of providing comprehensive digital access to the organization’s editorial content, event programming, and community contributions. Additionally, a secure web-view to easily manage, tweak, add and update said events, publications and submitted content, as well as record member participation and overall club activity was also in order.",
+        "Thus, Needle was born—a web-suite that unifies public-facing storytelling, creative UI/UX design, and internal operations into one cohesive platform for viewers, contributors, and authorized club members. Built in collaboration with a five-person team across design, frontend, and backend.",
+        "The Thread exists to highlight and celebrate RPI and greater Troy's visual design and fashion culture; Needle exists to organize and facilitate that celebration and share it with the world."
       ],
-      "result": "Shipped a lost-and-found web application deployed for use by 9,000+ students, faculty, and staff.",
-      "resultImages": [
-        { "src": "/finder1.jpg", "alt": "Finder" },
-        { "src": "/finder2.jpg", "alt": "Finder" },
-        { "src": "/finder3.jpg", "alt": "Finder" },
-        { "src": "/finder4.jpg", "alt": "Finder" },
-        { "src": "/finder5.jpg", "alt": "Finder" },
-        { "src": "/finder6.jpg", "alt": "Finder" },
-        { "src": "/finder7.jpg", "alt": "Finder" },
-        { "src": "/finder8.jpg", "alt": "Finder" }
-      ]
-    },
-    {
-      "id": 103,
-      "title": "Berle Farm",
-      "type": ["ux study"],
-      "date": "APR 2024",
-      "thumbnail": "/berleFarm1.jpg",
-      "link": "https://docs.google.com/document/d/1Unr9Xl6fputrr_ItA9wSKNImhZ_nvs3Snj6Y3FT-JP8/edit?usp=sharing",
-      "repo": "",
-      "background": "Berle Farm's e-commerce site presented opportunities to improve usability, visual clarity, and the overall online shopping experience for customers.",
-      "process": "Conducted an end-to-end UI/UX study of Berle Farm's e-commerce site, including heuristic evaluation, user flow analysis, and iterative Figma mockups developed across key shopping workflows.",
-      "processImages": [
-        { "src": "/berleFarm1.jpg", "alt": "Berle Farm" },
-        { "src": "/berleFarm2.jpg", "alt": "Berle Farm" }
+      "process": [
+        "The Needle web-suite runs on React (TypeScript) and Tailwind on the frontend, Flask on the backend, and MongoDB Atlas with AWS S3 for structured data and asset storage. API design followed a frontend-first, entity-based methodology, iterating from page-driven routes and split databases toward a consolidated model centered on three core entries—events, images, and members—with routes prefixed by classification and each entity owning its own MongoDB collection.",
+        "The Thread persists across every public page as the suite’s signature visual anchor—serving as both header and footer while grounding the rest of the UI. Its rounded, curvy form set the tone for the public site: soft corners, bold but weighty type, thick strokes, and inset and drop shadows throughout.",
+        "Event discovery is built around a card system for browsing past style and visual-design programming—each card pairs a thumbnail with a title and event type, translated through iconography: camera for shoots, calendar for events, pen for editorial pieces, globe for external programming. The icon system carries through into event details and the admin portal. For recent and upcoming programming, I iterated on a loop component—popup, then page section—before the team cut it; a planned calendar view would have overlapped, and implementation complexity wasn’t justified alongside everything else on the roadmap.",
+        "Event details were designed mobile-first, with a viewport-tall hero thumbnail and a collapsible metadata panel to preserve vertical space on small screens. I considered extending the iconography further here but pulled back—at this level of detail, additional symbols risked confusion where the card-level system already did the work.",
+        "Admin lives entirely under /admin, gated to club officers and authorized members, with POST, PUT, and DELETE access to events, members, and images. Early mocks shared the public site’s soft visual language, but The Thread deliberately doesn’t appear in the workspace—and without it anchoring the design, the roundedness and weight fell through. What emerged instead: thin grid-like strokes and outlines, sharp sans-serif type, and a more serious tone suited to a management portal."
       ],
-      "result": "Delivered a 16-page analysis, dynamic Figma mockups, and a 20-minute mock presentation to stakeholders.",
-      "resultImages": [
-        { "src": "/berleFarm1.jpg", "alt": "Berle Farm" },
-        { "src": "/berleFarm2.jpg", "alt": "Berle Farm" },
-        { "src": "/berleFarm3.jpg", "alt": "Berle Farm" }
-      ]
-    },
-    {
-      "id": 104,
-      "title": "HACKRPI X",
-      "type": ["web app"],
-      "date": "NOV 2023",
-      "thumbnail": "/hackRPI-X1.jpg",
-      "link": "",
-      "repo": "https://github.com/hack-rpi/HackRPI-Website2023",
-      "background": "HACKRPI X required a refreshed web presence to support event promotion, registration flows, and participant engagement for the 2023 hackathon.",
-      "process": "Designed and developed components of the HACKRPI 2023 web application as Team Lead of the Rensselaer Center for Open Source HACKRPI Website Development Team, coordinating implementation across the site.",
       "processImages": [
-        { "src": "/hackRPI-X1.jpg", "alt": "HACKRPI X" },
-        { "src": "/hackRPI-X2.jpg", "alt": "HACKRPI X" }
+        { "src": "/needle/needle-architecture-evolution.png", "alt": "Needle data architecture evolution: dataflow draft, schema v2, and proposed entity model" },
+        { "src": "/needle/needle-architecture-proposed-2.png", "alt": "Needle imageDB schema: S3 asset paths, event references, and personnel attribution" },
+        { "src": "/needle/needle_process_theThread-header.jpg", "alt": "The Thread visual anchor persisting as header and footer across public pages" }
       ],
-      "result": "Contributed core site components to the HACKRPI X web application as team lead of the website development team.",
+      "result": "Delivered a club management system that streamlined the club application process and managed club operations.",
       "resultImages": [
-        { "src": "/hackRPI-X1.jpg", "alt": "HACKRPI X" },
-        { "src": "/hackRPI-X2.jpg", "alt": "HACKRPI X" },
-        { "src": "/hackRPI-X3.jpg", "alt": "HACKRPI X" },
-        { "src": "/hackRPI-X4.jpg", "alt": "HACKRPI X" }
+        {
+          "src": "/needle/needle_result_landing.webp",
+          "alt": "Needle landing page, including The Thread visual anchor and event card system",
+          "type": "video",
+          "poster": "/needle/needle_result_landing_thumbnail.webp"
+        }
       ]
     }
   ]
