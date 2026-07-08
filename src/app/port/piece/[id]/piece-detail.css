@@ -180,7 +180,6 @@ video.piece-image {
     height: auto;
   }
 
-  /* ---- Content panel (~40%) ---- */
   .piece-content {
     flex: 1 1 45%;
     max-width: 45%;
@@ -191,16 +190,6 @@ video.piece-image {
     padding: 1.5rem 2.5rem 1.5rem 0;
     color: var(--grayo);
     overflow: hidden;
-    /* background-color: #cfcfcf;
-    background-image:
-      repeating-linear-gradient(90deg,
-        rgba(255, 0, 0, .09) 0, rgba(255, 0, 0, .09) 1px,
-        rgba(0, 255, 0, .09) 1px, rgba(0, 255, 0, .09) 2px,
-        rgba(0, 0, 255, .09) 2px, rgba(0, 0, 255, .09) 3px),
-      repeating-linear-gradient(0deg,
-        rgba(0, 0, 0, .10) 0, rgba(0, 0, 0, .10) 1px,
-        transparent 1px, transparent 3px);
-    background-blend-mode: multiply; */
   }
 
   .piece-content-head {
