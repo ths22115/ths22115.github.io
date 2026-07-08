@@ -183,7 +183,7 @@ video.piece-image {
   /* ---- Dead pixel zone (~40%) ---- */
   .dead-pixel-zone {
     flex: 1 1 42%;
-    max-width: 42%;
+    /* max-width: 42%; */
     height: 100%;
     display: flex;
     flex-direction: column;
