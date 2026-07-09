@@ -135,8 +135,11 @@ a {
 .mark-landing {
   pointer-events: none;
 }
-
 .mark-landing {
+  pointer-events: none;
+}
+
+.mark-landing, .mark-contact {
   bottom: -250px;
   right: -300px;
   z-index: 20;
