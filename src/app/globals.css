@@ -136,28 +136,29 @@ a {
   pointer-events: none;
 }
 
-.mark-landing, .mark-contact {
+.mark-landing {
   bottom: -250px;
   right: -300px;
   z-index: 20;
 }
 
-.mark-about {
+.mark-about, .mark-contact {
   animation: unset;
   top: 45%;
   left: 50%;
-  opacity: .5;
+  opacity: .2;
   scale: .9;
   /* transform: translateX(-50%); */
 }
-.mark-about:hover {
-  opacity: .25;
-  scale: .95;
+
+.mark-contact {
+  opacity: .5;
+  z-index: 20;
 }
 
-.mark-contact:hover {
-  opacity: .25;
-  scale: 1.08;
+.mark-about:hover, .mark-contact:hover {
+  opacity: 1;
+  scale: .9;
 }
 
 .mark-port, .mark-exp {

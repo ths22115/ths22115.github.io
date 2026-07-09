@@ -31,7 +31,7 @@ export default function GlobalMark() {
       markElement.style.left = "";
       markElement.style.top = "";
     } else {
-      if (page === "about") {
+      if (page === "about" || page === "contact") {
         const xPos = window.innerWidth / 2 - markWidth / 2;
         const yPos = window.innerHeight / 2 - markHeight / 2;
         markElement.style.left = `${xPos}px`;
