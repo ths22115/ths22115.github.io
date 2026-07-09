@@ -145,7 +145,7 @@ a {
   animation: unset;
   top: 45%;
   left: 50%;
-  opacity: .17;
+  opacity: .5;
   scale: .9;
   /* transform: translateX(-50%); */
 }
@@ -258,8 +258,8 @@ a {
 
 .mark.static-off {
   animation: none;
-  filter: invert(.25);
-  opacity: .5;
+  filter: invert(.1);
+  opacity: .3;
   mix-blend-mode: difference;
   pointer-events: none;
   top: unset;
