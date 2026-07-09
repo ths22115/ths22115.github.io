@@ -14,17 +14,23 @@
     max-width: unset;
     height: 100%;
     position: relative;
-    padding: 1rem 0;
+    padding: 2.5rem 2.5rem 3.25rem 0;
+    row-gap: .5rem;
+    /* align-items: center;
+    justify-content: center; */
+    /* align-items: flex-end; */
+    justify-content: flex-end;
   }
 
   .about-subtext {
-    position: absolute;
+    /* position: absolute; */
+    font-size: 1.125rem;
     width: auto;
     text-wrap: wrap;
     overflow-wrap: break-word;
   }
 
-  .about-subtext:first-child{
+  /* .about-subtext:first-child{
     right: 10%;
     top: 35%;
     text-align: right;
@@ -41,5 +47,5 @@
   .about-subtext:nth-child(4){
     left: 20%;
     top: 70%;
-  }
+  } */
 }

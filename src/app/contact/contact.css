@@ -1,5 +1,9 @@
 .contact-text {
     z-index: 20;
+    height: 100%;
+    padding: 2.5rem 2.5rem 3.375rem 0;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .contact-subtext {
@@ -14,8 +18,7 @@
         width: 100%;
         max-width: 10rem;
         row-gap: 1.5rem;
-        
-
+        justify-content: flex-start;
     }
     .contact-subtext {
       min-width: max-content;
