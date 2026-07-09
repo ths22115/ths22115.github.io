@@ -132,13 +132,14 @@ a {
 /* .mark-landing:not(.mark-landing:hover) {
   animation: 10s ease-in-out 0s infinite alternate mark-opacity-landing;
 } */
+.mark-landing {
+  pointer-events: none;
+}
 
 .mark-landing, .mark-contact {
-  /* :not(.mark-mobile) { */
-    bottom: -250px;
-    right: -300px;
-    z-index: 20;
-  /* } */
+  bottom: -250px;
+  right: -300px;
+  z-index: 20;
 }
 
 .mark-about {
