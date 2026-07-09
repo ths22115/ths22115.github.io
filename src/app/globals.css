@@ -149,7 +149,7 @@ a {
   animation: unset;
   top: 45%;
   left: 50%;
-  opacity: .2;
+  opacity: .5;
   scale: .9;
   /* transform: translateX(-50%); */
 }
