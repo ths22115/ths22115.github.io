@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import Link from "next/link";
 import "./landing.css";
 import { useMobile } from "./contexts/mobile-context";
 
@@ -13,15 +14,15 @@ export default function LandingView() {
           ? "Engineer by logic.\n\nDesigner by instinct.\n\nBuilding products as beautiful as they are meaningful."
           :
           <>
-            <div className={"subtext landing-subtext"}>
+            <Link href="/exp" className={"subtext landing-subtext hyperlink"}>
               Engineer by logic.
-            </div>
-            <div className={"subtext landing-subtext"}>
+            </Link>
+            <Link href="/port" className={"subtext landing-subtext hyperlink"}>
               Designer by instinct.
-            </div>
-            <div className={"subtext landing-subtext"}>
+            </Link>
+            <Link href="/about" className={"subtext landing-subtext hyperlink"}>
               Building products as beautiful as they are meaningful.
-            </div>
+            </Link>
           </>
       }
     </div>
