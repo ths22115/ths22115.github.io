@@ -2,21 +2,51 @@
 
 import Link from "next/link";
 import { formatPieceType } from "../lib/piece-format";
+import { isVideoMedia } from "../lib/piece-media";
 import { useStaticEffects } from "../contexts/static-effects-context";
+
+function PieceMedia({ id, src, poster, title }) {
+  if (isVideoMedia({ src })) {
+    return (
+      <video
+        id={id}
+        className="piece-img piece-gallery-img"
+        src={src}
+        poster={poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label={title}
+      />
+    );
+  }
+
+  return (
+    <img
+      id={id}
+      className="piece-img piece-gallery-img"
+      src={src}
+      alt={title}
+    />
+  );
+}
 
 export default function Piece(props) {
   const pieceHref = `/port/piece/${props.id}`;
   const { isStaticEnabled } = useStaticEffects();
+  const glitchSrc = props.poster || props.src;
 
   if (props.isMobile) {
     return (
       <Link href={pieceHref}>
-          <img
-            id={props.id}
-            className="piece-img piece-gallery-img"
-            src={props.src}
-            alt={props.title}
-          />
+        <PieceMedia
+          id={props.id}
+          src={props.src}
+          poster={props.poster}
+          title={props.title}
+        />
         <div className="piece-gallery-title">{props.title}</div>
         <div className="piece-gallery-type">{formatPieceType(props.type)}</div>
       </Link>
@@ -30,13 +60,13 @@ export default function Piece(props) {
       <Link href={pieceHref} className="piece-link">
         <span
           className="piece-glitch"
-          style={{ "--piece-img": `url(${props.src})`, "--glitch-delay": glitchDelay }}
+          style={{ "--piece-img": `url(${glitchSrc})`, "--glitch-delay": glitchDelay }}
         >
-          <img
+          <PieceMedia
             id={props.id}
-            className="piece-img piece-gallery-img"
             src={props.src}
-            alt={props.title}
+            poster={props.poster}
+            title={props.title}
           />
         </span>
       </Link>

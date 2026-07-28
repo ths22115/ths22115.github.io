@@ -6,19 +6,36 @@ const SECTIONS = {
   webdev: "webdev",
 };
 
+function normalizeThumbnail(piece, section) {
+  const raw =
+    piece.thumbnail ??
+    piece.resultImages?.[0] ??
+    (section === SECTIONS.design ? `/design${piece.id}.jpg` : null);
+
+  if (!raw) {
+    return { src: null };
+  }
+
+  if (typeof raw === "string") {
+    return { src: raw };
+  }
+
+  return {
+    src: raw.src ?? null,
+    poster: raw.poster,
+  };
+}
+
 function withSection(pieces, section) {
   return pieces.map((piece) => ({
     ...piece,
     section,
-    thumbnail:
-      piece.thumbnail ??
-      piece.resultImages?.[0]?.src ??
-      (section === SECTIONS.design ? `/design${piece.id}.jpg` : null),
+    thumbnail: normalizeThumbnail(piece, section),
   }));
 }
 
 const allPieces = [
-  ...withSection(webdevData.pieces, SECTIONS.webdev),
+  ...withSection(webdevData, SECTIONS.webdev),
   ...withSection(designData.pieces, SECTIONS.design),
 ];
 

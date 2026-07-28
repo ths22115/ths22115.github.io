@@ -26,7 +26,8 @@ export default function PortfolioView() {
               <Piece
                 key={piece.id}
                 id={piece.id}
-                src={piece.thumbnail}
+                src={piece.thumbnail.src}
+                poster={piece.thumbnail.poster}
                 title={piece.title}
                 type={piece.type}
                 isMobile={isMobile}
@@ -43,7 +44,8 @@ export default function PortfolioView() {
               <Piece
                 key={piece.id}
                 id={piece.id}
-                src={piece.thumbnail}
+                src={piece.thumbnail.src}
+                poster={piece.thumbnail.poster}
                 title={piece.title}
                 type={piece.type}
                 isMobile={isMobile}
@@ -71,7 +73,8 @@ export default function PortfolioView() {
             <Piece
               key={piece.id}
               id={piece.id}
-              src={piece.thumbnail}
+              src={piece.thumbnail.src}
+              poster={piece.thumbnail.poster}
               title={piece.title}
               type={piece.type}
             />
@@ -92,7 +95,8 @@ export default function PortfolioView() {
             <Piece
               key={piece.id}
               id={piece.id}
-              src={piece.thumbnail}
+              src={piece.thumbnail.src}
+              poster={piece.thumbnail.poster}
               title={piece.title}
               type={piece.type}
             />
