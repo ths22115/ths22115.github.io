@@ -50,7 +50,7 @@ export default function ExperienceView() {
               <Link
                 href="/port"
                 className="hyperlink job-buffer-sublink"
-                onClick={() => updatePortSection("design")}
+                onClick={() => updatePortSection("webdev")}
               >
                 <span className="job-title">BROWSE DESIGN WORK</span>
                 <div className="hyperlink-arrow">&#8599;&#xFE0E;</div>
