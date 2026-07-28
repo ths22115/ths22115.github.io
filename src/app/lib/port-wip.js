@@ -1,6 +1,6 @@
 export const PORT_SECTION_WIP = {
   webdev: false,
-  design: false,
+  design: true,
 };
 
 export function isPortSectionWip(section) {
