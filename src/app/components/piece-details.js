@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { formatPieceType } from "../lib/piece-format";
 import { AnimatedPieceMedia, PieceMedia } from "../lib/piece-media";
 import { useMobile } from "../contexts/mobile-context";
-import { useStaticEffects } from "../contexts/static-effects-context";
 
 function RichText({ text }) {
   if (!text) {
@@ -90,15 +89,8 @@ function NavLinks({ prevPiece, nextPiece }) {
 }
 
 function getSections(piece) {
-  const backgroundImages =
-    piece.backgroundImages && piece.backgroundImages.length
-      ? piece.backgroundImages
-      : piece.thumbnail
-      ? [{ src: piece.thumbnail, alt: piece.title }]
-      : [];
-
   return [
-    { key: "background", label: "Background", text: piece.background, images: backgroundImages },
+    { key: "background", label: "Background", text: piece.background, images: piece.backgroundImages ?? [] },
     { key: "process", label: "Process", text: piece.process, images: piece.processImages ?? [] },
     { key: "result", label: "Result", text: piece.result, images: piece.resultImages ?? [] },
   ];
@@ -115,6 +107,17 @@ function MobilePieceDetails({ piece, prevPiece, nextPiece }) {
 
         <div className="piece-background">
           <RichText text={piece.background} />
+        </div>
+
+        <div className="piece-images piece-background-images">
+          {piece.backgroundImages.map((image, index) => (
+            <PieceMedia
+              key={`${image.src}-${index}`}
+              item={image}
+              className="piece-image"
+              fallbackAlt={piece.title}
+            />
+          ))}
         </div>
 
         <div className="piece-process">
@@ -159,23 +162,15 @@ const ADVANCE_COOLDOWN = 650;
 
 function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
   const hasLinks = piece.link || piece.repo;
-  const { isStaticEnabled } = useStaticEffects();
   const sections = getSections(piece);
   const sectionCount = sections.length;
 
-  const tabBodyMotion = isStaticEnabled
-    ? {
-        initial: { height: 0, width: 0 },
-        animate: { height: "auto", width: "auto" },
-        exit: { height: 0, width: 0 },
-        transition: { duration: 0.4, ease: "easeOut" },
-      }
-    : {
-        initial: { height: 0, opacity: 0 },
-        animate: { height: "auto", opacity: 1 },
-        exit: { height: 0, opacity: 0 },
-        transition: { duration: 0.4, ease: "easeInOut" },
-      };
+  const tabBodyMotion = {
+    initial: { height: 0, opacity: 0 },
+    animate: { height: "auto", opacity: 1 },
+    exit: { height: 0, opacity: 0 },
+    transition: { duration: 0.4, ease: "easeInOut" },
+  };
 
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
@@ -312,37 +307,33 @@ function DesktopPieceDetails({ piece, prevPiece, nextPiece }) {
         </AnimatePresence>
       </div>
 
-      <aside className={"dead-pixel-zone " + (isStaticEnabled ? "dpz-static" : "dpz-bw")}>
-        <div className="dpz-head">
+      <aside className="piece-content">
+        <div className="piece-content-head">
           <div className="piece-page-title piece-title">{piece.title}</div>
           <Subtitle piece={piece} hasLinks={hasLinks} />
         </div>
 
-        <div className="dpz-tabs" ref={tabsRef}>
+        <div className="piece-content-tabs" ref={tabsRef}>
           {sections.map((section, index) => {
             const isActive = index === activeIndex;
 
             return (
               <div
-                className={
-                  "dpz-tab" +
-                  (isActive ? " is-active" : "") +
-                  (isStaticEnabled ? " pixel-corners" : "")
-                }
+                className={"piece-content-tab" + (isActive ? " is-active" : "")}
                 key={section.key}
               >
                 <button
                   type="button"
-                  className={"dpz-tab-header" + (isStaticEnabled ? " dpz-static" : "")}
+                  className="piece-content-tab-header"
                   onClick={() => goTo(index)}
                   aria-expanded={isActive}
                 >
-                  <span className="dpz-tab-label">{section.label}</span>
+                  <span className="piece-content-tab-label">{section.label}</span>
                 </button>
                 <AnimatePresence initial={false}>
                   {isActive ? (
-                    <motion.div className="dpz-tab-body" key="body" {...tabBodyMotion}>
-                      <div className="dpz-tab-text">
+                    <motion.div className="piece-content-tab-body" key="body" {...tabBodyMotion}>
+                      <div className="piece-content-tab-text">
                         <RichText text={section.text} />
                       </div>
                     </motion.div>

@@ -26,9 +26,11 @@ export default function PortfolioView() {
               <Piece
                 key={piece.id}
                 id={piece.id}
-                src={piece.thumbnail}
+                src={piece.thumbnail.src}
+                poster={piece.thumbnail.poster}
                 title={piece.title}
                 type={piece.type}
+                wip={piece.wip}
                 isMobile={isMobile}
               />
             ))
@@ -43,9 +45,11 @@ export default function PortfolioView() {
               <Piece
                 key={piece.id}
                 id={piece.id}
-                src={piece.thumbnail}
+                src={piece.thumbnail.src}
+                poster={piece.thumbnail.poster}
                 title={piece.title}
                 type={piece.type}
+                wip={piece.wip}
                 isMobile={isMobile}
               />
             ))
@@ -71,9 +75,11 @@ export default function PortfolioView() {
             <Piece
               key={piece.id}
               id={piece.id}
-              src={piece.thumbnail}
+              src={piece.thumbnail.src}
+              poster={piece.thumbnail.poster}
               title={piece.title}
               type={piece.type}
+              wip={piece.wip}
             />
           ))
         )}
@@ -92,9 +98,11 @@ export default function PortfolioView() {
             <Piece
               key={piece.id}
               id={piece.id}
-              src={piece.thumbnail}
+              src={piece.thumbnail.src}
+              poster={piece.thumbnail.poster}
               title={piece.title}
               type={piece.type}
+              wip={piece.wip}
             />
           ))
         )}
