@@ -30,6 +30,7 @@ export default function PortfolioView() {
                 poster={piece.thumbnail.poster}
                 title={piece.title}
                 type={piece.type}
+                wip={piece.wip}
                 isMobile={isMobile}
               />
             ))
@@ -48,6 +49,7 @@ export default function PortfolioView() {
                 poster={piece.thumbnail.poster}
                 title={piece.title}
                 type={piece.type}
+                wip={piece.wip}
                 isMobile={isMobile}
               />
             ))
@@ -77,6 +79,7 @@ export default function PortfolioView() {
               poster={piece.thumbnail.poster}
               title={piece.title}
               type={piece.type}
+              wip={piece.wip}
             />
           ))
         )}
@@ -99,6 +102,7 @@ export default function PortfolioView() {
               poster={piece.thumbnail.poster}
               title={piece.title}
               type={piece.type}
+              wip={piece.wip}
             />
           ))
         )}

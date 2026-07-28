@@ -45,6 +45,21 @@
     text-decoration: none;
 }
 
+.piece-card--wip {
+    pointer-events: none;
+    user-select: none;
+}
+
+.piece-card--wip .piece-img {
+    filter: blur(2px) saturate(0.35);
+    opacity: 0.5;
+    cursor: default;
+}
+
+.piece-link--wip {
+    cursor: default;
+}
+
 .display:not(.display-active) {
     display: none;
     opacity: 0;
@@ -291,6 +306,11 @@
       min-width: 0;
       padding-top: .125rem;
       text-transform: uppercase;
+    }
+
+    .piece-card--wip .piece-gallery-title,
+    .piece-card--wip .piece-gallery-type {
+      opacity: 0.4;
     }
 
     .piece-title {

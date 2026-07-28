@@ -1,9 +1,14 @@
 import { notFound } from "next/navigation";
-import { getAllPieces, getPieceById, getAdjacentPieces } from "../../../lib/pieces";
+import {
+  getPublishedPieces,
+  getPieceById,
+  getAdjacentPieces,
+  isPieceWip,
+} from "../../../lib/pieces";
 import PieceDetailView from "./piece-detail-view";
 
 export function generateStaticParams() {
-  return getAllPieces().map((piece) => ({
+  return getPublishedPieces().map((piece) => ({
     id: String(piece.id),
   }));
 }
@@ -12,7 +17,7 @@ export async function generateMetadata({ params }) {
   const { id } = await params;
   const piece = getPieceById(id);
 
-  if (!piece) {
+  if (!piece || isPieceWip(piece)) {
     return {};
   }
 
@@ -25,7 +30,7 @@ export default async function Page({ params }) {
   const { id } = await params;
   const piece = getPieceById(id);
 
-  if (!piece) {
+  if (!piece || isPieceWip(piece)) {
     notFound();
   }
 

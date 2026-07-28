@@ -30,6 +30,7 @@ function withSection(pieces, section) {
   return pieces.map((piece) => ({
     ...piece,
     section,
+    wip: piece.wip === true,
     thumbnail: normalizeThumbnail(piece, section),
   }));
 }
@@ -39,12 +40,24 @@ const allPieces = [
   ...withSection(designData.pieces, SECTIONS.design),
 ];
 
+export function isPieceWip(piece) {
+  return piece?.wip === true;
+}
+
 export function getPiecesBySection(section) {
   return allPieces.filter((piece) => piece.section === section);
 }
 
+export function getPublishedPiecesBySection(section) {
+  return getPiecesBySection(section).filter((piece) => !isPieceWip(piece));
+}
+
 export function getAllPieces() {
   return allPieces;
+}
+
+export function getPublishedPieces() {
+  return allPieces.filter((piece) => !isPieceWip(piece));
 }
 
 export function getPieceById(id) {
@@ -54,11 +67,11 @@ export function getPieceById(id) {
 export function getAdjacentPieces(id) {
   const piece = getPieceById(id);
 
-  if (!piece) {
+  if (!piece || isPieceWip(piece)) {
     return { prevPiece: null, nextPiece: null };
   }
 
-  const pieces = getPiecesBySection(piece.section);
+  const pieces = getPublishedPiecesBySection(piece.section);
   const index = pieces.findIndex((entry) => String(entry.id) === String(id));
 
   if (index === -1) {
