@@ -12,7 +12,7 @@ export default function RouteTransition({ children }) {
   const prevPathnameRef = useRef(pathname)
   const { isMobile } = useMobile()
   const transitionDuration = 400
-  const mobileTransitionDuration = 800
+  const mobileTransitionDuration = 600
   const { isStaticEnabled } = useStaticEffects()
 
   useEffect(() => {
