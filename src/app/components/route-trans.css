@@ -1,3 +1,19 @@
+.page-fade {
+  --page-fade-duration: 250ms;
+  transition: opacity var(--page-fade-duration) ease;
+}
+
+.page-fade.is-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-fade {
+    --page-fade-duration: 0ms;
+  }
+}
+
 .route-transition-overlay {
   position: fixed;
   inset: 0;
