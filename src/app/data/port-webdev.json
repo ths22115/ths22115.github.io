@@ -62,10 +62,85 @@
   },
   {
     "id": 2,
-    "title": "Mius Thomas Historical Archive of Black Design",
-    "type": ["digital archive"],
-    "wip": true,
-    "thumbnail": "/mt-archive/thumbnail-still.webp"
+    "title": "Historical Archive of Black Design",
+    "type": ["digital archive", "ux study"],
+    "date": "SPRING 2026",
+    "thumbnail": "/archive/thumbnail-still.webp",
+    "link": "https://www.figma.com/proto/5RI3RWwjwr9kgg2wsQzfH7/Historical-Archive-of-Black-Design?node-id=75-45&viewport=2929%2C1832%2C0.36&t=SD910lbEflwfmHQd-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=75%3A45&page-id=0%3A1",
+    "background": [
+      "The Mius Thomas Historical Archive of Black Design (Archive, for short) is my vision for a central digital system that stores, maps, and organizes the earliest contributions of African American/Soulaani people to graphic arts and design, and ultimately serves as their source of truth.",
+      "Archive needs to exist because the accepted design canon, like those of many other arts and industries, rarely acknowledges the contributions of African American/Soulaani people, groups, and culture. Shaped by centuries of political, economic, and social forces, it is fundamentally incapable of doing so. Many excellent Black archives preserve artifacts and histories that their generalized peers neglect, but there is no dedicated source of truth for Black design. As a Black design scholar who struggled to find the work of my predecessors, I learned the hard way that we have always been, and will continue to be, overlooked by the mainstream canon. So I set out to make sure future Black designers never struggle to see themselves in the discipline they love.",
+      "It started with a question I asked in my Fall 2025 Typography course that I still can’t answer: “Who was the first Black (graphic) designer?” That personal research became an independent study under Dr. Adam Biggs in Spring 2026, culminating in a research paper and a UX prototype that brings my vision to life."
+    ],
+    "backgroundImages": [
+      {
+        "src": "/archive/background/entry-assets.png",
+        "alt": "Entry assets for Archive UI exploration"
+      },
+      {
+        "src": "/archive/background/paper-excerpt.jpg",
+        "alt": "Excerpt from the independent study research paper behind Archive"
+      }
+    ],
+    "process": [
+      "Archive’s visual language extends that of my personal brand: colorless and predominantly black to carry the weight of the work, minimal and sharp so the catalog holds the user’s focus. Every entry, whether a person, movement, organization, or work, is essential to this narrative yet overlooked in most others, so the interface acts as the stage they were never given.",
+      "Entries began as individuals while I searched for the first Black designers, but the criteria slowly grew to include organizations, movements, mediums, and the works they produced, telling a more complete story than a single question could. I defined a data model for each collection to standardize similar entries. That let me design one reusable collection interface and a reusable entry interface per model, cutting my design overhead. I gave up tailoring interfaces to individual entries, but for an archive meant to catalog and spotlight a near-endless body of overlooked work, the consistency and speed are well worth it.",
+      "The reusable collection interface was designed in a rush. It lacked key design heuristics, like collection iconography, and archival functionality, like embedded search and filtering to narrow down entries. I revised the screen to add those motifs and features, making the collection view more visually aligned with the system and more capable as an archive."
+    ],
+    "processImages": [
+      {
+        "src": "/archive/process/logo-exploration.webp",
+        "alt": "Logo exploration for Archive"
+      },
+      {
+        "src": "/archive/process/logo-exploration-pt2.webp",
+        "alt": "Logo exploration for Archive, continued for the full signature logotype"
+      },
+      {
+        "src": "/archive/process/homeUI-exploration.jpg",
+        "alt": "Home UI exploration for Archive"
+      },
+      {
+        "src": "/archive/process/iconography-exploration.jpg",
+        "alt": "Iconography exploration for Archive"
+      },
+      {
+        "src": "/archive/process/entry-card-exploration.png",
+        "alt": "Entry card exploration for Archive"
+      },
+      {
+        "src": "/archive/process/entry-card-final.png",
+        "alt": "Final entry card for Archive"
+      },
+      {
+        "src": "/archive/process/collectionUI-upgrade.png",
+        "alt": "Collection UI upgrade for Archive"
+      }
+    ],
+    "result": [
+      "The prototype covers mobile views of the landing page with featured entries, global search, the menu, and each collection, plus entry views for Aaron Douglas and the Harlem Renaissance (New Negro Movement). Most collections use the original reusable collection interface, and the Groups and Organizations collection demos the upgraded one.",
+      "Archive is still just a vision: a Figma prototype with no codebase or database. Next, I intend to refine a few more of the existing interfaces and create desktop counterparts, before planning implementation, including final entry models, end-to-end data flow, and component architecture."
+    ],
+    "resultImages": [
+      {
+        "src": "/archive/result/homeUI-final-poster.jpg",
+        "poster": "/archive/result/homeUI-final-poster.jpg",
+        "alt": "Archive landing page",
+        "type": "image"
+      },
+      {
+        "src": "/archive/result/searchUI-final-poster.jpg",
+        "poster": "/archive/result/searchUI-final-poster.jpg",
+        "alt": "Archive search UI",
+        "type": "image"
+      },
+      {
+        "src": "/archive/result/entryUI-final-poster.jpg",
+        "poster": "/archive/result/entryUI-final-poster.jpg",
+        "alt": "Archive entry view for Aaron Douglas",
+        "type": "image"
+      }
+    ]
   },
   {
     "id": 3,
