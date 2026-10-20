@@ -2,11 +2,11 @@
   {
     "id": 1,
     "title": "Needle",
-    "type": ["web app"],
+    "type": ["web app", "digital publication"],
     "date": "OCT 2023",
     "thumbnail": {
       "src": "/needle/thumbnail.mp4",
-      "poster": "/needle/thumbnail_still.webp"
+      "poster": "/needle/thumbnail_poster.jpg"
     },
     "link": "https://needle-ui.vercel.app/",
     "repo": "https://github.com/thread-rpi",
@@ -63,9 +63,12 @@
   {
     "id": 2,
     "title": "Historical Archive of Black Design",
-    "type": ["digital archive", "ux study"],
+    "type": ["ux prototype", "digital archive"],
     "date": "SPRING 2026",
-    "thumbnail": "/archive/thumbnail-still.webp",
+    "thumbnail": {
+      "src": "/archive/thumbnail.webm",
+      "poster": "/archive/thumbnail_poster.webp"
+    },
     "link": "https://www.figma.com/proto/5RI3RWwjwr9kgg2wsQzfH7/Historical-Archive-of-Black-Design?node-id=75-45&viewport=2929%2C1832%2C0.36&t=SD910lbEflwfmHQd-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=75%3A45&page-id=0%3A1",
     "background": [
       "The Mius Thomas Historical Archive of Black Design (Archive, for short) is my vision for a central digital system that stores, maps, and organizes the earliest contributions of African American/Soulaani people to graphic arts and design, and ultimately serves as their source of truth.",
@@ -123,22 +126,22 @@
     ],
     "resultImages": [
       {
-        "src": "/archive/result/homeUI-final-poster.jpg",
-        "poster": "/archive/result/homeUI-final-poster.jpg",
-        "alt": "Archive landing page",
-        "type": "image"
+        "src": "/archive/result/home-AD_demo.webm",
+        "poster": "/archive/result/home-AD_poster.jpg",
+        "alt": "Home UI and reusable entry interface demo",
+        "type": "video"
       },
       {
-        "src": "/archive/result/searchUI-final-poster.jpg",
-        "poster": "/archive/result/searchUI-final-poster.jpg",
-        "alt": "Archive search UI",
-        "type": "image"
+        "src": "/archive/result/search_demo.webm",
+        "poster": "/archive/result/search_poster.jpg",
+        "alt": "Search UI demo",
+        "type": "video"
       },
       {
-        "src": "/archive/result/entryUI-final-poster.jpg",
-        "poster": "/archive/result/entryUI-final-poster.jpg",
-        "alt": "Archive entry view for Aaron Douglas",
-        "type": "image"
+        "src": "/archive/result/menu-groups_demo.webm",
+        "poster": "/archive/result/menu-groups_poster.jpg",
+        "alt": "Menu UI and reusable collection interface demo",
+        "type": "video"
       }
     ]
   },
