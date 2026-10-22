@@ -5,11 +5,13 @@ import "./app-shell.css";
 import Navbar from "./navbar";
 import { useStaticEffects } from "../contexts/static-effects-context";
 import { useMobile } from "../contexts/mobile-context";
+import { useRouteTransition } from "./route-trans";
 import { getPageFromPathname } from "../lib/get-page-from-pathname";
 
 export default function AppShell({ children }) {
 	const { isStaticEnabled } = useStaticEffects();
   const { isMobile } = useMobile();
+  const { isFading } = useRouteTransition();
   const pathname = usePathname();
   const page = useMemo(() => getPageFromPathname(pathname), [pathname]);
   const showMobileStaticEffects = isMobile && isStaticEnabled;
@@ -33,7 +35,7 @@ export default function AppShell({ children }) {
       )}
 
 			<Navbar page={page} />
-			<main className="app-shell-content">{children}</main>
+			<main className={"app-shell-content page-fade" + (isFading ? " is-fading" : "")}>{children}</main>
 			{ !isMobile ? (
 			<div className={"footer" + (page == "port" ? " footer-port" : "")}>&copy; Miles Mckinley Thomas. All rights reserved.</div>
 			) : ""}
