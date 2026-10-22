@@ -43,7 +43,11 @@ function getLinkLabel(type) {
     return "VIEW STUDY";
   }
 
-  if (types.includes("web app") || types.includes("digital portfolio")) {
+  if (types.includes("ux prototype")) {
+    return "VIEW PROTOTYPE";
+  }
+
+  if (types.includes("web app")) {
     return "VIEW LIVE";
   }
 
